@@ -541,5 +541,389 @@ add10(20) # 30
 
 
 =======================
+Date range
+
+Creates a list of dates between start (inclusive) and end (not inclusive).
+
+Use datetime.timedelta.days to get the days between start and end.
+Use int() to convert the result to an integer and range() to iterate over each day.
+Use a list comprehension and datetime.timedelta to create a list of datetime.date objects.
+
+```py
+from datetime import timedelta, date
+
+def daterange(start, end):
+  return [start + timedelta(n) for n in range(int((end - start).days))]
+from datetime import date
+
+daterange(date(2020, 10, 1), date(2020, 10, 5))
+# [date(2020, 10, 1), date(2020, 10, 2), date(2020, 10, 3), date(2020, 10, 4)]
+```
+
+
+
+=======================
+Days ago
+
+
+Calculates the date of n days ago from today.
+
+Use datetime.date.today() to get the current day.
+Use datetime.timedelta to subtract n days from today's date.
+
+```py
+from datetime import timedelta, date
+
+def days_ago(n):
+  return date.today() - timedelta(n)
+days_ago(5) # date(2020, 10, 23)
+```
+
+
+=======================
+Date difference in days
+
+Calculates the day difference between two dates.
+
+Subtract start from end and use datetime.timedelta.days to get the day difference.
+
+```py
+def days_diff(start, end):
+  return (end - start).days
+from datetime import date
+
+days_diff(date(2020, 10, 25), date(2020, 10, 28)) # 3
+```
+
+
+
+
+=======================
+Days from now
+
+Calculates the date of n days from today.
+
+Use datetime.date.today() to get the current day.
+Use datetime.timedelta to add n days from today's date.
+
+```py
+from datetime import timedelta, date
+
+def days_from_now(n):
+  return date.today() + timedelta(n)
+days_from_now(5) # date(2020, 11, 02)
+```
+
+
+
+=======================
+Decapitalize string
+
+Decapitalizes the first letter of a string.
+
+Use list slicing and str.lower() to decapitalize the first letter of the string.
+Use str.join() to combine the lowercase first letter with the rest of the characters.
+Omit the upper_rest parameter to keep the rest of the string intact, or set it to True to convert to uppercase.
+
+```py
+def decapitalize(s, upper_rest = False):
+  return ''.join([s[:1].lower(), (s[1:].upper() if upper_rest else s[1:])])
+decapitalize('FooBar') # 'fooBar'
+decapitalize('FooBar', True) # 'fOOBAR'
+```
+
+
+=======================
+Deep flatten list
+
+Deep flattens a list.
+
+Use recursion.
+Use isinstance() with collections.abc.Iterable to check if an element is iterable.
+If it is iterable, apply deep_flatten() recursively, otherwise return [lst].
+
+```py
+from collections.abc import Iterable
+
+def deep_flatten(lst):
+  return ([a for i in lst for a in
+          deep_flatten(i)] if isinstance(lst, Iterable) else [lst])
+deep_flatten([1, [2], [[3], 4], 5]) # [1, 2, 3, 4, 5]
+```
+
+
+=======================
+Degrees to radians
+
+
+Converts an angle from degrees to radians.
+
+Use math.pi and the degrees to radians formula to convert the angle from degrees to radians.
+
+```py
+from math import pi
+
+def degrees_to_rads(deg):
+  return (deg * pi) / 180.0
+degrees_to_rads(180) # ~3.1416
+```
+
+
+=======================
+Delayed function execution
+
+
+Invokes the provided function after ms milliseconds.
+
+Use time.sleep() to delay the execution of fn by ms / 1000 seconds.
+
+```py
+from time import sleep
+
+def delay(fn, ms, *args):
+  sleep(ms / 1000)
+  return fn(*args)
+delay(lambda x: print(x), 1000, 'later') # prints 'later' after one second
+```
+
+
+
+=======================
+Dictionary to list
+
+Converts a dictionary to a list of tuples.
+
+Use dict.items() and list() to get a list of tuples from the given dictionary.
+
+```py
+def dict_to_list(d):
+  return list(d.items())
+d = {'one': 1, 'three': 3, 'five': 5, 'two': 2, 'four': 4}
+dict_to_list(d)
+# [('one', 1), ('three', 3), ('five', 5), ('two', 2), ('four', 4)]```
+```
+
+=======================
+List difference based on function
+
+Returns the difference between two lists, after applying the provided function to each list element of both.
+
+Create a set, using map() to apply fn to each element in b.
+Use a list comprehension in combination with fn on a to only keep values not contained in the previously created set, _b.
+
+
+```py
+def difference_by(a, b, fn):
+  _b = set(map(fn, b))
+  return [item for item in a if fn(item) not in _b]
+from math import floor
+
+difference_by([2.1, 1.2], [2.3, 3.4], floor) # [1.2]
+difference_by([{ 'x': 2 }, { 'x': 1 }], [{ 'x': 1 }], lambda v : v['x'])
+# [ { x: 2 } ]
+```
+
+
+=======================
+List difference
+
+
+Calculates the difference between two iterables, without filtering duplicate values.
+
+Create a set from b.
+Use a list comprehension on a to only keep values not contained in the previously created set, _b.
+
+```py
+def difference(a, b):
+  _b = set(b)
+  return [item for item in a if item not in _b]
+difference([1, 2, 3], [1, 2, 4]) # [3]
+```
+
+
+
+=======================
+Digitize number
+
+
+Converts a number to a list of digits.
+
+Use map() combined with int on the string representation of n and return a list from the result.
+
+
+```py
+def digitize(n):
+  return list(map(int, str(n)))
+digitize(123) # [1, 2, 3]
+```
+
+
+=======================
+Drop list elements from the right
+
+Returns a list with n elements removed from the right.
+
+Use slice notation to remove the specified number of elements from the right.
+
+Omit the last argument, n, to use a default value of 1.
+
+
+```py
+
+def drop_right(a, n = 1):
+  return a[:-n]
+drop_right([1, 2, 3]) # [1, 2]
+drop_right([1, 2, 3], 2) # [1]
+drop_right([1, 2, 3], 42) # []
+```
+
+
+=======================
+Drop list elements from the left
+
+
+Returns a list with n elements removed from the left.
+
+Use slice notation to remove the specified number of elements from the left.
+Omit the last argument, n, to use a default value of 1.
+
+
+```py
+def drop(a, n = 1):
+  return a[n:]
+drop([1, 2, 3]) # [2, 3]
+drop([1, 2, 3], 2) # [3]
+drop([1, 2, 3], 42) # []
+```
+
+
+
+
+=======================
+
+
+
+
+
+=======================
+
+
+
+
+
+=======================
+
+
+
+
+
+=======================
+
+
+
+
+
+
+
+=======================
+
+
+
+
+
+=======================
+
+
+
+
+
+=======================
+
+
+
+
+
+=======================
+
+
+
+
+
+
+
+=======================
+
+
+
+
+
+=======================
+
+
+
+
+
+=======================
+
+
+
+
+
+=======================
+
+
+
+
+
+
+
+=======================
+
+
+
+
+
+=======================
+
+
+
+
+
+=======================
+
+
+
+
+
+=======================
+
+
+
+
+
+
+
+=======================
+
+
+
+
+
+=======================
+
+
+
+
+
+=======================
+
+
+
+
+
+=======================
+
+
+
 
 
