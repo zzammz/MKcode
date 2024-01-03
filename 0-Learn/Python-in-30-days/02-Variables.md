@@ -272,6 +272,8 @@ Number data types in Python:
 1. Run help('keywords') in Python shell or in your file to check for the Python reserved words or keywords
 
 
+=============================
+
 ```py
 # Variables in Python
 
@@ -313,4 +315,5 @@ print('Country: ', country)
 print('Age: ', age)
 print('Married: ', is_married)
 
+```
 
