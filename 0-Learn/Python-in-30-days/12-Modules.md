@@ -289,11 +289,38 @@ print(rgb_color_gen())
 
 ==================================================
 main.py
+```py
 
+from mymodule import generate_full_name as fullname, sum_two_nums as total, person as p, gravity as g
+print(fullname('Jim','Halpert'))
+print(total(1, 9))
+mass = 100;
+weight = mass * g
+print(weight)
+print(p)
+print(p['firstname'])
+```
 
 =================================================
 mymodules.py
 
+```py
+def generate_full_name(firstname, lastname):
+      space = ' '
+      fullname = firstname + space + lastname
+      return fullname
+
+def sum_two_nums (num1, num2):
+    return num1 + num2
+gravity = 9.81
+person = {
+    "firstname": "Jim",
+    "age": 250,
+    "country": "US",
+    "city":'Scranton'
+}
+
+```
 
 
 
