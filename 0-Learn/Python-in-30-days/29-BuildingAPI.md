@@ -33,7 +33,8 @@ Examples of API
 
 [Postman](https://www.getpostman.com/) is a very popular tool when it comes to API development. So, if you like to do this section you need to [download postman](https://www.getpostman.com/). An alternative of Postman is [Insomnia](https://insomnia.rest/download).
 
-![Postman](../images/postman.png)
+![image](https://github.com/zzammz/MKcode/assets/56573737/b8409e6d-d30a-4382-9b80-df270cf27b8e)
+
 
 ### Structure of an API
 
@@ -109,11 +110,12 @@ if __name__ == '__main__':
 
 When you request the http://localhost:5000/api/v1.0/students url on the browser you will get this:
 
-![Get on browser](../images/get_on_browser.png)
+![image](https://github.com/zzammz/MKcode/assets/56573737/14cd6624-9e7b-4ebd-92bc-5ace3b75fd7d)
 
 When you request the http://localhost:5000/api/v1.0/students url on the browser you will get this:
 
-![Get on postman](../images/get_on_postman.png)
+![image](https://github.com/zzammz/MKcode/assets/56573737/79879d1b-15ec-4741-86b7-25ee7c9942cd)
+
 
 In stead of displaying dummy data let us connect the flask application with MongoDB and get data from mongoDB database.
 
