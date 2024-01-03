@@ -1,3 +1,5 @@
+--- USEFUL STUFF ---
+
 
 ===================
 Calculates the date of n days from the given date.
@@ -1131,59 +1133,179 @@ from_iso_date('2020-10-28T12:30:59.000000') # 2020-10-28 12:30:59
 ```
 
 =======================
+Greatest common divisor
+
+Calculates the greatest common divisor of a list of numbers.
+
+Use functools.reduce() and math.gcd() over the given list.
+from functools import reduce
+from math import gcd as _gcd
+
+```py
+def gcd(numbers):
+  return reduce(_gcd, numbers)
+gcd([8, 36, 28]) # 4
+```
 
 
+=======================
+Geometric progression
+
+
+Initializes a list containing the numbers in the specified range where start and end are inclusive and the ratio between two terms is step.
+
+Use range(), math.log() and math.floor() and a list comprehension to create a list of the appropriate length, applying the step for each element.
+Returns an error if step equals 1.
+Omit the second argument, start, to use a default value of 1.
+Omit the third argument, step, to use a default value of 2.
+from math import floor, log
+
+```py
+def geometric_progression(end, start=1, step=2):
+  return [start * step ** i for i in range(floor(log(end / start)
+          / log(step)) + 1)]
+
+geometric_progression(256) # [1, 2, 4, 8, 16, 32, 64, 128, 256]
+geometric_progression(256, 3) # [3, 6, 12, 24, 48, 96, 192]
+geometric_progression(256, 1, 4) # [1, 4, 16, 64, 256]
+```
+
+
+=======================
+Get nested value
+
+Retrieves the value of the nested key indicated by the given selector list from a dictionary or list.
+
+Use functools.reduce() to iterate over the selectors list.
+Apply operator.getitem() for each key in selectors, retrieving the value to be used as the iteratee for the next iteration.
+from functools import reduce
+from operator import getitem
+
+```py
+def get(d, selectors):
+  return reduce(getitem, selectors, d)
+users = {
+  'freddy': {
+    'name': {
+      'first': 'fred',
+      'last': 'smith'
+    },
+    'postIds': [1, 2, 3]
+  }
+}
+get(users, ['freddy', 'name', 'last']) # 'smith'
+get(users, ['freddy', 'postIds', 1]) # 2
+```
 
 
 
 =======================
+Group list elements
 
 
+Groups the elements of a list based on the given function.
 
+Use collections.defaultdict to initialize a dictionary.
+Use fn in combination with a for loop and dict.append() to populate the dictionary.
+Use dict() to convert it to a regular dictionary.
+from collections import defaultdict
 
+```py
+def group_by(lst, fn):
+  d = defaultdict(list)
+  for el in lst:
+    d[fn(el)].append(el)
+  return dict(d)
+from math import floor
 
-=======================
-
-
-
-
-
-=======================
-
-
-
-
-
-=======================
-
-
-
-
-
-=======================
-
-
+group_by([6.1, 4.2, 6.3], floor) # {4: [4.2], 6: [6.1, 6.3]}
+group_by(['one', 'two', 'three'], len) # {3: ['one', 'two'], 5: ['three']}
+```
 
 
 
 =======================
+Hamming distance
 
+Calculates the Hamming distance between two values.
 
+Use the XOR operator (^) to find the bit difference between the two numbers.
+Use bin() to convert the result to a binary string.
+Convert the string to a list and use count() of str class to count and return the number of 1s in it.
 
-
+```py
+def hamming_distance(a, b):
+  return bin(a ^ b).count('1')
+hamming_distance(2, 3) # 1
+```
 
 
 
 =======================
+Check for duplicates in list
+
+Checks if there are duplicate values in a flat list.
+
+Use set() on the given list to remove duplicates, compare its length with the length of the list.
+
+```py
+def has_duplicates(lst):
+  return len(lst) != len(set(lst))
+x = [1, 2, 3, 4, 5, 5]
+y = [1, 2, 3, 4, 5]
+has_duplicates(x) # True
+has_duplicates(y) # False
+```
 
 
+=======================
+Check lists have same contents
+
+Checks if two lists contain the same elements regardless of order.
+
+Use set() on the combination of both lists to find the unique values.
+Iterate over them with a for loop comparing the count() of each unique value in each list.
+Return False if the counts do not match for any element, True otherwise.
+
+```py
+def have_same_contents(a, b):
+  for v in set(a + b):
+    if a.count(v) != b.count(v):
+      return False
+  return True
+have_same_contents([1, 2, 4], [2, 4, 1]) # True
+```
 
 
 
 =======================
+List head
+
+Returns the head of a list.
+
+Use lst[0] to return the first element of the passed list.
+
+```py
+def head(lst):
+  return lst[0]
+head([1, 2, 3]) # 1
+```
 
 
 
+=======================
+Hex to RGB
+
+Converts a hexadecimal color code to a tuple of integers corresponding to its RGB components.
+
+Use a list comprehension in combination with int() and list slice notation to get the RGB components from the hexadecimal string.
+Use tuple() to convert the resulting list to a tuple.
+
+```py
+def hex_to_rgb(hex):
+  return tuple(int(hex[i:i+2], 16) for i in (0, 2, 4))
+hex_to_rgb('FFA501') # (255, 165, 1)
+```
 
 
 =======================
