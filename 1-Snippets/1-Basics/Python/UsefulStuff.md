@@ -11,8 +11,8 @@ from datetime import datetime, timedelta
 ```py
 def add_days(n, d = datetime.today()):
   return d + timedelta(n)
-from datetime import date
 
+from datetime import date
 
 add_days(5, date(2020, 10, 25)) # date(2020, 10, 30)
 add_days(-5, date(2020, 10, 25)) # date(2020, 10, 20)
@@ -41,6 +41,7 @@ Use len() to compare the length of the unique values to the original list.
 ```py
 def all_unique(lst):
   return len(lst) == len(set(lst))
+
 x = [1, 2, 3, 4, 5, 6]
 y = [1, 2, 2, 3, 4, 5]
 all_unique(x) # True
@@ -57,6 +58,7 @@ Use range() and list() with the appropriate start, step and end values.
 ```py
 def arithmetic_progression(n, lim):
   return list(range(n, lim + 1, n))
+
 arithmetic_progression(5, 25) # [5, 10, 15, 20, 25]
 ```
 
@@ -74,9 +76,8 @@ Omit the last argument, fn, to use the default identity function.
 ```py
 def average_by(lst, fn = lambda x: x):
   return sum(map(fn, lst), 0.0) / len(lst)
-```
 
-```py
+
 average_by([{ 'n': 4 }, { 'n': 2 }, { 'n': 8 }, { 'n': 6 }], lambda x: x['n'])
 # 5.0
 ```
@@ -210,6 +211,7 @@ Use str.title() to capitalize the first letter of every word in the string.
 ```py
 def capitalize_every_word(s):
   return s.title()
+
 capitalize_every_word('hello world!') # 'Hello World!'
 ```
 
@@ -259,6 +261,7 @@ Follow the conversion formula F = 1.8 * C + 32.
 ```py
 def celsius_to_fahrenheit(degrees):
   return ((degrees * 1.8) + 32)
+
 celsius_to_fahrenheit(180) # 356.0
 ```
 
@@ -300,6 +303,7 @@ def chunk_into_n(lst, n):
     map(lambda x: lst[x * size:x * size + size],
     list(range(n)))
   )
+
 chunk_into_n([1, 2, 3, 4, 5, 6, 7], 4) # [[1, 2], [3, 4], [5, 6], [7]]
 ```
 
@@ -321,6 +325,7 @@ def chunk(lst, size):
   return list(
     map(lambda x: lst[x * size:x * size + size],
       list(range(ceil(len(lst) / size)))))
+
 chunk([1, 2, 3, 4, 5], 2) # [[1, 2], [3, 4], [5]]
 ```
 
@@ -337,6 +342,7 @@ Otherwise, return the nearest number in the range.
 ```py
 def clamp_number(num, a, b):
   return max(min(num, max(a, b)), min(a, b))
+
 clamp_number(2, 3, 5) # 3
 clamp_number(1, -1, -5) # -1
 ```
@@ -369,6 +375,7 @@ ages = {
   'Isabel': 10,
   'Anna': 9,
 }
+
 collect_dictionary(ages) # { 10: ['Peter', 'Isabel'], 9: ['Anna'] }
 ```
 
@@ -392,6 +399,8 @@ def combine_values(*dicts):
     for key in d:
       res[key].append(d[key])
   return dict(res)
+
+
 d1 = {'a': 1, 'b': 'foo', 'c': 400}
 d2 = {'a': 3, 'b': 200, 'd': 400}
 
@@ -410,6 +419,7 @@ Use filter() to filter out falsy values (False, None, 0, and "").
 ```py
 def compact(lst):
   return list(filter(None, lst))
+
 compact([0, 1, False, 2, '', 3, 'a', 's', 34]) # [ 1, 2, 3, 'a', 's', 34 ]
 ```
 
@@ -428,6 +438,7 @@ from functools import reduce
 
 def compose_right(*fns):
   return reduce(lambda f, g: lambda *args: g(f(*args)), fns)
+
 add = lambda x, y: x + y
 square = lambda x: x * x
 add_and_square = compose_right(add, square)
@@ -451,6 +462,8 @@ from functools import reduce
 
 def compose(*fns):
   return reduce(lambda f, g: lambda *args: f(g(*args)), fns)
+
+
 add5 = lambda x: x + 5
 multiply = lambda x, y: x * y
 multiply_and_add_5 = compose(add5, multiply)
@@ -496,6 +509,8 @@ Use list.count() to count the number of occurrences of val in lst.
 ```py
 def count_occurrences(lst, val):
   return lst.count(val)
+
+
 count_occurrences([1, 1, 2, 1, 2, 3], 1) # 3
 ```
 
@@ -516,6 +531,7 @@ from itertools import accumulate
 
 def cumsum(lst):
   return list(accumulate(lst))
+
 cumsum(range(0, 15, 3)) # [0, 3, 9, 18, 30]
 ```
 
@@ -535,6 +551,8 @@ from functools import partial
 
 def curry(fn, *args):
   return partial(fn, *args)
+
+
 add = lambda x, y: x + y
 add10 = curry(add, 10)
 add10(20) # 30
@@ -578,6 +596,7 @@ from datetime import timedelta, date
 
 def days_ago(n):
   return date.today() - timedelta(n)
+
 days_ago(5) # date(2020, 10, 23)
 ```
 
@@ -613,6 +632,8 @@ from datetime import timedelta, date
 
 def days_from_now(n):
   return date.today() + timedelta(n)
+
+
 days_from_now(5) # date(2020, 11, 02)
 ```
 
@@ -630,6 +651,8 @@ Omit the upper_rest parameter to keep the rest of the string intact, or set it t
 ```py
 def decapitalize(s, upper_rest = False):
   return ''.join([s[:1].lower(), (s[1:].upper() if upper_rest else s[1:])])
+
+
 decapitalize('FooBar') # 'fooBar'
 decapitalize('FooBar', True) # 'fOOBAR'
 ```
@@ -650,6 +673,8 @@ from collections.abc import Iterable
 def deep_flatten(lst):
   return ([a for i in lst for a in
           deep_flatten(i)] if isinstance(lst, Iterable) else [lst])
+
+
 deep_flatten([1, [2], [[3], 4], 5]) # [1, 2, 3, 4, 5]
 ```
 
@@ -667,6 +692,8 @@ from math import pi
 
 def degrees_to_rads(deg):
   return (deg * pi) / 180.0
+
+
 degrees_to_rads(180) # ~3.1416
 ```
 
@@ -685,6 +712,8 @@ from time import sleep
 def delay(fn, ms, *args):
   sleep(ms / 1000)
   return fn(*args)
+
+
 delay(lambda x: print(x), 1000, 'later') # prints 'later' after one second
 ```
 
@@ -700,6 +729,8 @@ Use dict.items() and list() to get a list of tuples from the given dictionary.
 ```py
 def dict_to_list(d):
   return list(d.items())
+
+
 d = {'one': 1, 'three': 3, 'five': 5, 'two': 2, 'four': 4}
 dict_to_list(d)
 # [('one', 1), ('three', 3), ('five', 5), ('two', 2), ('four', 4)]```
@@ -739,6 +770,7 @@ Use a list comprehension on a to only keep values not contained in the previousl
 def difference(a, b):
   _b = set(b)
   return [item for item in a if item not in _b]
+
 difference([1, 2, 3], [1, 2, 4]) # [3]
 ```
 
@@ -756,6 +788,7 @@ Use map() combined with int on the string representation of n and return a list 
 ```py
 def digitize(n):
   return list(map(int, str(n)))
+
 digitize(123) # [1, 2, 3]
 ```
 
@@ -774,6 +807,7 @@ Omit the last argument, n, to use a default value of 1.
 
 def drop_right(a, n = 1):
   return a[:-n]
+
 drop_right([1, 2, 3]) # [1, 2]
 drop_right([1, 2, 3], 2) # [1]
 drop_right([1, 2, 3], 42) # []
@@ -793,6 +827,7 @@ Omit the last argument, n, to use a default value of 1.
 ```py
 def drop(a, n = 1):
   return a[n:]
+
 drop([1, 2, 3]) # [2, 3]
 drop([1, 2, 3], 2) # [3]
 drop([1, 2, 3], 42) # []
@@ -811,6 +846,7 @@ Use slice notation to create a new list that contains every nth element of the g
 ```py
 def every_nth(lst, nth):
   return lst[nth - 1::nth]
+
 every_nth([1, 2, 3, 4, 5, 6], 2) # [ 2, 4, 6 ]
 ```
 
@@ -825,6 +861,7 @@ Use all() in combination with map() and fn to check if fn returns True for all e
 ```py
 def every(lst, fn = lambda x: x):
   return all(map(fn, lst))
+
 every([4, 2, 3], lambda x: x > 1) # True
 every([1, 2, 3]) # True
 ```
@@ -845,6 +882,7 @@ def factorial(num):
   if not ((num >= 0) and (num % 1 == 0)):
     raise Exception("Number can't be floating point or negative.")
   return 1 if num == 0 else num * factorial(num - 1)
+
 factorial(6) # 720
 ```
 
@@ -860,6 +898,7 @@ Follow the conversion formula C = (F - 32) * 5 / 9.
 ```py
 def fahrenheit_to_celsius(degrees):
   return ((degrees - 32) * 5 / 9)
+
 fahrenheit_to_celsius(77) # 25.0
 ```
 
@@ -881,6 +920,7 @@ def fibonacci(n):
     next_value = sequence[len(sequence) - 1] + sequence[len(sequence) - 2]
     sequence.append(next_value)
   return sequence
+
 fibonacci(7) # [0, 1, 1, 2, 3, 5, 8, 13]
 ```
 
@@ -897,6 +937,7 @@ from collections import Counter
 ```py
 def filter_non_unique(lst):
   return [item for item, count in Counter(lst).items() if count == 1]
+
 filter_non_unique([1, 2, 2, 3, 4, 4, 5]) # [1, 3, 5]
 ```
 
@@ -915,6 +956,7 @@ from collections import Counter
 ```py
 def filter_unique(lst):
   return [item for item, count in Counter(lst).items() if count > 1]
+
 filter_unique([1, 2, 2, 3, 4, 4, 5]) # [2, 4]
 ```
 
@@ -929,6 +971,7 @@ Use enumerate() and a list comprehension to return the indexes of the all elemen
 ```py
 def find_index_of_all(lst, fn):
   return [i for i, x in enumerate(lst) if fn(x)]
+
 find_index_of_all([1, 2, 3, 4], lambda n: n % 2 == 1) # [0, 2]
 ```
 
@@ -945,6 +988,7 @@ Use a list comprehension, enumerate() and next() to return the index of the firs
 ```py
 def find_index(lst, fn):
   return next(i for i, x in enumerate(lst) if fn(x))
+
 find_index([1, 2, 3, 4], lambda n: n % 2 == 1) # 0
 ```
 
@@ -964,6 +1008,7 @@ ages = {
   'Isabel': 11,
   'Anna': 9,
 }
+
 find_key(ages, 11) # 'Isabel'
 ```
 
@@ -983,6 +1028,7 @@ ages = {
   'Isabel': 11,
   'Anna': 10,
 }
+
 find_keys(ages, 10) # [ 'Peter', 'Anna' ]
 ```
 
@@ -1013,6 +1059,7 @@ Use a list comprehension and next() to return the last element in lst for which 
 ```py
 def find_last(lst, fn):
   return next(x for x in lst[::-1] if fn(x))
+
 find_last([1, 2, 3, 4], lambda n: n % 2 == 1) # 3
 ```
 
@@ -1034,6 +1081,7 @@ def find_parity_outliers(nums):
     x for x in nums
     if x % 2 != Counter([n % 2 for n in nums]).most_common()[0][0]
   ]
+
 find_parity_outliers([1, 2, 3, 4, 6]) # [1, 3]
 ```
 
@@ -1049,6 +1097,7 @@ Use a list comprehension and next() to return the first element in lst for which
 ```py
 def find(lst, fn):
   return next(x for x in lst if fn(x))
+
 find([1, 2, 3, 4], lambda n: n % 2 == 1) # 1
 ```
 
@@ -1063,6 +1112,7 @@ Use a list comprehension to extract each value from sub-lists in order.
 ```py
 def flatten(lst):
   return [x for y in lst for x in y]
+
 flatten([[1, 2, 3, 4], [5, 6, 7, 8]]) # [1, 2, 3, 4, 5, 6, 7, 8]
 ```
 
@@ -1079,6 +1129,7 @@ Use a for loop in combination with slice notation to execute fn for each element
 def for_each_right(itr, fn):
   for el in itr[::-1]:
     fn(el)
+
 for_each_right([1, 2, 3], print) # 3 2 1
 ```
 
@@ -1095,6 +1146,7 @@ Use a for loop to execute fn for each element in itr.
 def for_each(itr, fn):
   for el in itr:
     fn(el)
+
 for_each([1, 2, 3], print) # 1 2 3
 ```
 
@@ -1113,6 +1165,7 @@ def frequencies(lst):
   for val in lst:
     freq[val] += 1
   return dict(freq)
+
 frequencies(['a', 'b', 'a', 'c', 'a', 'a', 'b']) # { 'a': 4, 'b': 2, 'c': 1 }
 ```
 
@@ -1129,6 +1182,7 @@ from datetime import datetime
 ```py
 def from_iso_date(d):
   return datetime.fromisoformat(d)
+
 from_iso_date('2020-10-28T12:30:59.000000') # 2020-10-28 12:30:59
 ```
 
@@ -1144,6 +1198,7 @@ from math import gcd as _gcd
 ```py
 def gcd(numbers):
   return reduce(_gcd, numbers)
+
 gcd([8, 36, 28]) # 4
 ```
 
@@ -1193,6 +1248,7 @@ users = {
     'postIds': [1, 2, 3]
   }
 }
+
 get(users, ['freddy', 'name', 'last']) # 'smith'
 get(users, ['freddy', 'postIds', 1]) # 2
 ```
@@ -1236,6 +1292,7 @@ Convert the string to a list and use count() of str class to count and return th
 ```py
 def hamming_distance(a, b):
   return bin(a ^ b).count('1')
+
 hamming_distance(2, 3) # 1
 ```
 
@@ -1251,8 +1308,10 @@ Use set() on the given list to remove duplicates, compare its length with the le
 ```py
 def has_duplicates(lst):
   return len(lst) != len(set(lst))
+
 x = [1, 2, 3, 4, 5, 5]
 y = [1, 2, 3, 4, 5]
+
 has_duplicates(x) # True
 has_duplicates(y) # False
 ```
@@ -1273,6 +1332,7 @@ def have_same_contents(a, b):
     if a.count(v) != b.count(v):
       return False
   return True
+
 have_same_contents([1, 2, 4], [2, 4, 1]) # True
 ```
 
@@ -1288,6 +1348,7 @@ Use lst[0] to return the first element of the passed list.
 ```py
 def head(lst):
   return lst[0]
+
 head([1, 2, 3]) # 1
 ```
 
@@ -1304,11 +1365,406 @@ Use tuple() to convert the resulting list to a tuple.
 ```py
 def hex_to_rgb(hex):
   return tuple(int(hex[i:i+2], 16) for i in (0, 2, 4))
+
 hex_to_rgb('FFA501') # (255, 165, 1)
 ```
 
 
 =======================
+Number in range
+
+
+Checks if the given number falls within the given range.
+
+Use arithmetic comparison to check if the given number is in the specified range.
+If the second parameter, end, is not specified, the range is considered to be from 0 to start.
+
+
+```py
+def in_range(n, start, end = 0):
+  return start <= n <= end if end >= start else end <= n <= start
+
+in_range(3, 2, 5) # True
+in_range(3, 4) # True
+in_range(2, 3, 5) # False
+in_range(3, 2) # False
+```
+
+=======================
+List includes all values
+
+
+Checks if all the elements in values are included in lst.
+
+Check if every value in values is contained in lst using a for loop.
+Return False if any one value is not found, True otherwise.
+
+```py
+def includes_all(lst, values):
+  for v in values:
+    if v not in lst:
+      return False
+  return True
+
+includes_all([1, 2, 3, 4], [1, 4]) # True
+includes_all([1, 2, 3, 4], [1, 5]) # False
+```
+
+
+
+=======================
+List includes any values
+
+Checks if any element in values is included in lst.
+
+Check if any value in values is contained in lst using a for loop.
+Return True if any one value is found, False otherwise.
+
+```py
+def includes_any(lst, values):
+  for v in values:
+    if v in lst:
+      return True
+  return False
+
+includes_any([1, 2, 3, 4], [2, 9]) # True
+includes_any([1, 2, 3, 4], [8, 9]) # False
+```
+
+
+
+=======================
+All indexes of value
+
+
+eturns a list of indexes of all the occurrences of an element in a list.
+
+Use enumerate() and a list comprehension to check each element for equality with value and adding i to the result.
+
+```py
+def index_of_all(lst, value):
+  return [i for i, x in enumerate(lst) if x == value]
+
+index_of_all([1, 2, 1, 4, 5, 1], 1) # [0, 2, 5]
+index_of_all([1, 2, 3, 4], 6) # []
+```
+
+
+=======================
+List without last element
+
+Returns all the elements of a list except the last one.
+
+Use lst[:-1] to return all but the last element of the list.
+
+```py
+def initial(lst):
+  return lst[:-1]
+
+initial([1, 2, 3]) # [1, 2]
+```
+
+
+=======================
+Initialize 2D list
+
+Initializes a 2D list of given width and height and value.
+
+Use a list comprehension and range() to generate h rows where each is a list with length h, initialized with val.
+Omit the last argument, val, to set the default value to None.
+
+
+```py
+def initialize_2d_list(w, h, val = None):
+  return [[val for x in range(w)] for y in range(h)]
+
+initialize_2d_list(2, 2, 0) # [[0, 0], [0, 0]]
+```
+
+
+=======================
+Initialize list with range
+
+Initializes a list containing the numbers in the specified range where start and end are inclusive with their common difference step.
+
+Use list() and range() to generate a list of the appropriate length, filled with the desired values in the given range.
+Omit start to use the default value of 0.
+Omit step to use the default value of 1.
+
+
+```py
+def initialize_list_with_range(end, start = 0, step = 1):
+  return list(range(start, end + 1, step))
+
+initialize_list_with_range(5) # [0, 1, 2, 3, 4, 5]
+initialize_list_with_range(7, 3) # [3, 4, 5, 6, 7]
+initialize_list_with_range(9, 0, 2) # [0, 2, 4, 6, 8]
+```
+
+
+=======================
+Initialize list with values
+
+Initializes and fills a list with the specified value.
+
+Use a list comprehension and range() to generate a list of length equal to n, filled with the desired values.
+Omit val to use the default value of 0.
+
+
+```py
+def initialize_list_with_values(n, val = 0):
+  return [val for x in range(n)]
+
+initialize_list_with_values(5, 2) # [2, 2, 2, 2, 2]
+```
+
+
+=======================
+List intersection based on function
+
+Returns a list of elements that exist in both lists, after applying the provided function to each list element of both.
+
+Create a set, using map() to apply fn to each element in b.
+Use a list comprehension in combination with fn on a to only keep values contained in both lists.
+
+```py
+def intersection_by(a, b, fn):
+  _b = set(map(fn, b))
+  return [item for item in a if fn(item) in _b]
+from math import floor
+
+intersection_by([2.1, 1.2], [2.3, 3.4], floor) # [2.1]
+```
+
+
+
+=======================
+List intersection
+
+Returns a list of elements that exist in both lists.
+
+Create a set from a and b.
+Use the built-in set operator & to only keep values contained in both sets, then transform the set back into a list.
+
+```py
+def intersection(a, b):
+  _a, _b = set(a), set(b)
+  return list(_a & _b)
+
+intersection([1, 2, 3], [4, 3, 2]) # [2, 3]
+```
+
+
+=======================
+Invert dictionary
+
+
+Inverts a dictionary with unique hashable values.
+
+Use dictionary.items() in combination with a list comprehension to create a new dictionary with the values and keys inverted.
+
+
+```py
+def invert_dictionary(obj):
+  return { value: key for key, value in obj.items() }
+ages = {
+  'Peter': 10,
+  'Isabel': 11,
+  'Anna': 9,
+}
+
+invert_dictionary(ages) # { 10: 'Peter', 11: 'Isabel', 9: 'Anna' }
+```
+
+=======================
+String is anagram
+
+Checks if a string is an anagram of another string (case-insensitive, ignores spaces, punctuation and special characters).
+
+Use str.isalnum() to filter out non-alphanumeric characters, str.lower() to transform each character to lowercase.
+Use collections.Counter to count the resulting characters for each string and compare the results.
+from collections import Counter
+
+
+```py
+def is_anagram(s1, s2):
+  return Counter(
+    c.lower() for c in s1 if c.isalnum()
+  ) == Counter(
+    c.lower() for c in s2 if c.isalnum()
+  )
+
+is_anagram('#anagram', 'Nag a ram!')  # True
+```
+
+
+
+=======================
+List is contained in other list
+
+
+Checks if the elements of the first list are contained in the second one regardless of order.
+
+Use count() to check if any value in a has more occurrences than it has in b.
+Return False if any such value is found, True otherwise.
+
+
+```py
+def is_contained_in(a, b):
+  for v in set(a):
+    if a.count(v) > b.count(v):
+      return False
+  return True
+
+is_contained_in([1, 4], [2, 4, 1]) # True
+```
+
+
+=======================
+Number is divisible
+
+Checks if the first numeric argument is divisible by the second one.
+
+Use the modulo operator (%) to check if the remainder is equal to 0.
+
+
+
+```py
+def is_divisible(dividend, divisor):
+  return dividend % divisor == 0
+
+is_divisible(6, 3) # True
+```
+
+
+
+=======================
+Collection is empty
+
+Checks if the a value is an empty sequence or collection.
+
+Use not to test the truth value of the provided sequence or collection.
+
+
+```py
+def is_empty(val):
+  return not val
+
+is_empty([]) # True
+is_empty({}) # True
+is_empty('') # True
+is_empty(set()) # True
+is_empty(range(0)) # True
+is_empty([1, 2]) # False
+is_empty({ 'a': 1, 'b': 2 }) # False
+is_empty('text') # False
+is_empty(set([1, 2])) # False
+is_empty(range(2)) # False
+```
+
+
+
+=======================
+Number is even
+
+
+Checks if the given number is even.
+
+Check whether a number is odd or even using the modulo (%) operator.
+Return True if the number is even, False if the number is odd.
+
+```py
+def is_even(num):
+  return num % 2 == 0
+
+is_even(3) # False
+```
+
+=======================
+Number is odd
+
+
+Checks if the given number is odd.
+
+Checks whether a number is even or odd using the modulo (%) operator.
+Returns True if the number is odd, False if the number is even.
+
+```py
+def is_odd(num):
+  return num % 2 != 0
+
+is_odd(3) # True
+```
+
+
+
+=======================
+Number is prime
+
+
+Checks if the provided integer is a prime number.
+
+Return False if the number is 0, 1, a negative number or a multiple of 2.
+Use all() and range() to check numbers from 3 to the square root of the given number.
+Return True if none divides the given number, False otherwise.
+from math import sqrt
+
+```py
+def is_prime(n):
+  if n <= 1 or (n % 2 == 0 and n > 2):
+    return False
+  return all(n % i for i in range(3, int(sqrt(n)) + 1, 2))
+is_prime(11) # True
+```
+
+
+=======================
+Date is weekday
+
+
+Checks if the given date is a weekday.
+
+Use datetime.datetime.weekday() to get the day of the week as an integer.
+Check if the day of the week is less than or equal to 4.
+Omit the second argument, d, to use a default value of datetime.today().
+from datetime import datetime
+
+```py
+def is_weekday(d = datetime.today()):
+  return d.weekday() <= 4
+
+from datetime import date
+
+is_weekday(date(2020, 10, 25)) # False
+is_weekday(date(2020, 10, 28)) # True
+```
+
+
+
+
+=======================
+Date is weekend
+
+Checks if the given date is a weekend.
+
+Use datetime.datetime.weekday() to get the day of the week as an integer.
+Check if the day of the week is greater than 4.
+Omit the second argument, d, to use a default value of datetime.today().
+from datetime import datetime
+
+```py
+def is_weekend(d = datetime.today()):
+  return d.weekday() > 4
+from datetime import date
+
+is_weekend(date(2020, 10, 25)) # True
+is_weekend(date(2020, 10, 28)) # False
+```
+
+
+
+=======================
+
 
 
 
@@ -1319,25 +1775,6 @@ hex_to_rgb('FFA501') # (255, 165, 1)
 
 
 
-=======================
-
-
-
-
-
-=======================
-
-
-
-
-
-=======================
-
-
-
-
-
-
 
 =======================
 
@@ -1352,39 +1789,6 @@ hex_to_rgb('FFA501') # (255, 165, 1)
 
 
 =======================
-
-
-
-
-
-=======================
-
-
-
-
-
-
-
-=======================
-
-
-
-
-
-=======================
-
-
-
-
-
-=======================
-
-
-
-
-
-=======================
-
 
 
 
