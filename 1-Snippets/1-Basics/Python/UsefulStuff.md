@@ -79,6 +79,157 @@ average_by([{ 'n': 4 }, { 'n': 2 }, { 'n': 8 }, { 'n': 6 }], lambda x: x['n'])
 # 5.0
 ```
 
+
+======================
+Average
+
+
+Calculates the average of two or more numbers.
+
+Use sum() to sum all of the args provided, divide by len().
+
+```py
+def average(*args):
+  return sum(args, 0.0) / len(args)
+
+
+average(*[1, 2, 3]) # 2.0
+average(1, 2, 3) # 2.0
+```
+
+==================
+Bifurcate list based on function
+
+
+Splits values into two groups, based on the result of the given filtering function.
+
+Use a list comprehension to add elements to groups, based on the value returned by fn for each element.
+If fn returns a truthy value for any element, add it to the first group, otherwise add it to the second group.
+
+```py
+def bifurcate_by(lst, fn):
+  return [
+    [x for x in lst if fn(x)],
+    [x for x in lst if not fn(x)]
+  ]
+
+bifurcate_by(['beep', 'boop', 'foo', 'bar'], lambda x: x[0] == 'b')
+# [ ['beep', 'boop', 'bar'], ['foo'] ]
+```
+
+==================
+Bifurcate list based on values
+
+
+Splits values into two groups, based on the result of the given filter list.
+
+Use a list comprehension and zip() to add elements to groups, based on filter.
+If filter has a truthy value for any element, add it to the first group, otherwise add it to the second group.
+
+
+```p
+def bifurcate(lst, filter):
+  return [
+    [x for x, flag in zip(lst, filter) if flag],
+    [x for x, flag in zip(lst, filter) if not flag]
+  ]
+
+bifurcate(['beep', 'boop', 'foo', 'bar'], [True, True, False, True])
+# [ ['beep', 'boop', 'bar'], ['foo'] ]
+```
+
+==================
+Binomial coefficient
+
+
+Calculates the number of ways to choose k items from n items without repetition and without order.
+
+Use math.comb() to calculate the binomial coefficient.
+
+
+```py
+from math import comb
+
+def binomial_coefficient(n, k):
+  return comb(n, k)
+binomial_coefficient(8, 2) # 28
+
+```
+
+
+==================
+Byte size of string
+
+Returns the length of a string in bytes.
+
+Use str.encode() to encode the given string and return its length.
+
+```py
+def byte_size(s):
+  return len(s.encode('utf-8'))
+
+byte_size('😀') # 4
+byte_size('Hello World') # 11
+```
+
+
+==================
+Camelcase string
+Converts a string to camelcase.
+
+Use re.sub() to replace any - or _ with a space, using the regexp r"(_|-)+".
+Use str.title() to capitalize the first letter of each word and convert the rest to lowercase.
+Finally, use str.replace() to remove spaces between words.
+
+```py
+from re import sub
+
+def camel(s):
+  s = sub(r"(_|-)+", " ", s).title().replace(" ", "")
+  return ''.join([s[0].lower(), s[1:]])
+
+
+camel('some_database_field_name') # 'someDatabaseFieldName'
+camel('Some label that needs to be camelized')
+# 'someLabelThatNeedsToBeCamelized'
+camel('some-javascript-property') # 'someJavascriptProperty'
+camel('some-mixed_string with spaces_underscores-and-hyphens')
+# 'someMixedStringWithSpacesUnderscoresAndHyphens'
+```
+
+
+==================
+Capitalize every word
+
+Capitalizes the first letter of every word in a string.
+
+Use str.title() to capitalize the first letter of every word in the string.
+
+```py
+def capitalize_every_word(s):
+  return s.title()
+capitalize_every_word('hello world!') # 'Hello World!'
+```
+
+
+==================
+Capitalize string
+
+Capitalizes the first letter of a string.
+
+Use list slicing and str.upper() to capitalize the first letter of the string.
+Use str.join() to combine the capitalized first letter with the rest of the characters.
+Omit the lower_rest parameter to keep the rest of the string intact, or set it to True to convert to lowercase.
+
+```py
+def capitalize(s, lower_rest = False):
+  return ''.join([s[:1].upper(), (s[1:].lower() if lower_rest else s[1:])])
+
+capitalize('fooBar') # 'FooBar'
+capitalize('fooBar', True) # 'Foobar'
+```
+
+
 ==================
 Casts the provided value as a list if it's not one.
 
