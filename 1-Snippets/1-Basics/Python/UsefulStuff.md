@@ -127,7 +127,7 @@ Use a list comprehension and zip() to add elements to groups, based on filter.
 If filter has a truthy value for any element, add it to the first group, otherwise add it to the second group.
 
 
-```p
+```py
 def bifurcate(lst, filter):
   return [
     [x for x, flag in zip(lst, filter) if flag],
@@ -245,6 +245,300 @@ cast_list('foo') # ['foo']
 cast_list([1]) # [1]
 cast_list(('foo', 'bar')) # ['foo', 'bar']
 ```
+
+=======================
+Celsius to Fahrenheit
+
+
+Converts Celsius to Fahrenheit.
+
+Follow the conversion formula F = 1.8 * C + 32.
+
+```py
+def celsius_to_fahrenheit(degrees):
+  return ((degrees * 1.8) + 32)
+celsius_to_fahrenheit(180) # 356.0
+```
+
+=======================
+Check property
+
+Creates a function that will invoke a predicate function for the specified property on a given dictionary.
+
+Return a lambda function that takes a dictionary and applies the predicate function, fn to the specified property.
+
+```py
+def check_prop(fn, prop):
+  return lambda obj: fn(obj[prop])
+
+
+check_age = check_prop(lambda x: x >= 18, 'age')
+user = {'name': 'Mark', 'age': 18}
+check_age(user) # True
+```
+
+
+=======================
+Split list into n chunks
+
+Chunks a list into n smaller lists.
+
+Use math.ceil() and len() to get the size of each chunk.
+Use list() and range() to create a new list of size n.
+Use map() to map each element of the new list to a chunk the length of size.
+If the original list can't be split evenly, the final chunk will contain the remaining elements.
+
+
+```py
+from math import ceil
+
+def chunk_into_n(lst, n):
+  size = ceil(len(lst) / n)
+  return list(
+    map(lambda x: lst[x * size:x * size + size],
+    list(range(n)))
+  )
+chunk_into_n([1, 2, 3, 4, 5, 6, 7], 4) # [[1, 2], [3, 4], [5, 6], [7]]
+```
+
+
+=======================
+Split list into chunks
+
+
+Chunks a list into smaller lists of a specified size.
+
+Use list() and range() to create a list of the desired size.
+Use map() on the list and fill it with splices of the given list.
+Finally, return the created list.
+
+```py
+from math import ceil
+
+def chunk(lst, size):
+  return list(
+    map(lambda x: lst[x * size:x * size + size],
+      list(range(ceil(len(lst) / size)))))
+chunk([1, 2, 3, 4, 5], 2) # [[1, 2], [3, 4], [5]]
+```
+
+
+=======================
+Clamp number
+
+
+Clamps num within the inclusive range specified by the boundary values.
+
+If num falls within the range (a, b), return num.
+Otherwise, return the nearest number in the range.
+
+```py
+def clamp_number(num, a, b):
+  return max(min(num, max(a, b)), min(a, b))
+clamp_number(2, 3, 5) # 3
+clamp_number(1, -1, -5) # -1
+```
+
+
+
+
+=======================
+Invert dictionary
+
+Inverts a dictionary with non-unique hashable values.
+
+Create a collections.defaultdict with list as the default value for each key.
+Use dictionary.items() in combination with a loop to map the values of the dictionary to keys using dict.append().
+Use dict() to convert the collections.defaultdict to a regular dictionary.
+
+
+```py
+from collections import defaultdict
+
+def collect_dictionary(obj):
+  inv_obj = defaultdict(list)
+  for key, value in obj.items():
+    inv_obj[value].append(key)
+  return dict(inv_obj)
+
+
+ages = {
+  'Peter': 10,
+  'Isabel': 10,
+  'Anna': 9,
+}
+collect_dictionary(ages) # { 10: ['Peter', 'Isabel'], 9: ['Anna'] }
+```
+
+
+
+=======================
+Combine dictionary values
+
+Combines two or more dictionaries, creating a list of values for each key.
+
+Create a new collections.defaultdict with list as the default value for each key and loop over dicts.
+Use dict.append() to map the values of the dictionary to keys.
+Use dict() to convert the collections.defaultdict to a regular dictionary.
+
+```py
+from collections import defaultdict
+
+def combine_values(*dicts):
+  res = defaultdict(list)
+  for d in dicts:
+    for key in d:
+      res[key].append(d[key])
+  return dict(res)
+d1 = {'a': 1, 'b': 'foo', 'c': 400}
+d2 = {'a': 3, 'b': 200, 'd': 400}
+
+combine_values(d1, d2) # {'a': [1, 3], 'b': ['foo', 200], 'c': [400], 'd': [400]}
+```
+
+
+=======================
+Compact list
+
+Removes falsy values from a list.
+
+Use filter() to filter out falsy values (False, None, 0, and "").
+
+
+```py
+def compact(lst):
+  return list(filter(None, lst))
+compact([0, 1, False, 2, '', 3, 'a', 's', 34]) # [ 1, 2, 3, 'a', 's', 34 ]
+```
+
+
+=======================
+Reverse compose functions
+
+
+Performs left-to-right function composition.
+
+Use functools.reduce() to perform left-to-right function composition.
+The first (leftmost) function can accept one or more arguments; the remaining functions must be unary.
+
+```py
+from functools import reduce
+
+def compose_right(*fns):
+  return reduce(lambda f, g: lambda *args: g(f(*args)), fns)
+add = lambda x, y: x + y
+square = lambda x: x * x
+add_and_square = compose_right(add, square)
+add_and_square(1, 2) # 9
+```
+
+
+
+=======================
+Compose functions
+
+
+Performs right-to-left function composition.
+
+Use functools.reduce() to perform right-to-left function composition.
+The last (rightmost) function can accept one or more arguments; the remaining functions must be unary.
+
+
+```py
+from functools import reduce
+
+def compose(*fns):
+  return reduce(lambda f, g: lambda *args: f(g(*args)), fns)
+add5 = lambda x: x + 5
+multiply = lambda x, y: x * y
+multiply_and_add_5 = compose(add5, multiply)
+multiply_and_add_5(5, 2) # 15
+```
+
+
+
+
+=======================
+Count grouped elements
+
+Groups the elements of a list based on the given function and returns the count of elements in each group.
+
+Use collections.defaultdict to initialize a dictionary.
+Use map() to map the values of the given list using the given function.
+Iterate over the map and increase the element count each time it occurs.
+
+```py
+from collections import defaultdict
+
+def count_by(lst, fn = lambda x: x):
+  count = defaultdict(int)
+  for val in map(fn, lst):
+    count[val] += 1
+  return dict(count)
+from math import floor
+
+count_by([6.1, 4.2, 6.3], floor) # {6: 2, 4: 1}
+count_by(['one', 'two', 'three'], len) # {3: 2, 5: 1}
+```
+
+
+
+=======================
+Count occurrences
+
+
+Counts the occurrences of a value in a list.
+
+Use list.count() to count the number of occurrences of val in lst.
+
+```py
+def count_occurrences(lst, val):
+  return lst.count(val)
+count_occurrences([1, 1, 2, 1, 2, 3], 1) # 3
+```
+
+
+
+
+=======================
+Partial sum list
+
+
+Creates a list of partial sums.
+
+Use itertools.accumulate() to create the accumulated sum for each element.
+Use list() to convert the result into a list.
+
+```py
+from itertools import accumulate
+
+def cumsum(lst):
+  return list(accumulate(lst))
+cumsum(range(0, 15, 3)) # [0, 3, 9, 18, 30]
+```
+
+
+
+
+=======================
+Curry function
+
+
+Curries a function.
+
+Use functools.partial() to return a new partial object which behaves like fn with the given arguments, args, partially applied.
+
+```py
+from functools import partial
+
+def curry(fn, *args):
+  return partial(fn, *args)
+add = lambda x, y: x + y
+add10 = curry(add, 10)
+add10(20) # 30
+```
+
+
 
 =======================
 
