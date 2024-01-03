@@ -1793,8 +1793,187 @@ kebab('AllThe-small Things') # 'all-the-small-things'
 
 
 =======================
+Key in dictionary
 
 
+Checks if the given key exists in a dictionary.
+
+- Use the `in` operator to check if `d` contains `key`.
+
+```py
+def key_in_dict(d, key):
+  return (key in d)
+```
+
+```py
+d = {'one': 1, 'three': 3, 'five': 5, 'two': 2, 'four': 4}
+key_in_dict(d, 'three') # True
+```
+
+
+
+=======================
+Key of max value
+
+Finds the key of the maximum value in a dictionary.
+
+- Use `max()` with the `key` parameter set to `dict.get()` to find and return the key of the maximum value in the given dictionary.
+
+```py
+def key_of_max(d):
+  return max(d, key = d.get)
+```
+
+```py
+key_of_max({'a':4, 'b':0, 'c':13}) # c
+```
+
+
+
+=======================
+Key of min value
+
+Finds the key of the minimum value in a dictionary.
+
+- Use `min()` with the `key` parameter set to `dict.get()` to find and return the key of the minimum value in the given dictionary.
+
+```py
+def key_of_min(d):
+  return min(d, key = d.get)
+```
+
+```py
+key_of_min({'a':4, 'b':0, 'c':13}) # b
+```
+
+
+=======================
+Dictionary keys
+
+Creates a flat list of all the keys in a flat dictionary.
+
+- Use `dict.keys()` to return the keys in the given dictionary.
+- Return a `list()` of the previous result.
+
+```py
+def keys_only(flat_dict):
+  return list(flat_dict.keys())
+```
+
+```py
+ages = {
+  'Peter': 10,
+  'Isabel': 11,
+  'Anna': 9,
+}
+keys_only(ages) # ['Peter', 'Isabel', 'Anna']
+```
+
+=======================
+Km to miles
+
+Converts kilometers to miles.
+
+- Follows the conversion formula `mi = km * 0.621371`.
+
+```py
+def km_to_miles(km):
+  return km * 0.621371
+```
+
+```py
+km_to_miles(8.1) # 5.0331051
+```
+
+=======================
+
+
+
+=======================
+
+
+
+=======================
+
+
+
+=======================
+
+
+
+=======================
+
+
+
+=======================
+
+
+
+=======================
+
+
+
+
+=======================
+
+
+
+=======================
+
+
+
+=======================
+
+
+
+=======================
+
+
+
+
+=======================
+
+
+
+=======================
+
+
+
+=======================
+
+
+
+=======================
+
+
+
+
+=======================
+
+
+
+=======================
+
+
+
+=======================
+
+
+
+=======================
+
+
+
+
+=======================
+
+
+
+=======================
+
+
+
+=======================
 
 
 
@@ -1804,13 +1983,6 @@ kebab('AllThe-small Things') # 'all-the-small-things'
 
 
 
-=======================
-
-
-
-
-
-=======================
 
 
 
