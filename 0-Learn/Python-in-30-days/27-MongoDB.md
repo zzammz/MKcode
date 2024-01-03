@@ -36,43 +36,50 @@ MongoDB is a NoSQL database. MongoDB stores data in a JSON like document which m
 
 ### SQL versus NoSQL
 
-![SQL versus NoSQL](../images/mongoDB/sql-vs-nosql.png)
+
+![image](https://github.com/zzammz/MKcode/assets/56573737/035d380e-daf2-4c9b-8b98-a66f4f4bc41c)
 
 In this section, we will focus on a NoSQL database MongoDB. Lets sign up on [mongoDB](https://www.mongodb.com/) by click on the sign in button then click register on the next page.
 
-![MongoDB Sign up pages](../images/mongoDB/mongodb-signup-page.png)
+![image](https://github.com/zzammz/MKcode/assets/56573737/849c7cd6-9d08-4ee6-a9a7-38eeced05686)
 
 Complete the fields and click continue
 
-![Mongodb register](../images/mongoDB/mongodb-register.png)
+![image](https://github.com/zzammz/MKcode/assets/56573737/7b23a971-c25e-4630-84a6-e46dc1863ee7)
+
 
 Select the free plan
 
-![Mongodb free plan](../images/mongoDB/mongodb-free.png)
+![image](https://github.com/zzammz/MKcode/assets/56573737/9c9157ae-5d87-4725-8e73-ffadf17956f5)
 
 Choose the proximate free region and give any name for you cluster.
 
-![Mongodb cluster name](../images/mongoDB/mongodb-cluster-name.png)
+![image](https://github.com/zzammz/MKcode/assets/56573737/22fda337-cced-41bd-973a-6bde817fbdc3)
+
 
 Now, a free sandbox is created
 
-![Mongodb sandbox](../images/mongoDB/mongodb-sandbox.png)
+![image](https://github.com/zzammz/MKcode/assets/56573737/8f2b0286-0651-49e5-ba35-e8952bde7bd8)
+
 
 All local host access
 
-![Mongodb allow ip access](../images/mongoDB/mongodb-allow-ip-access.png)
+![image](https://github.com/zzammz/MKcode/assets/56573737/9ad01a3a-d080-424e-9af1-e8aa79983e32)
 
 Add user and password
 
-![Mongodb add user](../images/mongoDB/mongodb-add-user.png)
+![image](https://github.com/zzammz/MKcode/assets/56573737/208c1890-5ae0-44df-b564-8f5dc8fe2a0c)
+
 
 Create a mongoDB uri link
 
-![Mongodb create uri](../images/mongoDB/mongodb-create-uri.png)
+![image](https://github.com/zzammz/MKcode/assets/56573737/624e6ddd-35fd-4224-bd0d-1ff4f88ef427)
+
 
 Select Python 3.6 or above driver
 
-![Mongodb python driver](../images/mongoDB/mongodb-python-driver.png)
+![image](https://github.com/zzammz/MKcode/assets/56573737/d506c2b2-6fc0-41d7-8822-4f2b3d6e54a1)
+
 
 ### Getting Connection String(MongoDB URI)
 
@@ -166,7 +173,7 @@ Check your mongoDB cluster and you will see both the database and the collection
 
 If you see this on the mongoDB cluster, it means you have successfully created a database and a collection.
 
-![Creating database and collection](../images/mongoDB/mongodb-creating_database.png)
+![image](https://github.com/zzammz/MKcode/assets/56573737/8e9e9cfc-a7e1-431a-a8af-b419c86004ed)
 
 If you have seen on the figure, the document has been created with a long id which acts as a primary key. Every time we create a document mongoDB create and unique id for it.
 
