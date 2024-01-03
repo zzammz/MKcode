@@ -1,6 +1,6 @@
 <div align="center">
   <h1> 30 Days Of Python: Day 3 - Operators</h1>
-
+</div>
 
 
 
