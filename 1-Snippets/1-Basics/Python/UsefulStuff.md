@@ -800,7 +800,399 @@ drop([1, 2, 3], 42) # []
 
 
 =======================
+Every nth element in list
 
+Returns every nth element in a list.
+
+Use slice notation to create a new list that contains every nth element of the given list.
+
+```py
+def every_nth(lst, nth):
+  return lst[nth - 1::nth]
+every_nth([1, 2, 3, 4, 5, 6], 2) # [ 2, 4, 6 ]
+```
+
+
+=======================
+Test if every list element is truthy
+
+Checks if the provided function returns True for every element in the list.
+
+Use all() in combination with map() and fn to check if fn returns True for all elements in the list.
+
+```py
+def every(lst, fn = lambda x: x):
+  return all(map(fn, lst))
+every([4, 2, 3], lambda x: x > 1) # True
+every([1, 2, 3]) # True
+```
+
+
+=======================
+Factorial
+
+Calculates the factorial of a number.
+
+Use recursion.
+If num is less than or equal to 1, return 1.
+Otherwise, return the product of num and the factorial of num - 1.
+Throws an exception if num is a negative or a floating point number.
+
+```py
+def factorial(num):
+  if not ((num >= 0) and (num % 1 == 0)):
+    raise Exception("Number can't be floating point or negative.")
+  return 1 if num == 0 else num * factorial(num - 1)
+factorial(6) # 720
+```
+
+
+=======================
+Fahrenheit to Celsius
+
+
+Converts Fahrenheit to Celsius.
+
+Follow the conversion formula C = (F - 32) * 5 / 9.
+
+```py
+def fahrenheit_to_celsius(degrees):
+  return ((degrees - 32) * 5 / 9)
+fahrenheit_to_celsius(77) # 25.0
+```
+
+
+=======================
+Fibonacci
+
+Generates a list, containing the Fibonacci sequence, up until the nth term.
+
+Starting with 0 and 1, use list.append() to add the sum of the last two numbers of the list to the end of the list, until the length of the list reaches n.
+If n is less or equal to 0, return a list containing 0.
+
+```py
+def fibonacci(n):
+  if n <= 0:
+    return [0]
+  sequence = [0, 1]
+  while len(sequence) <= n:
+    next_value = sequence[len(sequence) - 1] + sequence[len(sequence) - 2]
+    sequence.append(next_value)
+  return sequence
+fibonacci(7) # [0, 1, 1, 2, 3, 5, 8, 13]
+```
+
+
+=======================
+Filter non-unique list values
+
+Creates a list with the non-unique values filtered out.
+
+Use collections.Counter to get the count of each value in the list.
+Use a list comprehension to create a list containing only the unique values.
+from collections import Counter
+
+```py
+def filter_non_unique(lst):
+  return [item for item, count in Counter(lst).items() if count == 1]
+filter_non_unique([1, 2, 2, 3, 4, 4, 5]) # [1, 3, 5]
+```
+
+
+
+=======================
+Filter unique list values
+
+
+Creates a list with the unique values filtered out.
+
+Use collections.Counter to get the count of each value in the list.
+Use a list comprehension to create a list containing only the non-unique values.
+from collections import Counter
+
+```py
+def filter_unique(lst):
+  return [item for item, count in Counter(lst).items() if count > 1]
+filter_unique([1, 2, 2, 3, 4, 4, 5]) # [2, 4]
+```
+
+
+=======================
+Find all matching indexes
+
+Finds the indexes of all elements in the given list that satisfy the provided testing function.
+
+Use enumerate() and a list comprehension to return the indexes of the all element in lst for which fn returns True.
+
+```py
+def find_index_of_all(lst, fn):
+  return [i for i, x in enumerate(lst) if fn(x)]
+find_index_of_all([1, 2, 3, 4], lambda n: n % 2 == 1) # [0, 2]
+```
+
+
+
+=======================
+Find matching index
+
+
+Finds the index of the first element in the given list that satisfies the provided testing function.
+
+Use a list comprehension, enumerate() and next() to return the index of the first element in lst for which fn returns True.
+
+```py
+def find_index(lst, fn):
+  return next(i for i, x in enumerate(lst) if fn(x))
+find_index([1, 2, 3, 4], lambda n: n % 2 == 1) # 0
+```
+
+
+=======================
+Find key of value
+
+Finds the first key in the provided dictionary that has the given value.
+
+Use dictionary.items() and next() to return the first key that has a value equal to val.
+
+```py
+def find_key(dict, val):
+  return next(key for key, value in dict.items() if value == val)
+ages = {
+  'Peter': 10,
+  'Isabel': 11,
+  'Anna': 9,
+}
+find_key(ages, 11) # 'Isabel'
+```
+
+
+=======================
+Find keys with value
+
+Finds all keys in the provided dictionary that have the given value.
+
+Use dictionary.items(), a generator and list() to return all keys that have a value equal to val.
+
+```py
+def find_keys(dict, val):
+  return list(key for key, value in dict.items() if value == val)
+ages = {
+  'Peter': 10,
+  'Isabel': 11,
+  'Anna': 10,
+}
+find_keys(ages, 10) # [ 'Peter', 'Anna' ]
+```
+
+
+
+=======================
+Find last matching index
+
+Finds the index of the last element in the given list that satisfies the provided testing function.
+
+Use a list comprehension, enumerate() and next() to return the index of the last element in lst for which fn returns True.
+
+```py
+def find_last_index(lst, fn):
+  return len(lst) - 1 - next(i for i, x in enumerate(lst[::-1]) if fn(x))
+
+```
+
+
+
+=======================
+Find last matching value
+
+Finds the value of the last element in the given list that satisfies the provided testing function.
+
+Use a list comprehension and next() to return the last element in lst for which fn returns True.
+
+```py
+def find_last(lst, fn):
+  return next(x for x in lst[::-1] if fn(x))
+find_last([1, 2, 3, 4], lambda n: n % 2 == 1) # 3
+```
+
+
+
+=======================
+Find parity outliers
+
+Finds the items that are parity outliers in a given list.
+
+Use collections.Counter with a list comprehension to count even and odd values in the list.
+Use collections.Counter.most_common() to get the most common parity.
+Use a list comprehension to find all elements that do not match the most common parity.
+from collections import Counter
+
+```py
+def find_parity_outliers(nums):
+  return [
+    x for x in nums
+    if x % 2 != Counter([n % 2 for n in nums]).most_common()[0][0]
+  ]
+find_parity_outliers([1, 2, 3, 4, 6]) # [1, 3]
+```
+
+
+
+=======================
+Find matching value
+
+Finds the value of the first element in the given list that satisfies the provided testing function.
+
+Use a list comprehension and next() to return the first element in lst for which fn returns True.
+
+```py
+def find(lst, fn):
+  return next(x for x in lst if fn(x))
+find([1, 2, 3, 4], lambda n: n % 2 == 1) # 1
+```
+
+
+=======================
+Flatten list
+
+Flattens a list of lists once.
+
+Use a list comprehension to extract each value from sub-lists in order.
+
+```py
+def flatten(lst):
+  return [x for y in lst for x in y]
+flatten([[1, 2, 3, 4], [5, 6, 7, 8]]) # [1, 2, 3, 4, 5, 6, 7, 8]
+```
+
+
+
+=======================
+Execute function for each list element in reverse
+
+Executes the provided function once for each list element, starting from the list's last element.
+
+Use a for loop in combination with slice notation to execute fn for each element in itr, starting from the last one.
+
+```py
+def for_each_right(itr, fn):
+  for el in itr[::-1]:
+    fn(el)
+for_each_right([1, 2, 3], print) # 3 2 1
+```
+
+
+=======================
+Execute function for each list element
+
+
+Executes the provided function once for each list element.
+
+Use a for loop to execute fn for each element in itr.
+
+```py
+def for_each(itr, fn):
+  for el in itr:
+    fn(el)
+for_each([1, 2, 3], print) # 1 2 3
+```
+
+=======================
+Value frequencies
+
+Creates a dictionary with the unique values of a list as keys and their frequencies as the values.
+
+Use collections.defaultdict to store the frequencies of each unique element.
+Use dict() to return a dictionary with the unique elements of the list as keys and their frequencies as the values.
+from collections import defaultdict
+
+```py
+def frequencies(lst):
+  freq = defaultdict(int)
+  for val in lst:
+    freq[val] += 1
+  return dict(freq)
+frequencies(['a', 'b', 'a', 'c', 'a', 'a', 'b']) # { 'a': 4, 'b': 2, 'c': 1 }
+```
+
+
+=======================
+Date from ISO format
+
+
+Converts a date from its ISO-8601 representation.
+
+Use datetime.datetime.fromisoformat() to convert the given ISO-8601 date to a datetime.datetime object.
+from datetime import datetime
+
+```py
+def from_iso_date(d):
+  return datetime.fromisoformat(d)
+from_iso_date('2020-10-28T12:30:59.000000') # 2020-10-28 12:30:59
+```
+
+=======================
+
+
+
+
+
+=======================
+
+
+
+
+
+=======================
+
+
+
+
+
+=======================
+
+
+
+
+
+=======================
+
+
+
+
+
+=======================
+
+
+
+
+
+=======================
+
+
+
+
+
+
+
+=======================
+
+
+
+
+
+=======================
+
+
+
+
+
+=======================
+
+
+
+
+
+=======================
 
 
 
@@ -870,59 +1262,6 @@ drop([1, 2, 3], 42) # []
 
 
 =======================
-
-
-
-
-
-
-
-=======================
-
-
-
-
-
-=======================
-
-
-
-
-
-=======================
-
-
-
-
-
-=======================
-
-
-
-
-
-
-
-=======================
-
-
-
-
-
-=======================
-
-
-
-
-
-=======================
-
-
-
-
-
-=======================
-
 
 
 
