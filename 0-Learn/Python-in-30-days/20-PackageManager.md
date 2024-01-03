@@ -443,4 +443,46 @@ The **__init__**.py exposes specified resources from its modules to be imported 
 4. UCI is one of the most common places to get data sets for data science and machine learning. Read the content of UCL (https://archive.ics.uci.edu/ml/datasets.php). Without additional libraries it will be difficult, so you may try it with BeautifulSoup4
 
 
+=============================
+arithmetic.py
+```py
+def add_numbers(*args):
+    total = 0
+    for num in args:
+        total += num
+    return total
+
+
+def subtract(a, b):
+    return (a - b)
+
+
+def multiple(a, b):
+    return a * b
+
+
+def division(a, b):
+    return a / b
+
+
+def remainder(a, b):
+    return a % b
+
+
+def power(a, b):
+    return a ** b
+```
+
+
+
+
+=============================
+greet.py
+
+```py
+def greet_person(firstname, lastname):
+    return f'{firstname} {lastname}, welcome to 30DaysOfPython Challenge!'
+```
+
+
 
