@@ -1,18 +1,3 @@
-<div align="center">
-  <h1> 30 Days Of Python: Day 24 - Statistics</h1>
-
-</div>
-
-
-
-- [📘 Day 24](#-day-24)
-  - [Python for Statistical Analysis](#python-for-statistical-analysis)
-  - [Statistics](#statistics)
-  - [Data](#data)
-  - [Statistics Module](#statistics-module)
-- [NumPy](#numpy)
-
-# 📘 Day 24
 
 ## Python for Statistical Analysis
 
