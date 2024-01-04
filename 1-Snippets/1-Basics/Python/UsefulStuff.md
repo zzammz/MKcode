@@ -2279,11 +2279,7 @@ num_to_range(5, 0, 10, 0, 100) # 50.0
 
 
 =======================
----
 Offset list elements
----
-
-
 
 
 Moves the specified amount of elements to the end of the list.
@@ -2301,9 +2297,8 @@ offset([1, 2, 3, 4, 5], -2) # [4, 5, 1, 2, 3]
 ```
 
 =======================
----
 Pad number
----
+
 
 Pads a given number to the specified length.
 
@@ -2320,69 +2315,319 @@ pad_number(1234, 6); # '001234'
 
 
 =======================
+Pad string
 
+Pads a string on both sides with the specified character, if it's shorter than the specified length.
+
+- Use `str.ljust()` and `str.rjust()` to pad both sides of the given string.
+- Omit the third argument, `char`, to use the whitespace character as the default padding character.
+
+```py
+from math import floor
+
+def pad(s, length, char = ' '):
+  return s.rjust(floor((len(s) + length)/2), char).ljust(length, char)
+```
+
+```py
+pad('cat', 8) # '  cat   '
+pad('42', 6, '0') # '004200'
+pad('foobar', 3) # 'foobar'
+```
+
+
+=======================
+Palindrome
+
+Checks if the given string is a palindrome.
+
+- Use `str.lower()` and `re.sub()` to convert to lowercase and remove non-alphanumeric characters from the given string.
+- Then, compare the new string with its reverse, using slice notation.
+
+```py
+from re import sub
+
+def palindrome(s):
+  s = sub('[\W_]', '', s.lower())
+  return s == s[::-1]
+```
+
+```py
+palindrome('taco cat') # True
+```
+
+
+=======================
+Pluck values from list of dictionaries
+
+Converts a list of dictionaries into a list of values corresponding to the specified `key`.
+
+- Use a list comprehension and `dict.get()` to get the value of `key` for each dictionary in `lst`.
+
+```py
+def pluck(lst, key):
+  return [x.get(key) for x in lst]
+```
+
+```py
+simpsons = [
+  { 'name': 'lisa', 'age': 8 },
+  { 'name': 'homer', 'age': 36 },
+  { 'name': 'marge', 'age': 34 },
+  { 'name': 'bart', 'age': 10 }
+]
+pluck(simpsons, 'age') # [8, 36, 34, 10]
+```
+
+
+=======================
+Powerset
+
+Returns the powerset of a given iterable.
+
+- Use `list()` to convert the given value to a list.
+- Use `range()` and `itertools.combinations()` to create a generator that returns all subsets.
+- Use `itertools.chain.from_iterable()` and `list()` to consume the generator and return a list.
+
+```py
+from itertools import chain, combinations
+
+def powerset(iterable):
+  s = list(iterable)
+  return list(chain.from_iterable(combinations(s, r) for r in range(len(s)+1)))
+```
+
+```py
+powerset([1, 2]) # [(), (1,), (2,), (1, 2)]
+```
+
+
+=======================
+Radians to degrees
+
+Converts an angle from radians to degrees.
+
+- Use `math.pi` and the radian to degree formula to convert the angle from radians to degrees.
+
+```py
+from math import pi
+
+def rads_to_degrees(rad):
+  return (rad * 180.0) / pi
+```
+
+```py
+from math import pi
+
+rads_to_degrees(pi / 2) # 90.0
+```
+
+=======================
+Reverse number
+
+Reverses a number.
+
+- Use `str()` to convert the number to a string, slice notation to reverse it and `str.replace()` to remove the sign.
+- Use `float()` to convert the result to a number and `math.copysign()` to copy the original sign.
+
+```py
+from math import copysign
+
+def reverse_number(n):
+  return copysign(float(str(n)[::-1].replace('-', '')), n)
+```
+
+```py
+reverse_number(981) # 189
+reverse_number(-500) # -5
+reverse_number(73.6) # 6.37
+reverse_number(-5.23) # -32.5
+```
+
+
+=======================
+Reverse list
+
+Reverses a list or a string.
+
+- Use slice notation to reverse the list or string.
+
+```py
+def reverse(itr):
+  return itr[::-1]
+```
+
+```py
+reverse([1, 2, 3]) # [3, 2, 1]
+reverse('snippet') # 'teppins'
+```
+
+=======================
+RGB to hex
+
+Converts the values of RGB components to a hexadecimal color code.
+
+- Create a placeholder for a zero-padded hexadecimal value using `'{:02X}'` and copy it three times.
+- Use `str.format()` on the resulting string to replace the placeholders with the given values.
+
+```py
+def rgb_to_hex(r, g, b):
+  return ('{:02X}' * 3).format(r, g, b)
+```
+
+```py
+rgb_to_hex(255, 165, 1) # 'FFA501'
+```
+
+=======================
+Rotate list elements
+
+Moves the specified amount of elements to the start of the list.
+
+- Use slice notation to get the two slices of the list and combine them before returning.
+
+```py
+def roll(lst, offset):
+  return lst[-offset:] + lst[:-offset]
+```
+
+```py
+roll([1, 2, 3, 4, 5], 2) # [4, 5, 1, 2, 3]
+roll([1, 2, 3, 4, 5], -2) # [3, 4, 5, 1, 2]
+```
+
+
+=======================
+Random element in list
+
+Returns a random element from a list.
+
+- Use `random.choice()` to get a random element from `lst`.
+
+```py
+from random import choice
+
+def sample(lst):
+  return choice(lst)
+```
+
+```py
+sample([3, 7, 9, 11]) # 9
+```
 
 
 
 =======================
+Shuffle list
 
+Randomizes the order of the values of an list, returning a new list.
+
+- Uses the [Fisher-Yates algorithm](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle) to reorder the elements of the list.
+- [`random.shuffle`](https://docs.python.org/3/library/random.html#random.shuffle) provides similar functionality to this snippet.
+
+```py
+from copy import deepcopy
+from random import randint
+
+def shuffle(lst):
+  temp_lst = deepcopy(lst)
+  m = len(temp_lst)
+  while (m):
+    m -= 1
+    i = randint(0, m)
+    temp_lst[m], temp_lst[i] = temp_lst[i], temp_lst[m]
+  return temp_lst
+```
+
+```py
+foo = [1, 2, 3]
+shuffle(foo) # [2, 3, 1], foo = [1, 2, 3]
+```
+
+=======================
+List similarity
+
+Returns a list of elements that exist in both lists.
+
+- Use a list comprehension on `a` to only keep values contained in both lists.
+
+```py
+def similarity(a, b):
+  return [item for item in a if item in b]
+```
+
+```py
+similarity([1, 2, 3], [1, 2, 4]) # [1, 2]
+```
+
+=======================
+String to slug
+
+Converts a string to a URL-friendly slug.
+
+- Use `str.lower()` and `str.strip()` to normalize the input string.
+- Use `re.sub()` to to replace spaces, dashes and underscores with `-` and remove special characters.
+
+```py
+import re
+
+def slugify(s):
+  s = s.lower().strip()
+  s = re.sub(r'[^\w\s-]', '', s)
+  s = re.sub(r'[\s_-]+', '-', s)
+  s = re.sub(r'^-+|-+$', '', s)
+  return s
+```
+
+```py
+slugify('Hello World!') # 'hello-world'
+```
 
 
 =======================
+Snakecase string
 
+Converts a string to snake case.
 
+- Use `re.sub()` to match all words in the string, `str.lower()` to lowercase them.
+- Use `re.sub()` to replace any `-` characters with spaces.
+- Finally, use `str.join()` to combine all words using `-` as the separator.
 
-=======================
+```py
+from re import sub
 
+def snake(s):
+  return '_'.join(
+    sub('([A-Z][a-z]+)', r' \1',
+    sub('([A-Z]+)', r' \1',
+    s.replace('-', ' '))).split()).lower()
+```
 
-
-
-=======================
-
-
-
-=======================
-
-
-
-=======================
-
-
-
-=======================
-
-
-
-
-=======================
-
-
-
-=======================
-
+```py
+snake('camelCase') # 'camel_case'
+snake('some text') # 'some_text'
+snake('some-mixed_string With spaces_underscores-and-hyphens')
+# 'some_mixed_string_with_spaces_underscores_and_hyphens'
+snake('AllThe-small Things') # 'all_the_small_things'
+```
 
 
 =======================
+Test if some list elements are truthy
 
+Checks if the provided function returns `True` for at least one element in the list.
 
+- Use `any()` in combination with `map()` to check if `fn` returns `True` for any element in the list.
 
+```py
+def some(lst, fn = lambda x: x):
+  return any(map(fn, lst))
+```
 
-=======================
-
-
-
-=======================
-
-
-
-=======================
-
-
-
-=======================
-
-
-
+```py
+some([0, 1, 2, 0], lambda x: x >= 2 ) # True
+some([0, 0, 1, 0]) # True
+```
 
 =======================
 
