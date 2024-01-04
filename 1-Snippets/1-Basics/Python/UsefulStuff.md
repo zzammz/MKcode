@@ -2630,28 +2630,532 @@ some([0, 0, 1, 0]) # True
 ```
 
 =======================
+Sort list by indexes
 
+ Sorts one list based on another list containing the desired indexes.
+
+- Use `zip()` and `sorted()` to combine and sort the two lists, based on the values of `indexes`.
+- Use a list comprehension to get the first element of each pair from the result.
+- Use the `reverse` parameter in `sorted()` to sort the dictionary in reverse order, based on the third argument.
+
+```py
+def sort_by_indexes(lst, indexes, reverse=False):
+  return [val for (_, val) in sorted(zip(indexes, lst), key=lambda x: \
+          x[0], reverse=reverse)]
+```
+
+```py
+a = ['eggs', 'bread', 'oranges', 'jam', 'apples', 'milk']
+b = [3, 2, 6, 4, 1, 5]
+sort_by_indexes(a, b) # ['apples', 'bread', 'eggs', 'jam', 'milk', 'oranges']
+sort_by_indexes(a, b, True)
+# ['oranges', 'milk', 'jam', 'eggs', 'bread', 'apples']
+```
 
 
 =======================
+Sort dictionary by key
 
+Sorts the given dictionary by key.
+
+- Use `dict.items()` to get a list of tuple pairs from `d` and sort it using `sorted()`.
+- Use `dict()` to convert the sorted list back to a dictionary.
+- Use the `reverse` parameter in `sorted()` to sort the dictionary in reverse order, based on the second argument.
+
+```py
+def sort_dict_by_key(d, reverse = False):
+  return dict(sorted(d.items(), reverse = reverse))
+```
+
+```py
+d = {'one': 1, 'three': 3, 'five': 5, 'two': 2, 'four': 4}
+sort_dict_by_key(d) # {'five': 5, 'four': 4, 'one': 1, 'three': 3, 'two': 2}
+sort_dict_by_key(d, True)
+# {'two': 2, 'three': 3, 'one': 1, 'four': 4, 'five': 5}
+```
 
 
 =======================
+Sort dictionary by value
 
+Sorts the given dictionary by value.
 
+- Use `dict.items()` to get a list of tuple pairs from `d` and sort it using a lambda function and `sorted()`.
+- Use `dict()` to convert the sorted list back to a dictionary.
+- Use the `reverse` parameter in `sorted()` to sort the dictionary in reverse order, based on the second argument.
+- **⚠️ NOTICE:** Dictionary values must be of the same type.
+
+```py
+def sort_dict_by_value(d, reverse = False):
+  return dict(sorted(d.items(), key = lambda x: x[1], reverse = reverse))
+```
+
+```py
+d = {'one': 1, 'three': 3, 'five': 5, 'two': 2, 'four': 4}
+sort_dict_by_value(d) # {'one': 1, 'two': 2, 'three': 3, 'four': 4, 'five': 5}
+sort_dict_by_value(d, True)
+# {'five': 5, 'four': 4, 'three': 3, 'two': 2, 'one': 1}
+```
+
+=======================
+Split into lines
+
+Splits a multiline string into a list of lines.
+
+- Use `str.split()` and `'\n'` to match line breaks and create a list.
+- [`str.splitlines()`](https://docs.python.org/3/library/stdtypes.html#str.splitlines) provides similar functionality to this snippet.
+
+```py
+def split_lines(s):
+  return s.split('\n')
+```
+
+```py
+split_lines('This\nis a\nmultiline\nstring.\n')
+# ['This', 'is a', 'multiline', 'string.' , '']
+```
+
+=======================
+Spread list
+
+Flattens a list, by spreading its elements into a new list.
+
+- Loop over elements, use `list.extend()` if the element is a list, `list.append()` otherwise.
+
+```py
+def spread(arg):
+  ret = []
+  for i in arg:
+    ret.extend(i) if isinstance(i, list) else ret.append(i)
+  return ret
+```
+
+```py
+spread([1, 2, 3, [4, 5, 6], [7], 8, 9]) # [1, 2, 3, 4, 5, 6, 7, 8, 9]
+```
 
 
 =======================
+Sum list based on function
 
+Calculates the sum of a list, after mapping each element to a value using the provided function.
+
+- Use `map()` with `fn` to map each element to a value using the provided function.
+- Use `sum()` to return the sum of the values.
+
+```py
+def sum_by(lst, fn):
+  return sum(map(fn, lst))
+```
+
+```py
+sum_by([{ 'n': 4 }, { 'n': 2 }, { 'n': 8 }, { 'n': 6 }], lambda v : v['n']) # 20
+```
+
+=======================
+Sum of powers
+
+Returns the sum of the powers of all the numbers from `start` to `end` (both inclusive).
+
+- Use `range()` in combination with a list comprehension to create a list of elements in the desired range raised to the given `power`.
+- Use `sum()` to add the values together.
+- Omit the second argument, `power`, to use a default power of `2`.
+- Omit the third argument, `start`, to use a default starting value of `1`.
+
+```py
+def sum_of_powers(end, power = 2, start = 1):
+  return sum([(i) ** power for i in range(start, end + 1)])
+```
+
+```py
+sum_of_powers(10) # 385
+sum_of_powers(10, 3) # 3025
+sum_of_powers(10, 3, 5) # 2925
+```
 
 
 =======================
+List symmetric difference based on function
 
+Returns the symmetric difference between two lists, after applying the provided function to each list element of both.
+
+- Create a `set` by applying `fn` to each element in every list.
+- Use a list comprehension in combination with `fn` on each of them to only keep values not contained in the previously created set of the other.
+
+```py
+def symmetric_difference_by(a, b, fn):
+  (_a, _b) = (set(map(fn, a)), set(map(fn, b)))
+  return [item for item in a if fn(item) not in _b] + [item
+          for item in b if fn(item) not in _a]
+```
+
+```py
+from math import floor
+
+symmetric_difference_by([2.1, 1.2], [2.3, 3.4], floor) # [1.2, 3.4]
+```
+
+=======================
+List symmetric difference
+
+Returns the symmetric difference between two iterables, without filtering out duplicate values.
+
+- Create a `set` from each list.
+- Use a list comprehension on each of them to only keep values not contained in the previously created set of the other.
+
+```py
+def symmetric_difference(a, b):
+  (_a, _b) = (set(a), set(b))
+  return [item for item in a if item not in _b] + [item for item in b
+          if item not in _a]
+```
+
+```py
+symmetric_difference([1, 2, 3], [1, 2, 4]) # [3, 4]
+```
 
 
 =======================
+List tail
 
+Returns all elements in a list except for the first one.
+
+- Use slice notation to return the last element if the list's length is more than `1`.
+- Otherwise, return the whole list.
+
+```py
+def tail(lst):
+  return lst[1:] if len(lst) > 1 else lst
+```
+
+```py
+tail([1, 2, 3]) # [2, 3]
+tail([1]) # [1]
+```
+
+=======================
+Remove list elements from the end
+
+Returns a list with `n` elements removed from the end.
+
+- Use slice notation to create a slice of the list with `n` elements taken from the end.
+
+```py
+def take_right(itr, n = 1):
+  return itr[-n:]
+```
+
+```py
+take_right([1, 2, 3], 2) # [2, 3]
+take_right([1, 2, 3]) # [3]
+```
+
+=======================
+Remove list elements
+
+Returns a list with `n` elements removed from the beginning.
+
+- Use slice notation to create a slice of the list with `n` elements taken from the beginning.
+
+```py
+def take(itr, n = 1):
+  return itr[:n]
+```
+
+```py
+take([1, 2, 3], 5) # [1, 2, 3]
+take([1, 2, 3], 0) # []
+```
+
+=======================
+Number to binary
+
+Returns the binary representation of the given number.
+
+- Use `bin()` to convert a given decimal number into its binary equivalent.
+
+```py
+def to_binary(n):
+  return bin(n)
+```
+
+```py
+to_binary(100) # 0b1100100
+```
+
+
+=======================
+Lists to dictionary
+
+Combines two lists into a dictionary, where the elements of the first one serve as the keys and the elements of the second one serve as the values.
+The values of the first list need to be unique and hashable.
+
+- Use `zip()` in combination with `dict()` to combine the values of the two lists into a dictionary.
+
+```py
+def to_dictionary(keys, values):
+  return dict(zip(keys, values))
+```
+
+```py
+to_dictionary(['a', 'b'], [1, 2]) # { a: 1, b: 2 }
+```
+
+=======================
+Number to hex
+
+Returns the hexadecimal representation of the given number.
+
+- Use `hex()` to convert a given decimal number into its hexadecimal equivalent.
+
+```py
+def to_hex(dec):
+  return hex(dec)
+```
+
+```py
+to_hex(41) # 0x29
+to_hex(332) # 0x14c
+```
+
+=======================
+Date to ISO format
+
+Converts a date to its ISO-8601 representation.
+
+- Use `datetime.datetime.isoformat()` to convert the given `datetime.datetime` object to an ISO-8601 date.
+
+```py
+from datetime import datetime
+
+def to_iso_date(d):
+  return d.isoformat()
+```
+
+```py
+from datetime import datetime
+
+to_iso_date(datetime(2020, 10, 25)) # 2020-10-25T00:00:00
+```
+
+
+=======================
+Integer to roman numeral
+
+Converts an integer to its roman numeral representation.
+Accepts value between `1` and `3999` (both inclusive).
+
+- Create a lookup list containing tuples in the form of (roman value, integer).
+- Use a `for` loop to iterate over the values in `lookup`.
+- Use `divmod()` to update `num` with the remainder, adding the roman numeral representation to the result.
+
+```py
+def to_roman_numeral(num):
+  lookup = [
+    (1000, 'M'),
+    (900, 'CM'),
+    (500, 'D'),
+    (400, 'CD'),
+    (100, 'C'),
+    (90, 'XC'),
+    (50, 'L'),
+    (40, 'XL'),
+    (10, 'X'),
+    (9, 'IX'),
+    (5, 'V'),
+    (4, 'IV'),
+    (1, 'I'),
+  ]
+  res = ''
+  for (n, roman) in lookup:
+    (d, num) = divmod(num, n)
+    res += roman * d
+  return res
+```
+
+```py
+to_roman_numeral(3) # 'III'
+to_roman_numeral(11) # 'XI'
+to_roman_numeral(1998) # 'MCMXCVIII'
+```
+
+=======================
+Transpose matrix
+
+
+Transposes a two-dimensional list.
+
+- Use `*lst` to get the provided list as tuples.
+- Use `zip()` in combination with `list()` to create the transpose of the given two-dimensional list.
+
+```py
+def transpose(lst):
+  return list(zip(*lst))
+```
+
+```py
+transpose([[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]])
+# [(1, 4, 7, 10), (2, 5, 8, 11), (3, 6, 9, 12)]
+```
+
+
+=======================
+Unfold list
+
+Builds a list, using an iterator function and an initial seed value.
+
+- The iterator function accepts one argument (`seed`) and must always return a list with two elements ([`value`, `nextSeed`]) or `False` to terminate.
+- Use a generator function, `fn_generator`, that uses a `while` loop to call the iterator function and `yield` the `value` until it returns `False`.
+- Use a list comprehension to return the list that is produced by the generator, using the iterator function.
+
+```py
+def unfold(fn, seed):
+  def fn_generator(val):
+    while True:
+      val = fn(val[1])
+      if val == False: break
+      yield val[0]
+  return [i for i in fn_generator([None, seed])]
+```
+
+```py
+f = lambda n: False if n > 50 else [-n, n + 10]
+unfold(f, 10) # [-10, -20, -30, -40, -50]
+```
+
+
+=======================
+List union based on function
+
+
+Returns every element that exists in any of the two lists once, after applying the provided function to each element of both.
+
+- Create a `set` by applying `fn` to each element in `a`.
+- Use a list comprehension in combination with `fn` on `b` to only keep values not contained in the previously created set, `_a`.
+- Finally, create a `set` from the previous result and `a` and transform it into a `list`
+
+```py
+def union_by(a, b, fn):
+  _a = set(map(fn, a))
+  return list(set(a + [item for item in b if fn(item) not in _a]))
+```
+
+```py
+from math import floor
+
+union_by([2.1], [1.2, 2.3], floor) # [2.1, 1.2]
+```
+
+=======================
+List union
+
+Returns every element that exists in any of the two lists once.
+
+- Create a `set` with all values of `a` and `b` and convert to a `list`.
+
+```py
+def union(a, b):
+  return list(set(a + b))
+```
+
+```py
+union([1, 2, 3], [4, 3, 2]) # [1, 2, 3, 4]
+```
+
+=======================
+Unique elements in list
+
+Returns the unique elements in a given list.
+
+- Create a `set` from the list to discard duplicated values, then return a `list` from it.
+
+```py
+def unique_elements(li):
+  return list(set(li))
+```
+
+```py
+unique_elements([1, 2, 2, 3, 4, 3]) # [1, 2, 3, 4]
+```
+
+=======================
+Dictionary values
+
+Returns a flat list of all the values in a flat dictionary.
+
+- Use `dict.values()` to return the values in the given dictionary.
+- Return a `list()` of the previous result.
+
+```py
+def values_only(flat_dict):
+  return list(flat_dict.values())
+```
+
+```py
+ages = {
+  'Peter': 10,
+  'Isabel': 11,
+  'Anna': 9,
+}
+values_only(ages) # [10, 11, 9]
+```
+
+=======================
+Weighted average
+
+Returns the weighted average of two or more numbers.
+
+- Use `sum()` to sum the products of the numbers by their weight and to sum the weights.
+- Use `zip()` and a list comprehension to iterate over the pairs of values and weights.
+
+```py
+def weighted_average(nums, weights):
+  return sum(x * y for x, y in zip(nums, weights)) / sum(weights)
+```
+
+```py
+weighted_average([1, 2, 3], [0.6, 0.2, 0.3]) # 1.72727
+```
+
+=======================
+Apply function when true
+
+Tests a value, `x`, against a testing function, conditionally applying a function.
+
+- Check if the value of `predicate()` is `True` for `x` and if so call `when_true()`, otherwise return `x`.
+
+```py
+def when(predicate, when_true):
+  return lambda x: when_true(x) if predicate(x) else x
+```
+
+```py
+double_even_numbers = when(lambda x: x % 2 == 0, lambda x : x * 2)
+double_even_numbers(2) # 4
+double_even_numbers(1) # 1
+```
+
+=======================
+String to words
+
+Converts a given string into a list of words.
+
+- Use `re.findall()` with the supplied `pattern` to find all matching substrings.
+- Omit the second argument to use the default regexp, which matches alphanumeric and hyphens.
+
+```py
+import re
+
+def words(s, pattern = '[a-zA-Z-]+'):
+  return re.findall(pattern, s)
+```
+
+```py
+words('I love Python!!') # ['I', 'love', 'Python']
+words('python, javaScript & coffee') # ['python', 'javaScript', 'coffee']
+words('build -q --out one-item', r'\b[a-zA-Z-]+\b')
+# ['build', 'q', 'out', 'one-item']
+```
 
 
 =======================
