@@ -10,6 +10,7 @@ Omit the second argument, d, to use a default value of datetime.today().
 from datetime import datetime, timedelta
 
 > [!NOTE]
+>## Calculates the date of n days from the given date
 > Useful information that users should know, even when skimming content.
 
 
