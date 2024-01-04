@@ -99,8 +99,10 @@ average_by([{ 'n': 4 }, { 'n': 2 }, { 'n': 8 }, { 'n': 6 }], lambda x: x['n'])
 ```
 
 
-======================
-Average
+============================================================================
+
+> [!NOTE]
+> ## Average
 
 
 Calculates the average of two or more numbers.
@@ -116,8 +118,10 @@ average(*[1, 2, 3]) # 2.0
 average(1, 2, 3) # 2.0
 ```
 
-==================
-Bifurcate list based on function
+============================================================================
+
+> [!NOTE]
+> ## Bifurcate list based on function
 
 
 Splits values into two groups, based on the result of the given filtering function.
@@ -136,8 +140,10 @@ bifurcate_by(['beep', 'boop', 'foo', 'bar'], lambda x: x[0] == 'b')
 # [ ['beep', 'boop', 'bar'], ['foo'] ]
 ```
 
-==================
-Bifurcate list based on values
+============================================================================
+
+> [!NOTE]
+> ## Bifurcate list based on values
 
 
 Splits values into two groups, based on the result of the given filter list.
@@ -157,8 +163,10 @@ bifurcate(['beep', 'boop', 'foo', 'bar'], [True, True, False, True])
 # [ ['beep', 'boop', 'bar'], ['foo'] ]
 ```
 
-==================
-Binomial coefficient
+============================================================================
+
+> [!NOTE]
+> ## Binomial coefficient
 
 
 Calculates the number of ways to choose k items from n items without repetition and without order.
@@ -176,8 +184,10 @@ binomial_coefficient(8, 2) # 28
 ```
 
 
-==================
-Byte size of string
+============================================================================
+
+> [!NOTE]
+> ## Byte size of string
 
 Returns the length of a string in bytes.
 
@@ -192,8 +202,12 @@ byte_size('Hello World') # 11
 ```
 
 
-==================
-Camelcase string
+============================================================================
+
+> [!NOTE]
+> ## Camelcase string
+
+
 Converts a string to camelcase.
 
 Use re.sub() to replace any - or _ with a space, using the regexp r"(_|-)+".
@@ -217,8 +231,10 @@ camel('some-mixed_string with spaces_underscores-and-hyphens')
 ```
 
 
-==================
-Capitalize every word
+============================================================================
+
+> [!NOTE]
+> ## Capitalize every word
 
 Capitalizes the first letter of every word in a string.
 
@@ -232,8 +248,10 @@ capitalize_every_word('hello world!') # 'Hello World!'
 ```
 
 
-==================
-Capitalize string
+============================================================================
+
+> [!NOTE]
+> ## Capitalize string
 
 Capitalizes the first letter of a string.
 
@@ -250,8 +268,10 @@ capitalize('fooBar', True) # 'Foobar'
 ```
 
 
-==================
-Casts the provided value as a list if it's not one.
+============================================================================
+
+> [!NOTE]
+> ## Casts the provided value as a list if it's not one.
 
 Use isinstance() to check if the given value is enumerable.
 Return it by using list() or encapsulated in a list accordingly.
@@ -266,8 +286,10 @@ cast_list([1]) # [1]
 cast_list(('foo', 'bar')) # ['foo', 'bar']
 ```
 
-=======================
-Celsius to Fahrenheit
+============================================================================
+
+> [!NOTE]
+> ## Celsius to Fahrenheit
 
 
 Converts Celsius to Fahrenheit.
@@ -281,8 +303,10 @@ def celsius_to_fahrenheit(degrees):
 celsius_to_fahrenheit(180) # 356.0
 ```
 
-=======================
-Check property
+============================================================================
+
+> [!NOTE]
+> ## Check property
 
 Creates a function that will invoke a predicate function for the specified property on a given dictionary.
 
@@ -299,8 +323,10 @@ check_age(user) # True
 ```
 
 
-=======================
-Split list into n chunks
+============================================================================
+
+> [!NOTE]
+> ## Split list into n chunks
 
 Chunks a list into n smaller lists.
 
@@ -324,8 +350,10 @@ chunk_into_n([1, 2, 3, 4, 5, 6, 7], 4) # [[1, 2], [3, 4], [5, 6], [7]]
 ```
 
 
-=======================
-Split list into chunks
+============================================================================
+
+> [!NOTE]
+> ## Split list into chunks
 
 
 Chunks a list into smaller lists of a specified size.
@@ -346,8 +374,10 @@ chunk([1, 2, 3, 4, 5], 2) # [[1, 2], [3, 4], [5]]
 ```
 
 
-=======================
-Clamp number
+============================================================================
+
+> [!NOTE]
+> ## Clamp number
 
 
 Clamps num within the inclusive range specified by the boundary values.
@@ -366,8 +396,10 @@ clamp_number(1, -1, -5) # -1
 
 
 
-=======================
-Invert dictionary
+============================================================================
+
+> [!NOTE]
+> ## Invert dictionary
 
 Inverts a dictionary with non-unique hashable values.
 
@@ -397,8 +429,10 @@ collect_dictionary(ages) # { 10: ['Peter', 'Isabel'], 9: ['Anna'] }
 
 
 
-=======================
-Combine dictionary values
+============================================================================
+
+> [!NOTE]
+> ## Combine dictionary values
 
 Combines two or more dictionaries, creating a list of values for each key.
 
@@ -424,8 +458,10 @@ combine_values(d1, d2) # {'a': [1, 3], 'b': ['foo', 200], 'c': [400], 'd': [400]
 ```
 
 
-=======================
-Compact list
+============================================================================
+
+> [!NOTE]
+> ## Compact list
 
 Removes falsy values from a list.
 
@@ -440,8 +476,10 @@ compact([0, 1, False, 2, '', 3, 'a', 's', 34]) # [ 1, 2, 3, 'a', 's', 34 ]
 ```
 
 
-=======================
-Reverse compose functions
+============================================================================
+
+> [!NOTE]
+> ## Reverse compose functions
 
 
 Performs left-to-right function composition.
@@ -463,8 +501,10 @@ add_and_square(1, 2) # 9
 
 
 
-=======================
-Compose functions
+============================================================================
+
+> [!NOTE]
+> ## Compose functions
 
 
 Performs right-to-left function composition.
@@ -489,8 +529,10 @@ multiply_and_add_5(5, 2) # 15
 
 
 
-=======================
-Count grouped elements
+============================================================================
+
+> [!NOTE]
+> ## Count grouped elements
 
 Groups the elements of a list based on the given function and returns the count of elements in each group.
 
@@ -514,8 +556,10 @@ count_by(['one', 'two', 'three'], len) # {3: 2, 5: 1}
 
 
 
-=======================
-Count occurrences
+============================================================================
+
+> [!NOTE]
+> ## Count occurrences
 
 
 Counts the occurrences of a value in a list.
@@ -533,8 +577,10 @@ count_occurrences([1, 1, 2, 1, 2, 3], 1) # 3
 
 
 
-=======================
-Partial sum list
+============================================================================
+
+> [!NOTE]
+> ## Partial sum list
 
 
 Creates a list of partial sums.
@@ -554,8 +600,10 @@ cumsum(range(0, 15, 3)) # [0, 3, 9, 18, 30]
 
 
 
-=======================
-Curry function
+============================================================================
+
+> [!NOTE]
+> ## Curry function
 
 
 Curries a function.
@@ -576,8 +624,10 @@ add10(20) # 30
 
 
 
-=======================
-Date range
+============================================================================
+
+> [!NOTE]
+> ## Date range
 
 Creates a list of dates between start (inclusive) and end (not inclusive).
 
@@ -598,8 +648,10 @@ daterange(date(2020, 10, 1), date(2020, 10, 5))
 
 
 
-=======================
-Days ago
+============================================================================
+
+> [!NOTE]
+> ## Days ago
 
 
 Calculates the date of n days ago from today.
@@ -617,8 +669,10 @@ days_ago(5) # date(2020, 10, 23)
 ```
 
 
-=======================
-Date difference in days
+============================================================================
+
+> [!NOTE]
+> ## Date difference in days
 
 Calculates the day difference between two dates.
 
@@ -635,8 +689,10 @@ days_diff(date(2020, 10, 25), date(2020, 10, 28)) # 3
 
 
 
-=======================
-Days from now
+============================================================================
+
+> [!NOTE]
+> ## Days from now
 
 Calculates the date of n days from today.
 
@@ -655,8 +711,10 @@ days_from_now(5) # date(2020, 11, 02)
 
 
 
-=======================
-Decapitalize string
+============================================================================
+
+> [!NOTE]
+> ## Decapitalize string
 
 Decapitalizes the first letter of a string.
 
@@ -674,8 +732,10 @@ decapitalize('FooBar', True) # 'fOOBAR'
 ```
 
 
-=======================
-Deep flatten list
+============================================================================
+
+> [!NOTE]
+> ## Deep flatten list
 
 Deep flattens a list.
 
@@ -695,8 +755,10 @@ deep_flatten([1, [2], [[3], 4], 5]) # [1, 2, 3, 4, 5]
 ```
 
 
-=======================
-Degrees to radians
+============================================================================
+
+> [!NOTE]
+> ## Degrees to radians
 
 
 Converts an angle from degrees to radians.
@@ -714,8 +776,10 @@ degrees_to_rads(180) # ~3.1416
 ```
 
 
-=======================
-Delayed function execution
+============================================================================
+
+> [!NOTE]
+> ## Delayed function execution
 
 
 Invokes the provided function after ms milliseconds.
@@ -735,8 +799,10 @@ delay(lambda x: print(x), 1000, 'later') # prints 'later' after one second
 
 
 
-=======================
-Dictionary to list
+============================================================================
+
+> [!NOTE]
+> ## Dictionary to list
 
 Converts a dictionary to a list of tuples.
 
@@ -752,8 +818,10 @@ dict_to_list(d)
 # [('one', 1), ('three', 3), ('five', 5), ('two', 2), ('four', 4)]```
 ```
 
-=======================
-List difference based on function
+============================================================================
+
+> [!NOTE]
+> ## List difference based on function
 
 Returns the difference between two lists, after applying the provided function to each list element of both.
 
@@ -773,8 +841,10 @@ difference_by([{ 'x': 2 }, { 'x': 1 }], [{ 'x': 1 }], lambda v : v['x'])
 ```
 
 
-=======================
-List difference
+============================================================================
+
+> [!NOTE]
+> ## List difference
 
 
 Calculates the difference between two iterables, without filtering duplicate values.
@@ -792,8 +862,10 @@ difference([1, 2, 3], [1, 2, 4]) # [3]
 
 
 
-=======================
-Digitize number
+============================================================================
+
+> [!NOTE]
+> ## Digitize number
 
 
 Converts a number to a list of digits.
@@ -809,8 +881,10 @@ digitize(123) # [1, 2, 3]
 ```
 
 
-=======================
-Drop list elements from the right
+============================================================================
+
+> [!NOTE]
+> ## Drop list elements from the right
 
 Returns a list with n elements removed from the right.
 
@@ -830,8 +904,10 @@ drop_right([1, 2, 3], 42) # []
 ```
 
 
-=======================
-Drop list elements from the left
+============================================================================
+
+> [!NOTE]
+> ## Drop list elements from the left
 
 
 Returns a list with n elements removed from the left.
@@ -852,8 +928,10 @@ drop([1, 2, 3], 42) # []
 
 
 
-=======================
-Every nth element in list
+============================================================================
+
+> [!NOTE]
+> ## Every nth element in list
 
 Returns every nth element in a list.
 
@@ -867,8 +945,10 @@ every_nth([1, 2, 3, 4, 5, 6], 2) # [ 2, 4, 6 ]
 ```
 
 
-=======================
-Test if every list element is truthy
+============================================================================
+
+> [!NOTE]
+> ## Test if every list element is truthy
 
 Checks if the provided function returns True for every element in the list.
 
@@ -883,8 +963,10 @@ every([1, 2, 3]) # True
 ```
 
 
-=======================
-Factorial
+============================================================================
+
+> [!NOTE]
+> ## Factorial
 
 Calculates the factorial of a number.
 
@@ -903,8 +985,10 @@ factorial(6) # 720
 ```
 
 
-=======================
-Fahrenheit to Celsius
+============================================================================
+
+> [!NOTE]
+> ## Fahrenheit to Celsius
 
 
 Converts Fahrenheit to Celsius.
@@ -919,8 +1003,10 @@ fahrenheit_to_celsius(77) # 25.0
 ```
 
 
-=======================
-Fibonacci
+============================================================================
+
+> [!NOTE]
+> ## Fibonacci
 
 Generates a list, containing the Fibonacci sequence, up until the nth term.
 
@@ -941,8 +1027,10 @@ fibonacci(7) # [0, 1, 1, 2, 3, 5, 8, 13]
 ```
 
 
-=======================
-Filter non-unique list values
+============================================================================
+
+> [!NOTE]
+> ## Filter non-unique list values
 
 Creates a list with the non-unique values filtered out.
 
@@ -959,8 +1047,10 @@ filter_non_unique([1, 2, 2, 3, 4, 4, 5]) # [1, 3, 5]
 
 
 
-=======================
-Filter unique list values
+============================================================================
+
+> [!NOTE]
+> ## Filter unique list values
 
 
 Creates a list with the unique values filtered out.
@@ -977,8 +1067,10 @@ filter_unique([1, 2, 2, 3, 4, 4, 5]) # [2, 4]
 ```
 
 
-=======================
-Find all matching indexes
+============================================================================
+
+> [!NOTE]
+> ## Find all matching indexes
 
 Finds the indexes of all elements in the given list that satisfy the provided testing function.
 
@@ -993,8 +1085,10 @@ find_index_of_all([1, 2, 3, 4], lambda n: n % 2 == 1) # [0, 2]
 
 
 
-=======================
-Find matching index
+============================================================================
+
+> [!NOTE]
+> ## Find matching index
 
 
 Finds the index of the first element in the given list that satisfies the provided testing function.
@@ -1009,8 +1103,10 @@ find_index([1, 2, 3, 4], lambda n: n % 2 == 1) # 0
 ```
 
 
-=======================
-Find key of value
+============================================================================
+
+> [!NOTE]
+> ## Find key of value
 
 Finds the first key in the provided dictionary that has the given value.
 
@@ -1029,8 +1125,10 @@ find_key(ages, 11) # 'Isabel'
 ```
 
 
-=======================
-Find keys with value
+============================================================================
+
+> [!NOTE]
+> ## Find keys with value
 
 Finds all keys in the provided dictionary that have the given value.
 
@@ -1050,8 +1148,10 @@ find_keys(ages, 10) # [ 'Peter', 'Anna' ]
 
 
 
-=======================
-Find last matching index
+============================================================================
+
+> [!NOTE]
+> ## Find last matching index
 
 Finds the index of the last element in the given list that satisfies the provided testing function.
 
@@ -1065,8 +1165,10 @@ def find_last_index(lst, fn):
 
 
 
-=======================
-Find last matching value
+============================================================================
+
+> [!NOTE]
+> ## Find last matching value
 
 Finds the value of the last element in the given list that satisfies the provided testing function.
 
@@ -1081,8 +1183,10 @@ find_last([1, 2, 3, 4], lambda n: n % 2 == 1) # 3
 
 
 
-=======================
-Find parity outliers
+============================================================================
+
+> [!NOTE]
+> ## Find parity outliers
 
 Finds the items that are parity outliers in a given list.
 
@@ -1103,8 +1207,10 @@ find_parity_outliers([1, 2, 3, 4, 6]) # [1, 3]
 
 
 
-=======================
-Find matching value
+============================================================================
+
+> [!NOTE]
+> ## Find matching value
 
 Finds the value of the first element in the given list that satisfies the provided testing function.
 
@@ -1118,8 +1224,10 @@ find([1, 2, 3, 4], lambda n: n % 2 == 1) # 1
 ```
 
 
-=======================
-Flatten list
+============================================================================
+
+> [!NOTE]
+> ## Flatten list
 
 Flattens a list of lists once.
 
@@ -1134,8 +1242,10 @@ flatten([[1, 2, 3, 4], [5, 6, 7, 8]]) # [1, 2, 3, 4, 5, 6, 7, 8]
 
 
 
-=======================
-Execute function for each list element in reverse
+============================================================================
+
+> [!NOTE]
+> ## Execute function for each list element in reverse
 
 Executes the provided function once for each list element, starting from the list's last element.
 
@@ -1150,8 +1260,10 @@ for_each_right([1, 2, 3], print) # 3 2 1
 ```
 
 
-=======================
-Execute function for each list element
+============================================================================
+
+> [!NOTE]
+> ## Execute function for each list element
 
 
 Executes the provided function once for each list element.
@@ -1166,8 +1278,10 @@ def for_each(itr, fn):
 for_each([1, 2, 3], print) # 1 2 3
 ```
 
-=======================
-Value frequencies
+============================================================================
+
+> [!NOTE]
+> ## Value frequencies
 
 Creates a dictionary with the unique values of a list as keys and their frequencies as the values.
 
@@ -1186,8 +1300,10 @@ frequencies(['a', 'b', 'a', 'c', 'a', 'a', 'b']) # { 'a': 4, 'b': 2, 'c': 1 }
 ```
 
 
-=======================
-Date from ISO format
+============================================================================
+
+> [!NOTE]
+> ## Date from ISO format
 
 
 Converts a date from its ISO-8601 representation.
@@ -1202,8 +1318,10 @@ def from_iso_date(d):
 from_iso_date('2020-10-28T12:30:59.000000') # 2020-10-28 12:30:59
 ```
 
-=======================
-Greatest common divisor
+============================================================================
+
+> [!NOTE]
+> ## Greatest common divisor
 
 Calculates the greatest common divisor of a list of numbers.
 
@@ -1219,8 +1337,10 @@ gcd([8, 36, 28]) # 4
 ```
 
 
-=======================
-Geometric progression
+============================================================================
+
+> [!NOTE]
+> ## Geometric progression
 
 
 Initializes a list containing the numbers in the specified range where start and end are inclusive and the ratio between two terms is step.
@@ -1242,8 +1362,10 @@ geometric_progression(256, 1, 4) # [1, 4, 16, 64, 256]
 ```
 
 
-=======================
-Get nested value
+============================================================================
+
+> [!NOTE]
+> ## Get nested value
 
 Retrieves the value of the nested key indicated by the given selector list from a dictionary or list.
 
@@ -1271,8 +1393,10 @@ get(users, ['freddy', 'postIds', 1]) # 2
 
 
 
-=======================
-Group list elements
+============================================================================
+
+> [!NOTE]
+> ## Group list elements
 
 
 Groups the elements of a list based on the given function.
@@ -1296,8 +1420,10 @@ group_by(['one', 'two', 'three'], len) # {3: ['one', 'two'], 5: ['three']}
 
 
 
-=======================
-Hamming distance
+============================================================================
+
+> [!NOTE]
+> ## Hamming distance
 
 Calculates the Hamming distance between two values.
 
@@ -1314,8 +1440,10 @@ hamming_distance(2, 3) # 1
 
 
 
-=======================
-Check for duplicates in list
+============================================================================
+
+> [!NOTE]
+> ## Check for duplicates in list
 
 Checks if there are duplicate values in a flat list.
 
@@ -1333,8 +1461,10 @@ has_duplicates(y) # False
 ```
 
 
-=======================
-Check lists have same contents
+============================================================================
+
+> [!NOTE]
+> ## Check lists have same contents
 
 Checks if two lists contain the same elements regardless of order.
 
@@ -1354,8 +1484,10 @@ have_same_contents([1, 2, 4], [2, 4, 1]) # True
 
 
 
-=======================
-List head
+============================================================================
+
+> [!NOTE]
+> ## List head
 
 Returns the head of a list.
 
@@ -1370,8 +1502,10 @@ head([1, 2, 3]) # 1
 
 
 
-=======================
-Hex to RGB
+============================================================================
+
+> [!NOTE]
+> ## Hex to RGB
 
 Converts a hexadecimal color code to a tuple of integers corresponding to its RGB components.
 
@@ -1386,8 +1520,10 @@ hex_to_rgb('FFA501') # (255, 165, 1)
 ```
 
 
-=======================
-Number in range
+============================================================================
+
+> [!NOTE]
+> ## Number in range
 
 
 Checks if the given number falls within the given range.
@@ -1406,8 +1542,11 @@ in_range(2, 3, 5) # False
 in_range(3, 2) # False
 ```
 
-=======================
-List includes all values
+
+============================================================================
+
+> [!NOTE]
+> ## List includes all values
 
 
 Checks if all the elements in values are included in lst.
@@ -1428,8 +1567,10 @@ includes_all([1, 2, 3, 4], [1, 5]) # False
 
 
 
-=======================
-List includes any values
+============================================================================
+
+> [!NOTE]
+> ## List includes any values
 
 Checks if any element in values is included in lst.
 
@@ -1449,8 +1590,10 @@ includes_any([1, 2, 3, 4], [8, 9]) # False
 
 
 
-=======================
-All indexes of value
+============================================================================
+
+> [!NOTE]
+> ## All indexes of value
 
 
 eturns a list of indexes of all the occurrences of an element in a list.
@@ -1466,8 +1609,10 @@ index_of_all([1, 2, 3, 4], 6) # []
 ```
 
 
-=======================
-List without last element
+============================================================================
+
+> [!NOTE]
+> ## List without last element
 
 Returns all the elements of a list except the last one.
 
@@ -1481,8 +1626,10 @@ initial([1, 2, 3]) # [1, 2]
 ```
 
 
-=======================
-Initialize 2D list
+============================================================================
+
+> [!NOTE]
+> ## Initialize 2D list
 
 Initializes a 2D list of given width and height and value.
 
@@ -1498,8 +1645,10 @@ initialize_2d_list(2, 2, 0) # [[0, 0], [0, 0]]
 ```
 
 
-=======================
-Initialize list with range
+============================================================================
+
+> [!NOTE]
+> ## Initialize list with range
 
 Initializes a list containing the numbers in the specified range where start and end are inclusive with their common difference step.
 
@@ -1518,8 +1667,10 @@ initialize_list_with_range(9, 0, 2) # [0, 2, 4, 6, 8]
 ```
 
 
-=======================
-Initialize list with values
+============================================================================
+
+> [!NOTE]
+> ## Initialize list with values
 
 Initializes and fills a list with the specified value.
 
@@ -1535,8 +1686,10 @@ initialize_list_with_values(5, 2) # [2, 2, 2, 2, 2]
 ```
 
 
-=======================
-List intersection based on function
+============================================================================
+
+> [!NOTE]
+> ## List intersection based on function
 
 Returns a list of elements that exist in both lists, after applying the provided function to each list element of both.
 
@@ -1554,8 +1707,10 @@ intersection_by([2.1, 1.2], [2.3, 3.4], floor) # [2.1]
 
 
 
-=======================
-List intersection
+============================================================================
+
+> [!NOTE]
+> ## List intersection
 
 Returns a list of elements that exist in both lists.
 
@@ -1571,8 +1726,10 @@ intersection([1, 2, 3], [4, 3, 2]) # [2, 3]
 ```
 
 
-=======================
-Invert dictionary
+============================================================================
+
+> [!NOTE]
+> ## Invert dictionary
 
 
 Inverts a dictionary with unique hashable values.
@@ -1592,8 +1749,10 @@ ages = {
 invert_dictionary(ages) # { 10: 'Peter', 11: 'Isabel', 9: 'Anna' }
 ```
 
-=======================
-String is anagram
+============================================================================
+
+> [!NOTE]
+> ## String is anagram
 
 Checks if a string is an anagram of another string (case-insensitive, ignores spaces, punctuation and special characters).
 
@@ -1615,8 +1774,10 @@ is_anagram('#anagram', 'Nag a ram!')  # True
 
 
 
-=======================
-List is contained in other list
+============================================================================
+
+> [!NOTE]
+> ## List is contained in other list
 
 
 Checks if the elements of the first list are contained in the second one regardless of order.
@@ -1636,8 +1797,10 @@ is_contained_in([1, 4], [2, 4, 1]) # True
 ```
 
 
-=======================
-Number is divisible
+============================================================================
+
+> [!NOTE]
+> ## Number is divisible
 
 Checks if the first numeric argument is divisible by the second one.
 
@@ -1654,8 +1817,10 @@ is_divisible(6, 3) # True
 
 
 
-=======================
-Collection is empty
+============================================================================
+
+> [!NOTE]
+> ## Collection is empty
 
 Checks if the a value is an empty sequence or collection.
 
@@ -1680,8 +1845,10 @@ is_empty(range(2)) # False
 
 
 
-=======================
-Number is even
+============================================================================
+
+> [!NOTE]
+> ## Number is even
 
 
 Checks if the given number is even.
@@ -1696,8 +1863,10 @@ def is_even(num):
 is_even(3) # False
 ```
 
-=======================
-Number is odd
+============================================================================
+
+> [!NOTE]
+> ## Number is odd
 
 
 Checks if the given number is odd.
@@ -1714,8 +1883,10 @@ is_odd(3) # True
 
 
 
-=======================
-Number is prime
+============================================================================
+
+> [!NOTE]
+> ## Number is prime
 
 
 Checks if the provided integer is a prime number.
@@ -1734,8 +1905,10 @@ is_prime(11) # True
 ```
 
 
-=======================
-Date is weekday
+============================================================================
+
+> [!NOTE]
+> ## Date is weekday
 
 
 Checks if the given date is a weekday.
@@ -1758,8 +1931,10 @@ is_weekday(date(2020, 10, 28)) # True
 
 
 
-=======================
-Date is weekend
+============================================================================
+
+> [!NOTE]
+> ## Date is weekend
 
 Checks if the given date is a weekend.
 
@@ -1779,8 +1954,10 @@ is_weekend(date(2020, 10, 28)) # False
 
 
 
-=======================
-Kebabcase string
+============================================================================
+
+> [!NOTE]
+> ## Kebabcase string
 
 
 Converts a string to kebab case.
@@ -1808,8 +1985,10 @@ kebab('AllThe-small Things') # 'all-the-small-things'
 ```
 
 
-=======================
-Key in dictionary
+============================================================================
+
+> [!NOTE]
+> ## Key in dictionary
 
 
 Checks if the given key exists in a dictionary.
@@ -1828,8 +2007,10 @@ key_in_dict(d, 'three') # True
 
 
 
-=======================
-Key of max value
+============================================================================
+
+> [!NOTE]
+> ## Key of max value
 
 Finds the key of the maximum value in a dictionary.
 
@@ -1846,8 +2027,10 @@ key_of_max({'a':4, 'b':0, 'c':13}) # c
 
 
 
-=======================
-Key of min value
+============================================================================
+
+> [!NOTE]
+> ## Key of min value
 
 Finds the key of the minimum value in a dictionary.
 
@@ -1863,8 +2046,10 @@ key_of_min({'a':4, 'b':0, 'c':13}) # b
 ```
 
 
-=======================
-Dictionary keys
+============================================================================
+
+> [!NOTE]
+> ## Dictionary keys
 
 Creates a flat list of all the keys in a flat dictionary.
 
@@ -1885,8 +2070,10 @@ ages = {
 keys_only(ages) # ['Peter', 'Isabel', 'Anna']
 ```
 
-=======================
-Km to miles
+============================================================================
+
+> [!NOTE]
+> ## Km to miles
 
 Converts kilometers to miles.
 
@@ -1901,8 +2088,10 @@ def km_to_miles(km):
 km_to_miles(8.1) # 5.0331051
 ```
 
-=======================
-Last list element
+============================================================================
+
+> [!NOTE]
+> ## Last list element
 
 Returns the last element in a list.
 
@@ -1917,8 +2106,10 @@ def last(lst):
 last([1, 2, 3]) # 3
 ```
 
-=======================
-Least common multiple
+============================================================================
+
+> [!NOTE]
+> ## Least common multiple
 
 Returns the least common multiple of a list of numbers.
 
@@ -1939,8 +2130,10 @@ lcm([1, 3, 4, 5]) # 60
 
 
 
-=======================
-Longest item
+============================================================================
+
+> [!NOTE]
+> ## Longest item
 
 Takes any number of iterable objects or objects with a length property and returns the longest one.
 
@@ -1960,8 +2153,10 @@ longest_item([1, 2, 3], 'foobar') # 'foobar'
 
 
 
-=======================
-Map list to dictionary
+============================================================================
+
+> [!NOTE]
+> ## Map list to dictionary
 
 Maps the values of a list to a dictionary using a function, where the key-value pairs consist of the original value as the key and the result of the function as the value.
 
@@ -1979,8 +2174,10 @@ map_dictionary([1, 2, 3], lambda x: x * x) # { 1: 1, 2: 4, 3: 9 }
 ```
 
 
-=======================
-Map dictionary values
+============================================================================
+
+> [!NOTE]
+> ## Map dictionary values
 
 Creates a dictionary with the same keys as the provided dictionary and values generated by running the provided function for each value.
 
@@ -2000,8 +2197,10 @@ map_values(users, lambda u : u['age']) # {'fred': 40, 'pebbles': 1}
 ```
 
 
-=======================
-Max list value based on function
+============================================================================
+
+> [!NOTE]
+> ## Max list value based on function
 
 Returns the maximum value of a list, after mapping each element to a value using the provided function.
 
@@ -2018,8 +2217,10 @@ max_by([{ 'n': 4 }, { 'n': 2 }, { 'n': 8 }, { 'n': 6 }], lambda v : v['n']) # 8
 ```
 
 
-=======================
-Index of max element
+============================================================================
+
+> [!NOTE]
+> ## Index of max element
 
 Returns the index of the element with the maximum value in a list.
 
@@ -2035,8 +2236,10 @@ max_element_index([5, 8, 9, 7, 10, 3, 0]) # 4
 ```
 
 
-=======================
-N max elements
+============================================================================
+
+> [!NOTE]
+> ## N max elements
 
 Returns the `n` maximum elements from the provided list.
 
@@ -2056,8 +2259,10 @@ max_n([1, 2, 3], 2) # [3, 2]
 ```
 
 
-=======================
-Median
+============================================================================
+
+> [!NOTE]
+> ## Median
 
 Finds the median of a list of numbers.
 
@@ -2079,8 +2284,10 @@ median([1, 2, 3]) # 2.0
 median([1, 2, 3, 4]) # 2.5
 ```
 
-=======================
-Merge dictionaries
+============================================================================
+
+> [!NOTE]
+> ## Merge dictionaries
 
 Merges two or more dictionaries.
 
@@ -2106,8 +2313,10 @@ merge_dictionaries(ages_one, ages_two)
 # { 'Peter': 10, 'Isabel': 11, 'Anna': 9 }
 ```
 
-=======================
-Merge lists
+============================================================================
+
+> [!NOTE]
+> ## Merge lists
 
 Merges two or more lists into a list of lists, combining elements from each of the input lists based on their positions.
 
@@ -2135,8 +2344,10 @@ merge(['a'], [1, 2], [True, False], fill_value = '_')
 ```
 
 
-=======================
-Miles to km
+============================================================================
+
+> [!NOTE]
+> ## Miles to km
 
 Converts miles to kilometers.
 
@@ -2150,8 +2361,10 @@ miles_to_km(5.03) # 8.09500032
 ```
 
 
-=======================
-Min list value based on function
+============================================================================
+
+> [!NOTE]
+> ## Min list value based on function
 
 Returns the minimum value of a list, after mapping each element to a value using the provided function.
 
@@ -2167,8 +2380,10 @@ def min_by(lst, fn):
 min_by([{ 'n': 4 }, { 'n': 2 }, { 'n': 8 }, { 'n': 6 }], lambda v : v['n']) # 2
 ```
 
-=======================
-Index of min element
+============================================================================
+
+> [!NOTE]
+> ## Index of min element
 
 Returns the index of the element with the minimum value in a list.
 
@@ -2184,8 +2399,10 @@ min_element_index([3, 5, 2, 6, 10, 7, 9]) # 2
 ```
 
 
-=======================
-N min elements
+============================================================================
+
+> [!NOTE]
+> ## N min elements
 
 Returns the `n` minimum elements from the provided list.
 
@@ -2204,8 +2421,10 @@ min_n([1, 2, 3]) # [1]
 min_n([1, 2, 3], 2) # [1, 2]
 ```
 
-=======================
-Date difference in months
+============================================================================
+
+> [!NOTE]
+> ## Date difference in months
 
 Calculates the month difference between two dates.
 
@@ -2226,8 +2445,10 @@ months_diff(date(2020, 10, 28), date(2020, 11, 25)) # 1
 ```
 
 
-=======================
-Most frequent element
+============================================================================
+
+> [!NOTE]
+> ## Most frequent element
 
 Returns the most frequent element in a list.
 
@@ -2243,8 +2464,10 @@ def most_frequent(lst):
 most_frequent([1, 2, 1, 2, 3, 2, 1, 4, 2]) #2
 ```
 
-=======================
-Repeat string
+============================================================================
+
+> [!NOTE]
+> ## Repeat string
 
 Generates a string with the given string value repeated `n` number of times.
 
@@ -2259,8 +2482,10 @@ def n_times_string(s, n):
 n_times_string('py', 4) #'pypypypy'
 ```
 
-=======================
-Test if every list element is falsy
+============================================================================
+
+> [!NOTE]
+> ## Test if every list element is falsy
 
 Checks if the provided function returns `True` for at least one element in the list.
 
@@ -2276,8 +2501,10 @@ none([0, 1, 2, 0], lambda x: x >= 2 ) # False
 none([0, 0, 0]) # True
 ```
 
-=======================
-Map number to range
+============================================================================
+
+> [!NOTE]
+> ## Map number to range
 
 Maps a number from one range to another range.
 
@@ -2294,8 +2521,10 @@ num_to_range(5, 0, 10, 0, 100) # 50.0
 ```
 
 
-=======================
-Offset list elements
+============================================================================
+
+> [!NOTE]
+> ## Offset list elements
 
 
 Moves the specified amount of elements to the end of the list.
@@ -2312,8 +2541,10 @@ offset([1, 2, 3, 4, 5], 2) # [3, 4, 5, 1, 2]
 offset([1, 2, 3, 4, 5], -2) # [4, 5, 1, 2, 3]
 ```
 
-=======================
-Pad number
+============================================================================
+
+> [!NOTE]
+> ## Pad number
 
 
 Pads a given number to the specified length.
@@ -2330,8 +2561,10 @@ pad_number(1234, 6); # '001234'
 ```
 
 
-=======================
-Pad string
+============================================================================
+
+> [!NOTE]
+> ## Pad string
 
 Pads a string on both sides with the specified character, if it's shorter than the specified length.
 
@@ -2352,8 +2585,10 @@ pad('foobar', 3) # 'foobar'
 ```
 
 
-=======================
-Palindrome
+============================================================================
+
+> [!NOTE]
+> ## Palindrome
 
 Checks if the given string is a palindrome.
 
@@ -2373,8 +2608,11 @@ palindrome('taco cat') # True
 ```
 
 
-=======================
-Pluck values from list of dictionaries
+
+============================================================================
+
+> [!NOTE]
+> ## Pluck values from list of dictionaries
 
 Converts a list of dictionaries into a list of values corresponding to the specified `key`.
 
@@ -2396,8 +2634,10 @@ pluck(simpsons, 'age') # [8, 36, 34, 10]
 ```
 
 
-=======================
-Powerset
+============================================================================
+
+> [!NOTE]
+> ## Powerset
 
 Returns the powerset of a given iterable.
 
@@ -2418,8 +2658,10 @@ powerset([1, 2]) # [(), (1,), (2,), (1, 2)]
 ```
 
 
-=======================
-Radians to degrees
+============================================================================
+
+> [!NOTE]
+> ## Radians to degrees
 
 Converts an angle from radians to degrees.
 
@@ -2438,8 +2680,10 @@ from math import pi
 rads_to_degrees(pi / 2) # 90.0
 ```
 
-=======================
-Reverse number
+============================================================================
+
+> [!NOTE]
+> ## Reverse number
 
 Reverses a number.
 
@@ -2461,8 +2705,10 @@ reverse_number(-5.23) # -32.5
 ```
 
 
-=======================
-Reverse list
+============================================================================
+
+> [!NOTE]
+> ## Reverse list
 
 Reverses a list or a string.
 
@@ -2478,8 +2724,10 @@ reverse([1, 2, 3]) # [3, 2, 1]
 reverse('snippet') # 'teppins'
 ```
 
-=======================
-RGB to hex
+============================================================================
+
+> [!NOTE]
+> ## RGB to hex
 
 Converts the values of RGB components to a hexadecimal color code.
 
@@ -2495,8 +2743,10 @@ def rgb_to_hex(r, g, b):
 rgb_to_hex(255, 165, 1) # 'FFA501'
 ```
 
-=======================
-Rotate list elements
+============================================================================
+
+> [!NOTE]
+> ## Rotate list elements
 
 Moves the specified amount of elements to the start of the list.
 
@@ -2513,8 +2763,10 @@ roll([1, 2, 3, 4, 5], -2) # [3, 4, 5, 1, 2]
 ```
 
 
-=======================
-Random element in list
+============================================================================
+
+> [!NOTE]
+> ## Random element in list
 
 Returns a random element from a list.
 
@@ -2533,8 +2785,10 @@ sample([3, 7, 9, 11]) # 9
 
 
 
-=======================
-Shuffle list
+============================================================================
+
+> [!NOTE]
+> ## Shuffle list
 
 Randomizes the order of the values of an list, returning a new list.
 
@@ -2560,8 +2814,10 @@ foo = [1, 2, 3]
 shuffle(foo) # [2, 3, 1], foo = [1, 2, 3]
 ```
 
-=======================
-List similarity
+============================================================================
+
+> [!NOTE]
+> ## List similarity
 
 Returns a list of elements that exist in both lists.
 
@@ -2576,8 +2832,10 @@ def similarity(a, b):
 similarity([1, 2, 3], [1, 2, 4]) # [1, 2]
 ```
 
-=======================
-String to slug
+============================================================================
+
+> [!NOTE]
+> ## String to slug
 
 Converts a string to a URL-friendly slug.
 
@@ -2600,8 +2858,10 @@ slugify('Hello World!') # 'hello-world'
 ```
 
 
-=======================
-Snakecase string
+============================================================================
+
+> [!NOTE]
+> ## Snakecase string
 
 Converts a string to snake case.
 
@@ -2628,8 +2888,10 @@ snake('AllThe-small Things') # 'all_the_small_things'
 ```
 
 
-=======================
-Test if some list elements are truthy
+============================================================================
+
+> [!NOTE]
+> ## Test if some list elements are truthy
 
 Checks if the provided function returns `True` for at least one element in the list.
 
@@ -2645,8 +2907,10 @@ some([0, 1, 2, 0], lambda x: x >= 2 ) # True
 some([0, 0, 1, 0]) # True
 ```
 
-=======================
-Sort list by indexes
+============================================================================
+
+> [!NOTE]
+> ## Sort list by indexes
 
  Sorts one list based on another list containing the desired indexes.
 
@@ -2669,8 +2933,10 @@ sort_by_indexes(a, b, True)
 ```
 
 
-=======================
-Sort dictionary by key
+============================================================================
+
+> [!NOTE]
+> ## Sort dictionary by key
 
 Sorts the given dictionary by key.
 
@@ -2691,8 +2957,10 @@ sort_dict_by_key(d, True)
 ```
 
 
-=======================
-Sort dictionary by value
+============================================================================
+
+> [!NOTE]
+> ## Sort dictionary by value
 
 Sorts the given dictionary by value.
 
@@ -2713,8 +2981,10 @@ sort_dict_by_value(d, True)
 # {'five': 5, 'four': 4, 'three': 3, 'two': 2, 'one': 1}
 ```
 
-=======================
-Split into lines
+============================================================================
+
+> [!NOTE]
+> ## Split into lines
 
 Splits a multiline string into a list of lines.
 
@@ -2751,8 +3021,10 @@ spread([1, 2, 3, [4, 5, 6], [7], 8, 9]) # [1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
 
 
-=======================
-Sum list based on function
+============================================================================
+
+> [!NOTE]
+> ## Sum list based on function
 
 Calculates the sum of a list, after mapping each element to a value using the provided function.
 
@@ -2768,8 +3040,10 @@ def sum_by(lst, fn):
 sum_by([{ 'n': 4 }, { 'n': 2 }, { 'n': 8 }, { 'n': 6 }], lambda v : v['n']) # 20
 ```
 
-=======================
-Sum of powers
+============================================================================
+
+> [!NOTE]
+> ## Sum of powers
 
 Returns the sum of the powers of all the numbers from `start` to `end` (both inclusive).
 
@@ -2790,8 +3064,10 @@ sum_of_powers(10, 3, 5) # 2925
 ```
 
 
-=======================
-List symmetric difference based on function
+============================================================================
+
+> [!NOTE]
+> ## List symmetric difference based on function
 
 Returns the symmetric difference between two lists, after applying the provided function to each list element of both.
 
@@ -2811,8 +3087,10 @@ from math import floor
 symmetric_difference_by([2.1, 1.2], [2.3, 3.4], floor) # [1.2, 3.4]
 ```
 
-=======================
-List symmetric difference
+============================================================================
+
+> [!NOTE]
+> ## List symmetric difference
 
 Returns the symmetric difference between two iterables, without filtering out duplicate values.
 
@@ -2831,8 +3109,10 @@ symmetric_difference([1, 2, 3], [1, 2, 4]) # [3, 4]
 ```
 
 
-=======================
-List tail
+============================================================================
+
+> [!NOTE]
+> ## List tail
 
 Returns all elements in a list except for the first one.
 
@@ -2849,8 +3129,10 @@ tail([1, 2, 3]) # [2, 3]
 tail([1]) # [1]
 ```
 
-=======================
-Remove list elements from the end
+============================================================================
+
+> [!NOTE]
+> ## Remove list elements from the end
 
 Returns a list with `n` elements removed from the end.
 
@@ -2866,8 +3148,10 @@ take_right([1, 2, 3], 2) # [2, 3]
 take_right([1, 2, 3]) # [3]
 ```
 
-=======================
-Remove list elements
+============================================================================
+
+> [!NOTE]
+> ## Remove list elements
 
 Returns a list with `n` elements removed from the beginning.
 
@@ -2883,8 +3167,10 @@ take([1, 2, 3], 5) # [1, 2, 3]
 take([1, 2, 3], 0) # []
 ```
 
-=======================
-Number to binary
+============================================================================
+
+> [!NOTE]
+> ## Number to binary
 
 Returns the binary representation of the given number.
 
@@ -2900,8 +3186,10 @@ to_binary(100) # 0b1100100
 ```
 
 
-=======================
-Lists to dictionary
+============================================================================
+
+> [!NOTE]
+> ## Lists to dictionary
 
 Combines two lists into a dictionary, where the elements of the first one serve as the keys and the elements of the second one serve as the values.
 The values of the first list need to be unique and hashable.
@@ -2917,8 +3205,10 @@ def to_dictionary(keys, values):
 to_dictionary(['a', 'b'], [1, 2]) # { a: 1, b: 2 }
 ```
 
-=======================
-Number to hex
+============================================================================
+
+> [!NOTE]
+> ## Number to hex
 
 Returns the hexadecimal representation of the given number.
 
@@ -2934,8 +3224,10 @@ to_hex(41) # 0x29
 to_hex(332) # 0x14c
 ```
 
-=======================
-Date to ISO format
+============================================================================
+
+> [!NOTE]
+> ## Date to ISO format
 
 Converts a date to its ISO-8601 representation.
 
@@ -2955,8 +3247,10 @@ to_iso_date(datetime(2020, 10, 25)) # 2020-10-25T00:00:00
 ```
 
 
-=======================
-Integer to roman numeral
+============================================================================
+
+> [!NOTE]
+> ## Integer to roman numeral
 
 Converts an integer to its roman numeral representation.
 Accepts value between `1` and `3999` (both inclusive).
@@ -2995,8 +3289,10 @@ to_roman_numeral(11) # 'XI'
 to_roman_numeral(1998) # 'MCMXCVIII'
 ```
 
-=======================
-Transpose matrix
+============================================================================
+
+> [!NOTE]
+> ## Transpose matrix
 
 
 Transposes a two-dimensional list.
@@ -3015,8 +3311,10 @@ transpose([[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]])
 ```
 
 
-=======================
-Unfold list
+============================================================================
+
+> [!NOTE]
+> ## Unfold list
 
 Builds a list, using an iterator function and an initial seed value.
 
@@ -3040,7 +3338,10 @@ unfold(f, 10) # [-10, -20, -30, -40, -50]
 ```
 
 
-=======================
+============================================================================
+
+> [!NOTE]
+> ## =======================
 List union based on function
 
 
@@ -3062,8 +3363,10 @@ from math import floor
 union_by([2.1], [1.2, 2.3], floor) # [2.1, 1.2]
 ```
 
-=======================
-List union
+============================================================================
+
+> [!NOTE]
+> ## List union
 
 Returns every element that exists in any of the two lists once.
 
@@ -3078,8 +3381,10 @@ def union(a, b):
 union([1, 2, 3], [4, 3, 2]) # [1, 2, 3, 4]
 ```
 
-=======================
-Unique elements in list
+============================================================================
+
+> [!NOTE]
+> ## Unique elements in list
 
 Returns the unique elements in a given list.
 
@@ -3094,8 +3399,10 @@ def unique_elements(li):
 unique_elements([1, 2, 2, 3, 4, 3]) # [1, 2, 3, 4]
 ```
 
-=======================
-Dictionary values
+============================================================================
+
+> [!NOTE]
+> ## Dictionary values
 
 Returns a flat list of all the values in a flat dictionary.
 
@@ -3116,8 +3423,10 @@ ages = {
 values_only(ages) # [10, 11, 9]
 ```
 
-=======================
-Weighted average
+============================================================================
+
+> [!NOTE]
+> ## Weighted average
 
 Returns the weighted average of two or more numbers.
 
@@ -3133,8 +3442,10 @@ def weighted_average(nums, weights):
 weighted_average([1, 2, 3], [0.6, 0.2, 0.3]) # 1.72727
 ```
 
-=======================
-Apply function when true
+============================================================================
+
+> [!NOTE]
+> ## Apply function when true
 
 Tests a value, `x`, against a testing function, conditionally applying a function.
 
@@ -3151,8 +3462,10 @@ double_even_numbers(2) # 4
 double_even_numbers(1) # 1
 ```
 
-=======================
-String to words
+============================================================================
+
+> [!NOTE]
+> ## String to words
 
 Converts a given string into a list of words.
 
