@@ -3,7 +3,7 @@
 
 
 ===================
-Calculates the date of n days from the given date.
+## Calculates the date of n days from the given date.
 
 Use datetime.timedelta and the + operator to calculate the new datetime.datetime value after adding n days to d.
 Omit the second argument, d, to use a default value of datetime.today().
