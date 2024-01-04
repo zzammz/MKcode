@@ -2280,12 +2280,10 @@ num_to_range(5, 0, 10, 0, 100) # 50.0
 
 =======================
 ---
+---
 Offset list elements
 ---
 
----
-Title: Offset list elements
----
 
 
 Moves the specified amount of elements to the end of the list.
