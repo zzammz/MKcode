@@ -2283,7 +2283,7 @@ num_to_range(5, 0, 10, 0, 100) # 50.0
 ---
 Offset list elements
 ---
----
+
 
 
 
@@ -2302,7 +2302,23 @@ offset([1, 2, 3, 4, 5], -2) # [4, 5, 1, 2, 3]
 ```
 
 =======================
+---
+---
+Pad number
+---
 
+Pads a given number to the specified length.
+
+- Use `str.zfill()` to pad the number to the specified length, after converting it to a string.
+
+```py
+def pad_number(n, l):
+  return str(n).zfill(l)
+```
+
+```py
+pad_number(1234, 6); # '001234'
+```
 
 
 =======================
