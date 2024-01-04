@@ -2,7 +2,7 @@
 
 
 
-===================
+======================================
 
 > [!NOTE]
 > ## Calculates the date of n days from the given date.
@@ -21,8 +21,14 @@ from datetime import date
 add_days(5, date(2020, 10, 25)) # date(2020, 10, 30)
 add_days(-5, date(2020, 10, 25)) # date(2020, 10, 20)
 ```
-=====================
-Checks if all elements in a list are equal.
+
+
+
+
+======================================
+
+> [!NOTE]
+> ## Checks if all elements in a list are equal.
 
 Use set() to eliminate duplicate elements and then use len() to check if length is 1.
 
