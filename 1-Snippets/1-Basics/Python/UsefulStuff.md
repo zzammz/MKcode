@@ -25,7 +25,7 @@ add_days(-5, date(2020, 10, 25)) # date(2020, 10, 20)
 
 
 
-======================================
+============================================================================
 
 > [!NOTE]
 > ## Checks if all elements in a list are equal.
@@ -42,8 +42,10 @@ all_equal([1, 1, 1, 1]) # True
 
 ```
 
-============================
-Checks if all the values in a list are unique.
+============================================================================
+
+> [!NOTE]
+> ## Checks if all the values in a list are unique.
 
 Use set() on the given list to keep only unique occurrences.
 Use len() to compare the length of the unique values to the original list.
@@ -58,8 +60,10 @@ all_unique(x) # True
 all_unique(y) # False
 ```
 
-======================
-arithmetic progression
+============================================================================
+
+> [!NOTE]
+> ## Arithmetic progression
 
 Generates a list of numbers in the arithmetic progression starting with the given positive integer and up to the specified limit.
 
@@ -72,8 +76,10 @@ def arithmetic_progression(n, lim):
 arithmetic_progression(5, 25) # [5, 10, 15, 20, 25]
 ```
 
-=======================
-Mapped list average
+============================================================================
+
+> [!NOTE]
+> ## Mapped list average
 
 
 Calculates the average of a list, after mapping each element to a value using the provided function.
