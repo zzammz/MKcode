@@ -9,6 +9,10 @@ Use datetime.timedelta and the + operator to calculate the new datetime.datetime
 Omit the second argument, d, to use a default value of datetime.today().
 from datetime import datetime, timedelta
 
+> [!NOTE]
+> Useful information that users should know, even when skimming content.
+
+
 ```py
 def add_days(n, d = datetime.today()):
   return d + timedelta(n)
