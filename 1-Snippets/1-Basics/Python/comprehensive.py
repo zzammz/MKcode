@@ -19,7 +19,7 @@ def log_trace(func_name):
     #print (inspect.getframeinfo(frame).function)
     #print(inspect.getframeinfo(inspect.currentframe()).function)
     return
- 
+
 #----------------- basics
 import sys
 from math import *
