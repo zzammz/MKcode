@@ -13,7 +13,7 @@ def examples_file_read() :
     for emp in file_emp.readlines():
         print (emp)
 
-    file_emp.close()
+    file_emp.close() 
     return
 
 def examples_file_append() :
