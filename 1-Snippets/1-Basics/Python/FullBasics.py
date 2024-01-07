@@ -24,6 +24,39 @@ def log_trace(func_name):
 
 # ========================= basics
 
+def examples_misc_funcs():
+    log_trace("examples_string")
+
+    print("- divmod")
+    res = divmod(7,2)
+    print (res)
+
+    print("- eval")
+    #xx = 'print(55)'
+    #eval(xx)
+
+    print("- range 1")
+    x2 = range(6)
+    print (x2)
+    x3 = range(2, 6)
+    print (x3)
+
+    print("- range 2")
+    x4 = range (1, 10, 2)
+    print (x4)
+    ii = 0
+    for ii in x4:
+        print (ii)
+
+    print("- round")
+    print (round(5.567, 2))
+
+    print("- sum")
+    x5 = [1, 2, 3, 4, 5]
+    print (sum(x5))
+    print (sum(x5, 2))
+    return
+
 #----------------- strings
 def examples_string():
     log_trace ("examples_string")
@@ -132,13 +165,118 @@ def check_str_content():
         print ("strings do not have same content")
     return
 
+def examples_substr():
+    log_trace("examples_substr")
+
+    print("")
+    print("- basic substr")
+    #string[start:end:step]
+    test_str = "hello darkness my old friend"
+    str1 = test_str[1:5]
+    #print (str1)
+    print(test_str[1:])  # all from 1 to end
+    print(test_str[1:5]) # from 1 to 4
+    print(test_str[-5:]) # last 5 chars
+    print (test_str[::2]) # get every other character
+
+    print("")
+    print("- find substr")
+    if "llo" in test_str:
+        print ("found substr")
+    if(test_str.find("XX") == -1):
+        print ("not found")
+    else:
+        print ("not found")
+
+    icount = test_str.count("e")
+    print ("count of 'e' in string: " + str(icount))
+
+    print("")
+    print("- indexes of all occurrence")
+    list2 = []
+    my_string = "hello darkness my old friend"
+    my_sub_string = "e"
+    len_my_string = len(my_string)
+    my_index = 0
+
+    while my_index < len_my_string:
+        tmp_index = my_string.find(my_sub_string, my_index)
+        if tmp_index == -1:
+            break
+        list2.append(tmp_index)
+        my_index = tmp_index + 1
+    print (list2)
+
+    print("")
+    print("- substr through slicing")
+    # Initialise the string
+    fullstr = 'substring in python'
+    print("Initial string: ", fullstr)
+
+    # creating substring from beginning
+    # define upto what index substring is needed
+    istart = fullstr[:2]
+    iend = fullstr[3:]
+    # result
+    print("Resultant substring from start:", istart)
+    print("Resultant substring from end:", iend)
+
+    print("")
+    print("- substr through gap")
+    # Create a substring by taking characters from a particular gap (step)
+    # Initialise string
+    fullstr = 'substring in python'
+    print("Initial String: ", fullstr)
+    # create substring by taking element after certain position gap and define length upto which substring is required
+    alt = fullstr[::2]
+    gap = fullstr[::3]
+
+    #  Create a substring while considering string from the middle with some step gap between characters
+    print("")
+    print("- substr through middle and some gap")
+    # Initialise string
+    string = 'substring in python'
+    print("Initial string: ", string)
+    # create substring by taking element after certain step gap in a defined length
+    astring = string[2:11:2]
+    # result
+    print("Resultant substring:", astring)
+    # result
+    print("Resultant substring from start:", alt)
+    print("Resultant substring from end:", gap)
+
+    print("")
+    print("- all substring from start")
+    test_str = "Geeks"
+    for ictr in range (0, len(test_str)):
+        test_substring = test_str[ictr:len(test_str)]
+        print (test_substring)
+
+    print("")
+    print("- overlapping substr")
+    fullstr = "GeeksforGeeksforGeeksforGeeks"
+    teststr = "GeeksforGeeks"
+    count_str = 0
+    start_pos = 0
+    while start_pos < len(fullstr):
+        post_str_found = fullstr.find(teststr, start_pos)
+        if post_str_found == -1:
+            break
+        else:
+            count_str += 1
+        start_pos = post_str_found + 1
+    print ("count of overlapping str: " + str(count_str))
+
+    return
+
 
 def TESTGRP_string_methods():
     examples_string()
     str2 = "hello darkness my old friend"
-    #check_vowel_count(str2)
-    #check_exact_str()
-    #check_str_content()
+    check_vowel_count(str2)
+    check_exact_str()
+    check_str_content()
+    examples_substr()
     return
 
 
@@ -264,6 +402,15 @@ def examples_tryexcept():
     print ("error msg: [" + global_err + "]")
 
     return
+
+import datetime
+def examples_datetime():
+    dt_obj = datetime.datetime.now()
+    print (dt_obj)
+    print (dt_obj.month)
+    return
+
+
 
 # ---- funcs
 def examples_func(name1, name2):
@@ -522,11 +669,47 @@ def TESTGRP_fileio():
     examples_commandline()
     return
 
+
+# ========================= data structures
+
+def DS_queue():
+    log_trace("DS_queue")
+    fruits = []
+    fruits.append("apple")
+    fruits.append("banana")
+    fruits.append("mango")
+    print (fruits)
+    print("popped: " + fruits.pop(0))
+    print(fruits)
+    fruits.append("cherry")
+    print(fruits)
+    print("popped: " + fruits.pop(0))
+    print(fruits)
+    return
+
+
+def DS_stack():
+    log_trace("DS_stack")
+    fruits = []
+    fruits.append("apple")
+    fruits.append("banana")
+    fruits.append("mango")
+    print (fruits)
+    print("popped: " + fruits.pop(-1))
+    print(fruits)
+    fruits.append("cherry")
+    print(fruits)
+    print("popped: " + fruits.pop(-1))
+    print(fruits)
+    return
+
+
 # ========================= main
 # basics
 #print ("Hello, World!\n")
 #examples_string()
-TESTGRP_string_methods()
+#examples_misc_funcs()
+#TESTGRP_string_methods()
 #examples_number()
 #examples_input()
 #examples_if()
@@ -534,6 +717,7 @@ TESTGRP_string_methods()
 #examples_tryexcept()
 #examples_func("jack", "pirate")
 #print("cube is: {0}".format(str(examples_func2(3))))
+#examples_datetime()
 
 # data structs
 #examples_list()
@@ -543,6 +727,10 @@ TESTGRP_string_methods()
 
 # fileio
 #TESTGRP_fileio()
+
+DS_queue()
+DS_stack()
+
 
 
 
