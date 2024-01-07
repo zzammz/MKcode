@@ -57,6 +57,20 @@ def examples_misc_funcs():
     print (sum(x5, 2))
     return
 
+
+
+def examples_enum():
+    fruits = ["apple", "banana", "orange"]
+    for idx, val in enumerate(fruits):
+        print ("index: {}  fruit: {}".format(idx, val))
+
+    lang = "Python"
+    for idx, ch in enumerate(lang):
+        print ("idx:{}  ch:{}".format(idx, ch))
+    return
+
+
+
 #----------------- strings
 def examples_string():
     log_trace ("examples_string")
@@ -403,6 +417,7 @@ def examples_tryexcept():
 
     return
 
+# ---- datetime
 import datetime
 def examples_datetime():
     dt_obj = datetime.datetime.now()
@@ -410,6 +425,49 @@ def examples_datetime():
     print (dt_obj.month)
     return
 
+
+def check_time_spent():
+    dt_start = datetime.datetime.now()
+    tmp_array = []
+    sum_array = 0
+    max_ctr = 10000
+    for ictr in range(0, max_ctr):
+        tmp_array.append(ictr)
+    for ictr in range(0, max_ctr):
+        sum_array = sum(tmp_array[0:ictr])
+
+    dt_end = datetime.datetime.now()
+    dt_diff = dt_end - dt_start
+    print ("{}.{} secs".format(str(dt_diff.seconds), str(dt_diff.microseconds)))
+    return
+
+
+def check_time_spent2():
+    tmp_array = []
+    sum_array = 0
+    max_ctr = 10000000
+    for ictr in range(0, max_ctr):
+        tmp_array.append(ictr)
+
+    #--- forloop
+    dt_start = datetime.datetime.now()
+    for ictr in range(0, max_ctr):
+        jj = tmp_array[ictr]
+
+    dt_end = datetime.datetime.now()
+    dt_diff = dt_end - dt_start
+    print ("forloop: {}.{} secs".format(str(dt_diff.seconds), str(dt_diff.microseconds)))
+
+    #--- enumerate
+    dt_start = datetime.datetime.now()
+    for idx, val in enumerate(tmp_array):
+        jj = val
+
+    dt_end = datetime.datetime.now()
+    dt_diff = dt_end - dt_start
+    print ("enum: {}.{} secs".format(str(dt_diff.seconds), str(dt_diff.microseconds)))
+
+    return
 
 
 # ---- funcs
@@ -421,7 +479,7 @@ def examples_func2(num):
     return num * num * num
 
 
-# =========== data strucutres: list, tuples, sets
+# =========== data structures: list, tuples, sets
 def examples_list():
     log_trace("examples_list")
     print("- list content manipulation")
@@ -703,10 +761,235 @@ def DS_stack():
     print(fruits)
     return
 
+# ========================= algorithms
+# ------ fibonacci
+
+# fibonacci
+def fib_iterative(param_val):
+    log_trace("fib_iterative")
+    if param_val < 0:
+        print ("incorrect value - cannot be less than 1")
+        return
+
+    prev_val = 0
+    current_val = 1
+
+    print(" {} ".format(0))
+    if param_val == 1:
+        return
+
+    print(" {} ".format(1))
+    if param_val == 2:
+        return
+
+    prev_val = current_val
+    very_prev_val = 0
+
+    for ictr in range (2, param_val):
+        current_val = very_prev_val + prev_val
+        very_prev_val = prev_val
+        prev_val = current_val
+        print (" {} ".format(current_val))
+    return
+
+def fib_recursive(param_val):
+    log_trace("fib_recursive")
+    if param_val < 0:
+        print("incorrect value - cannot be less than 1")
+        return
+    elif param_val == 1:
+        return 0
+    elif param_val == 2:
+        return 1
+    else:
+        return fib_recursive(param_val-1) + fib_recursive(param_val-2)
+
+
+def TEST_fibonacci():
+    log_trace("TEST_fibonacci")
+    fib_iterative(5)
+    print ("===")
+    print ("{}th fib num is: ".format(5) + str(fib_recursive(5)))
+    return
+
+
+
+def sub_if_pwd_valid(param_sub_str):
+    count_alpha = 0
+    count_num = 0
+
+    for cctr in range (0, len(param_sub_str)):
+        if param_sub_str[cctr].isalpha():
+            count_alpha += 1
+        elif param_sub_str[cctr].isdigit():
+            count_num += 1
+        else:
+            return -1
+
+    if count_alpha > 0 and count_num > 0:
+        if count_alpha % 2 == 0 and count_num %2 != 0:
+            return count_alpha + count_num
+
+    return -1
+
+
+def demo_test(A):
+    len_array = len(A)
+    B = set(A)
+    A2 = list(B)
+    A2.sort()
+    #if A2[0] != 1:
+    #    return 1
+    print (A2)
+    for ictr in range(0, len_array):
+        #print ("{}  {} ".format(A2[ictr], ictr+1))
+        if A2[ictr] != ictr + 1:
+            return ictr + 1
+    return len_array+1
+
+def demo_test2(A):
+    len_array = len(A)
+    A.sort()
+    prev_val = 0
+    ictr = 0
+    for ictr in range(0, len_array):
+        current_val = A[ictr]
+        diff_val = current_val - prev_val
+        if current_val < 1:
+            continue
+        if diff_val == 1:
+            prev_val = current_val
+            continue
+        if diff_val > 1:
+            return prev_val + 1
+    if current_val < 1:
+        return 1
+    return current_val+1
+
+
+def TEST_demo_test():
+    ar1 = [1, 3, 1, 4]
+    print (str(ar1) + " ... " + str(demo_test2(ar1)))
+
+    ar1 = [1, 3, 6, 4, 1, 2]
+    print (str(ar1) + " ... " + str(demo_test2(ar1)))
+
+    ar1 = [-1, -3]
+    print (str(ar1) + " ... " + str(demo_test2(ar1)))
+
+    ar1 = [1, 2, 3]
+    print (str(ar1) + " ... " + str(demo_test2(ar1)))
+
+    ar1 = [-1, -1000, -20, 3]
+    print (str(ar1) + " ... " + str(demo_test2(ar1)))
+
+    ar1 = [1, -1, 2, 3, 5, 7, 9]
+    print (str(ar1) + " ... " + str(demo_test2(ar1)))
+
+    ar1 = [-1, 1, 2, 3]
+    print (str(ar1) + " ... " + str(demo_test2(ar1)))
+
+    ar1 = [-1, 4, 2, 3]
+    print (str(ar1) + " ... " + str(demo_test2(ar1)))
+
+    return
+
+# --------------- find dupes
+
+def FindDupes (p_array):
+    log_trace("FindDupes")
+    dupe_response = -1
+    ictr = 0
+    jctr = 0
+    len_array = len(p_array)
+    for ictr in range (0, len_array-1):
+        for jctr in range (ictr+1, len_array):
+            if p_array[ictr] == p_array[jctr]:
+                dupe_response = p_array[ictr]
+                return dupe_response
+
+    return dupe_response
+
+
+def FindDupes2 (p_array):
+    log_trace("FindDupes2")
+    p_array.sort()
+    len_array = len(p_array)
+    if len_array <= 1:
+        return -1
+    ictr = 0
+    for ictr in range (0, len_array-1, 1):
+        if p_array[ictr] == p_array[ictr+1]:
+            return p_array[ictr]
+    return -1
+
+
+def TEST_FindDupes():
+    test_array = [11, 13, 7, 11, 1, 3, 8, 4]
+    response_dupe_check = FindDupes(test_array)
+    if response_dupe_check == -1:
+        print("No duplicates were found")
+    else:
+        print("Duplicate number: " + str(response_dupe_check))
+
+    response_dupe_check = FindDupes2(test_array)
+    if response_dupe_check == -1:
+        print("No duplicates were found")
+    else:
+        print("Duplicate number: " + str(response_dupe_check))
+
+    return
+
+
+
+# ----------------- movies on flight
+def MoviesOnFlight(p_array, p_duration, p_max_gap):
+    log_trace("MoviesOnFlight")
+    p_array.sort(reverse=True)
+    for ictr in range (0, len(p_array)-1, 1):
+        time_spent = p_duration - p_array[ictr] - p_array[ictr+1]
+        if time_spent > 0 and time_spent <= p_max_gap:
+            print(p_duration - p_array[ictr] - p_array[ictr+1])
+            print ("[" + str(p_array[ictr]) + ", " + str(p_array[ictr+1]) + "]")
+            return
+
+    print ("Could not find 2 movies to watch within the " + str(p_duration) + " time period")
+    return
+
+
+def TEST_MoviesOnFlight():
+    movie_array = [90, 85, 75, 60, 120, 150, 125]
+    flight_duration = 250
+    max_gap_allowed = 30
+    MoviesOnFlight(movie_array, flight_duration, max_gap_allowed)
+    return
+
+# ----------------- push zeroes to end
+def PushZeroesToEnd(p_array):
+    log_trace("PushZeroesToEnd")
+    print ("input array: " + str(p_array))
+    len_array = len(p_array)
+    for ictr in range (0, len_array, 1):
+        if(p_array[ictr] == 0):
+            for jctr in range (ictr, len_array-1, 1):
+                p_array[jctr] = p_array[jctr+1]
+            p_array[jctr+1] = 0
+    print("output array: " + str(p_array))
+    return
+
+def TEST_PushZeroestoEnd():
+    test_array = [1, 2, 0, 4, 3, 0, 5, 0]
+    #test_array = [1, 0, 3, 5, 0]
+    PushZeroesToEnd(test_array)
+    return
+
+
+
 
 # ========================= main
 # basics
 #print ("Hello, World!\n")
+#examples_enum()
 #examples_string()
 #examples_misc_funcs()
 #TESTGRP_string_methods()
@@ -728,8 +1011,14 @@ def DS_stack():
 # fileio
 #TESTGRP_fileio()
 
-DS_queue()
-DS_stack()
+#DS_queue()
+#DS_stack()
+
+# algos
+TEST_fibonacci()
+TEST_FindDupes()
+TEST_MoviesOnFlight()
+TEST_PushZeroestoEnd()
 
 
 
