@@ -18,7 +18,7 @@
     - [Exercises: Level 1](#exercises-level-1)
 
 # 📘 Day 9
-
+ 
 ## Conditionals
 
 By default, statements in Python script are executed sequentially from top to bottom. If the processing logic require so, the sequential flow of execution can be altered in two way:
