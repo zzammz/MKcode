@@ -20,7 +20,7 @@ def examples_basic_print():
     print(3 / 2)  # division(/)
     print(3 ** 2)  # exponential(**)
     print(3 % 2)  # modulus(%)
-    print(3 // 2)  # Floor division operator(//)
+    print(3 // 2)  # Floor division operator(//) 
     return
 
 def examples_print():
