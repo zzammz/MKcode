@@ -30,7 +30,7 @@ def examples_arithmetic_ops():
     # float
     print('Floating Point Number, PI', 3.14)
     print('Floating Point Number, gravity', 9.81)
-
+ 
     # complex numbers
     print('Complex number: ', 1 + 1j)
     print('Multiplying complex numbers: ', (1 + 1j) * (1 - 1j))
