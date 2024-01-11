@@ -1,7 +1,7 @@
 <div align="center">
   <h1> 30 Days Of Python: Day 6 - Tuples</h1>
 
-
+ 
 </div>
 
 
