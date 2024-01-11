@@ -2,7 +2,7 @@
   <h1> 30 Days Of Python: Day 10 - Loops</h1>
 
 </div>
-
+ 
 
 - [📘 Day 10](#-day-10)
   - [Loops](#loops)
