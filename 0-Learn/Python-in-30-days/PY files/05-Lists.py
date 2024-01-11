@@ -67,7 +67,33 @@ def lists_basics():
     print(last_fruit)  # lemon
     print(second_last)  # mango
 
+    print ("first fruit via negative indexing: " + fruits [len(fruits) * -1 ]  )
+
     return
+
+def unpack_2():
+    log_trace("unpack_2")
+
+    lst = ['item1', 'item2', 'item3', 'item4', 'item5']
+    first_item, second_item, third_item, fourth_item, fifth_item = lst
+    print (first_item)
+    print(fifth_item)
+
+    #item1, item2, *other_items = lst
+
+    #print(item1)
+    #print(item2)
+    #print(other_items)
+
+    #myList = [1, 2, 3, 3, 4, 4, 5, 6]
+    #mySet = {*myList}
+    #print("The list is:")
+    #print(myList)
+    #print("The set is:")
+    #print(mySet)
+
+    return
+
 
 def unpacking_lists():
     log_trace("unpacking_lists")
@@ -134,6 +160,8 @@ def slicing_lists():
     orange_and_mango = fruits[-3:-1]  # it does not include the last index,['orange', 'mango']
     orange_mango_lemon = fruits[-3:]  # this will give starting from -3 to the end,['orange', 'mango', 'lemon']
     reverse_fruits = fruits[::-1]  # a negative step will take the list in reverse order,['lemon', 'mango', 'orange', 'banana']
+    print (reverse_fruits)
+    print (fruits[::-1])
 
     return
 
@@ -190,9 +218,13 @@ def removing_from_list():
     print("")
     print("-- using pop")
     lst = ['item1', 'item2']
+    print(lst)
     lst.pop()  # last item
+    print (lst)
     lst.pop(index)
+    print(lst)
 
+    print("")
     fruits = ['banana', 'orange', 'mango', 'lemon']
     fruits.pop()
     print(fruits)  # ['banana', 'orange', 'mango']
@@ -216,6 +248,13 @@ def removing_from_list():
     del fruits
     #print(fruits)  # This should give: NameError: name 'fruits' is not defined
 
+    print("")
+    print("-- clear list with del")
+    mylist = ["1", "2", "3", "4", "5"]
+    print(mylist)
+    del mylist[0:]
+    print(mylist)
+
     return
 
 
@@ -229,17 +268,24 @@ def clearing_a_list():
     #fruits.clear()
     print(fruits)  # []
 
+    print("")
+    print("-- clear list with del")
+    mylist = ["1", "2", "3", "4", "5"]
+    print(mylist)
+    del mylist[0:]
+    print(mylist)
+
     return
 
 def copying_a_list():
     log_trace("copying_a_list")
 
     lst = ['item1', 'item2']
-    lst_copy = lst.copy()
+    #lst_copy = lst.copy()
 
     fruits = ['banana', 'orange', 'mango', 'lemon']
-    fruits_copy = fruits.copy()
-    print(fruits_copy)  # ['banana', 'orange', 'mango', 'lemon']
+    #fruits_copy = fruits.copy()
+    #print(fruits_copy)  # ['banana', 'orange', 'mango', 'lemon']
 
     return
 
@@ -289,24 +335,45 @@ def joining_a_list():
 def copying_items_in_a_list():
     log_trace("copying_items_in_a_list")
 
+    item = 0
     lst = ['item1', 'item2']
     lst.count(item)
+    print("items in lst: " + str(len(lst)))
 
     fruits = ['banana', 'orange', 'mango', 'lemon']
-    print(fruits.count('orange'))  # 1
+    print("count of fruits: " + str(fruits.count('orange')))  # 1
     ages = [22, 19, 24, 25, 26, 24, 25, 24]
-    print(ages.count(24))
+    print("count of time agew has 24: " + str(ages.count(24)))
+    print (ages)
 
     return
 
+def find_in_list(mylist, find_value):
+    find_pos = -1
+    if find_value in mylist:
+        find_pos = mylist.index(find_value)
+    return find_pos
 
 def finding_index_of_an_item():
     log_trace("finding_index_of_an_item")
 
     fruits = ['banana', 'orange', 'mango', 'lemon']
-    print(fruits.index('orange'))  # 1
+    print (fruits)
+    find_value = "orange"
+    print("index of " + find_value + " : " + str(find_in_list(fruits, find_value)) )
+    #if find_value in fruits:
+    #    print("index of " + find_value + " : " + str(fruits.index(find_value)))
+    #else:
+    #    print("index of " + find_value + " : not found")
+
+    #print("index of orange: " + str(fruits.index('orange')))  # 1
+    find_value = "cherry"
+    print("index of " + find_value + " : " + str(find_in_list(fruits, find_value)))
+
     ages = [22, 19, 24, 25, 26, 24, 25, 24]
-    print(ages.index(24))  # 2, the first occurrence
+    print (ages)
+    find_value = 24
+    print("index of " + str(find_value) + " : " + str(find_in_list(ages, find_value)))
     return
 
 
@@ -317,7 +384,9 @@ def sorting_a_list():
     print("-- using sort()")
     lst = ['item1', 'item2']
     lst.sort()  # ascending
+    print(lst)
     lst.sort(reverse=True)  # descending
+    print(lst)
 
     fruits = ['banana', 'orange', 'mango', 'lemon']
     fruits.sort()
@@ -348,6 +417,7 @@ def reversing_a_list():
 
     lst = ['item1', 'item2']
     lst.reverse()
+    print(lst)
 
     fruits = ['banana', 'orange', 'mango', 'lemon']
     fruits.reverse()
@@ -361,6 +431,7 @@ def reversing_a_list():
 # ========================= main
 
 lists_basics()
+unpack_2()
 #unpacking_lists()
 slicing_lists()
 modifying_lists()
