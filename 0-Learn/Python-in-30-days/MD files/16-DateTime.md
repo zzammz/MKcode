@@ -3,7 +3,7 @@
 
 </div>
 
-
+ 
 - [📘 Day 16](#-day-16)
   - [Python *datetime*](#python-datetime)
     - [Getting *datetime* Information](#getting-datetime-information)
