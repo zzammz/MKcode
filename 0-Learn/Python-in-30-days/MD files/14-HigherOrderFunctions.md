@@ -2,7 +2,7 @@
   <h1> 30 Days Of Python: Day 14 - Higher Order Functions</h1>
 
 </div>
-
+ 
 
 - [📘 Day 14](#-day-14)
   - [Higher Order Functions](#higher-order-functions)
