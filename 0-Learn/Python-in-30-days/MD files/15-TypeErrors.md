@@ -3,7 +3,7 @@
 
 </div>
 
-
+ 
 - [📘 Day 15](#-day-15)
   - [Python Error Types](#python-error-types)
     - [SyntaxError](#syntaxerror)
