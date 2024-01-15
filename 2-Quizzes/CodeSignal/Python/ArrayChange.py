@@ -32,5 +32,5 @@ def solution(inputArray):
             diff = inputArray[i] - inputArray[i+1] + 1
             inputArray[i+1] += diff
             count += diff
-    return count
+    return count + 1
 
