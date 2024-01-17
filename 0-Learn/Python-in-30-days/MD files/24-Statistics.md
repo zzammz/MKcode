@@ -15,9 +15,9 @@
 # 📘 Day 24
 
 ## Python for Statistical Analysis
-
+ 
 ## Statistics
-
+ 
 Statistics is the discipline that studies the _collection_, _organization_, _displaying_, _analysing_, _interpretation_ and _presentation_ of data.
 Statistics is a branch of Mathematics that is recommended to be a prerequisite for data science and machine learning. Statistics is a very broad field but we will focus in this section only on the most relevant part.
 After completing this challenge, you may go onto the web development, data analysis, machine learning and data science path. Whatever path you may follow, at some point in your career you will get data which you may work on. Having some statistical knowledge will help you to make decisions based on data, _data tells as they say_.
