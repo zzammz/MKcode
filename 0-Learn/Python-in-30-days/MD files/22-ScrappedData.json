@@ -7,7 +7,7 @@
         "Faculty": "4,171",
         "Nondegree Students": "2,008",
         "Graduate & Professional Students": "15,645",
-        "Undergraduate Students": "16,936"
+        "Undergraduate Students": "16,936" 
     },
     {
         "category": "Campus",
@@ -21,7 +21,7 @@
         "category": "Academics",
         "Study Abroad Programs": "70+",
         "Average Class Size": "27",
-        "Faculty": "4,171",
+        "Faculty": "4,171", 
         "Student/Faculty Ratio": "10:1",
         "Schools and Colleges": "17",
         "Programs of Study": "300+"
@@ -32,7 +32,7 @@
         "BMC Clinical Research Grants": "$88.0M"
     },
     {
-        "category": "Undergraduate Financial Aid & Scholarships",
+        "category": "Undergraduate Financial Aid & Scholarships", 
         "Average Total Need-Based Financial Aid": "$46,252",
         "Average Need-Based Grant/Scholarship": "$40,969",
         "Grants & Scholarships (need-based)": "$275.6M",
