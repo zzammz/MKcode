@@ -2,14 +2,14 @@
   <h1> 30 Days Of Python: Day 23 - Virtual Environment </h1>
 
 </div>
-
  
+  
 
 - [📘 Day 23](#-day-23)
   - [Setting up Virtual Environments](#setting-up-virtual-environments)
   - [💻 Exercises: Day 23](#-exercises-day-23)
 
-# 📘 Day 23
+# 📘 Day 23 
 
 ## Setting up Virtual Environments
 
