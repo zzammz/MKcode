@@ -10,7 +10,7 @@
     - [What is Web Scrapping](#what-is-web-scrapping)
   - [💻 Exercises: Day 22](#-exercises-day-22)
 
-# 📘 Day 22
+# 📘 Day 22 
 
 ## Python Web Scraping
   
@@ -38,7 +38,7 @@ from bs4 import BeautifulSoup
 ```
 
 Let us declare url variable for the website which we are going to scrape.
-
+ 
 ```py
 
 import requests
