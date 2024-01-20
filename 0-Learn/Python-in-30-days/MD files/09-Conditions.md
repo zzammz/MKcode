@@ -1,7 +1,7 @@
 <div align="center">
   <h1> 30 Days Of Python: Day 9 - Conditionals</h1>
 
-
+ 
 </div>
  
  
