@@ -2,7 +2,7 @@
   <h1> 30 Days Of Python: Day 8 - Dictionaries</h1>
 
 </div>
- 
+  
  
 - [📘 Day 8](#-day-8)
   - [Dictionaries](#dictionaries)
