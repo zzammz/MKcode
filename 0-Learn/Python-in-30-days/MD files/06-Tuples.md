@@ -4,7 +4,7 @@
  
 </div>
 
-
+  
 - [Day 6:](#day-6)
   - [Tuples](#tuples)
     - [Creating a Tuple](#creating-a-tuple)
