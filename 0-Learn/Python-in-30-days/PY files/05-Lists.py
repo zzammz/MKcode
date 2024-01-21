@@ -79,7 +79,7 @@ def unpack_2():
     print (first_item)
     print(fifth_item)
 
-    #item1, item2, *other_items = lst
+    #item1, item2, *other_items = lst   #
 
     #print(item1)
     #print(item2)
@@ -331,7 +331,6 @@ def joining_a_list():
     return
 
 
-
 def copying_items_in_a_list():
     log_trace("copying_items_in_a_list")
 
@@ -374,6 +373,7 @@ def finding_index_of_an_item():
     print (ages)
     find_value = 24
     print("index of " + str(find_value) + " : " + str(find_in_list(ages, find_value)))
+
     return
 
 
@@ -404,6 +404,8 @@ def sorting_a_list():
     print("-- using sorted() - returns the ordered list without modifying the original list")
     fruits = ['banana', 'orange', 'mango', 'lemon']
     print(sorted(fruits))  # ['banana', 'lemon', 'mango', 'orange']
+    print(fruits)
+    print ("")
     # Reverse order
     fruits = ['banana', 'orange', 'mango', 'lemon']
     fruits = sorted(fruits, reverse=True)

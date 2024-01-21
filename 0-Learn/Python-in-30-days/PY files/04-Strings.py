@@ -66,7 +66,7 @@ def escape_sequences():
 
 def string_formatting():
     log_trace("string_formatting")
-    # Strings only
+    # Strings only  #
     first_name = 'Jim'
     last_name = 'H'
     language = 'Python'
