@@ -23,7 +23,7 @@
     - [Exercises: Level 3](#exercises-level-3)
 
 # 📘 Day 14
-
+  
 ## Higher Order Functions
 
 In Python functions are treated as first class citizens, allowing you to perform the following operations on functions:
