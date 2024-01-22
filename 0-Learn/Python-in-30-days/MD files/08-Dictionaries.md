@@ -3,7 +3,7 @@
 
 </div>
   
- 
+  
 - [📘 Day 8](#-day-8)
   - [Dictionaries](#dictionaries)
     - [Creating a Dictionary](#creating-a-dictionary)
