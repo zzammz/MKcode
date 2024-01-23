@@ -142,7 +142,6 @@ def nested_for_loop():
         if key == 'skills':
             for skill in person['skills']:
                 print(skill)
-
     return
 
 def for_else():

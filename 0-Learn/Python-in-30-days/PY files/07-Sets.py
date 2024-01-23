@@ -23,11 +23,9 @@ def set_basics():
     return
 
 
-def xx(**kwargs):
+def setDisp(**kwargs):
     log_trace("xx")
 
-    print("")
-    print("-- x")
     # kwargs is a dict
     print(type(kwargs))
 
@@ -41,4 +39,4 @@ def xx(**kwargs):
 #set_basics()
 
 # Driver code
-xx(name="geeks", ID="101", language="Python")
+setDisp(name="geeks", ID="101", language="Python")
