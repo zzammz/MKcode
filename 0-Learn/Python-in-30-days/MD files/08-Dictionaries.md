@@ -1,7 +1,7 @@
 <div align="center">
   <h1> 30 Days Of Python: Day 8 - Dictionaries</h1>
 
-</div>
+</div> 
   
   
 - [📘 Day 8](#-day-8)
