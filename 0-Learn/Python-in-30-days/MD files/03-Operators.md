@@ -2,7 +2,7 @@
   <h1> 30 Days Of Python: Day 3 - Operators</h1>
 </div>
 
-
+ 
  
 - [📘 Day 3](#-day-3)
   - [Boolean](#boolean)
