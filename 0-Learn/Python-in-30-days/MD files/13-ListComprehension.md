@@ -1,7 +1,7 @@
 <div align="center">
   <h1> 30 Days Of Python: Day 13 - List Comprehension</h1>
 
-</div>
+</div> 
 
  
 - [📘 Day 13](#-day-13)
