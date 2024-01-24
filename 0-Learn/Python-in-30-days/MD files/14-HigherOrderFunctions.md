@@ -1,7 +1,7 @@
 <div align="center">
   <h1> 30 Days Of Python: Day 14 - Higher Order Functions</h1>
 
-</div>
+</div> 
  
 
 - [📘 Day 14](#-day-14)
