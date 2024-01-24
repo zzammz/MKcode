@@ -20,7 +20,7 @@
   - [Zip](#zip)
   - [Exercises: Day 17](#exercises-day-17)
 
-# 📘 Day 17
+# 📘 Day 17 
   
 ## Exception Handling
 
