@@ -3,7 +3,7 @@
 
 </div>
 
- 
+  
 
 - [📘 Day 24](#-day-24)
   - [Python for Statistical Analysis](#python-for-statistical-analysis)
