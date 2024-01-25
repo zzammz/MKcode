@@ -31,7 +31,6 @@ def solution2(src):
     for listitem in mysplit:
         #print ("\n100: word is: " + listitem)
         if( "_" in listitem):
-            #print ("300: _ found")
             returnValue = ""
             firstChar = ""
             lastChar = ""
@@ -42,8 +41,6 @@ def solution2(src):
                 lastChar = "_"
 
             splitList = listitem.split('_')
-            #print ("301: ")
-            #print (splitList)
             buildWord = ""
 
             #returnValue = splitList[0]
@@ -97,16 +94,70 @@ def test2():
     print("#4: " + varTest)
     print("[" + solution2(varTest) + "]\n")
 
-    varTest = "This is the doc_string for _secret_fun"
+    varTest = "This is the docString for __secretFun"
     print("#5: " + varTest)
     print("[" + solution2(varTest) + "]\n")
 
     return
 
+import re
+def solution3 (src):
+    strNew = ""
+    regex_pattern = "[a-bA-Z]_[a-zA-Z]"
+    listSrc = src.split()
+    isFirst = True
+    for strItem in listSrc:
+        strTmp = strItem
+        match1 = re.search(regex_pattern, strTmp, re.I)
+        if (match1):
+            found_location = match1.start()
+            the_char = strTmp[found_location + 2].upper()
+            newval = strTmp[0:found_location + 1] + the_char + strTmp[found_location + 3:]
+            if (isFirst):
+                strNew = newval
+                isFirst = False
+            else:
+                strNew = strNew + " " + newval
+        else:
+            if (isFirst):
+                isFirst = False
+                strNew = strItem
+            else:
+                strNew = strNew + " " + strItem
+
+    return strNew
+
+
+def test3():
+
+    varTest = "_"
+    print("#1: " + varTest)
+    print ("[" + solution3(varTest) + "]\n")
+
+    varTest = "this_is_something"
+    print("#2: " + varTest)
+    print("[" + solution3(varTest) + "]\n")
+
+    varTest = "_this_is_something_"
+    print("#3: " + varTest)
+    print("[" + solution3(varTest) + "]\n")
+
+    varTest = "this_is_something_"
+    print("#4: " + varTest)
+    print("[" + solution3(varTest) + "]\n")
+
+    varTest = "This is the docString for __secretFun"
+    print("#5: " + varTest)
+    print("[" + solution3(varTest) + "]\n")
+
+    return
+
+
 
 
 # ========================= main
 test2()
+test3()
 
 
 
