@@ -17,5 +17,5 @@ print(type(1 + 3j))              # Complex
 print(type('Jim'))          # String
 print(type([1, 2, 3]))           # List
 print(type({'name':'Jim'})) # Dictionary
-print(type({9.8, 3.14, 2.7}))    # Set
+print(type({9.8, 3.14, 2.7}))    # Set 
 print(type((9.8, 3.14, 2.7)))    # Tuple
