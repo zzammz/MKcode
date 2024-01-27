@@ -24,7 +24,7 @@ A boolean data type represents one of the two values: _True_ or _False_. The use
 print(True)
 print(False)
 ```
-
+ 
 ## Operators
 
 Python language supports several types of operators. In this section, we will focus on few of them.
