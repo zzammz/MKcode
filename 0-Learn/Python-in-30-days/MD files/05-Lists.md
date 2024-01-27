@@ -32,7 +32,7 @@
 # Day 5
 
 ## Lists
-
+ 
 There are four collection data types in Python :
 
 - List: is a collection which is ordered and changeable(modifiable). Allows duplicate members.
