@@ -43,7 +43,7 @@ There are four collection data types in Python :
 A list is collection of different data types which is ordered and modifiable(mutable). A list can be empty or it may have different data type items.
 
 ### How to Create a List
-
+ 
 In Python we can create lists in two ways:
 
 - Using list built-in function
