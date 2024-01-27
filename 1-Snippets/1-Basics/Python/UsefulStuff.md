@@ -12,7 +12,7 @@ Omit the second argument, d, to use a default value of datetime.today().
 from datetime import datetime, timedelta
 
 
-```py
+```py 
 def add_days(n, d = datetime.today()):
   return d + timedelta(n)
 
