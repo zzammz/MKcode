@@ -22,7 +22,7 @@
     - [Finding Symmetric Difference Between Two Sets](#finding-symmetric-difference-between-two-sets)
     - [Joining Sets](#joining-sets-1)
   - [💻 Exercises: Day 7](#-exercises-day-7)
-    - [Exercises: Level 1](#exercises-level-1) 
+    - [Exercises: Level 1](#exercises-level-1)  
     - [Exercises: Level 2](#exercises-level-2)
     - [Exercises: Level 3](#exercises-level-3)
 
