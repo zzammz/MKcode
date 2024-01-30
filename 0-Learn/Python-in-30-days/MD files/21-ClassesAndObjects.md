@@ -59,7 +59,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 ### Creating a Class
 
-To create a class we need the key word **class** followed by the name and colon. Class name should be **CamelCase**.
+To create a class we need the key word **class** followed by the name and colon. Class name should be **CamelCase**. 
 
 ```sh
 # syntax
