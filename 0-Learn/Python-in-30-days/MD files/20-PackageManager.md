@@ -31,7 +31,7 @@ Package is a Python module that can contain one or more modules or other package
 In programming, we do not have to write every utility program, instead we install packages and import them to our applications.
 
 ### Installing PIP
-
+ 
 If you did not install pip, let us install it now. Go to your terminal or command prompt and copy and paste this:
 
 ```sh
