@@ -16,7 +16,7 @@
   - [💻 Exercises: Day 16](#-exercises-day-16)
 # 📘 Day 16
 
-## Python *datetime*
+## Python *datetime* 
 
 Python has got _datetime_ module to handle date and time.
   
