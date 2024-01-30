@@ -7,7 +7,7 @@
   
 
 - [📘 Day 17](#-day-17)
-  - [Exception Handling](#exception-handling)
+  - [Exception Handling](#exception-handling) 
   - [Packing and Unpacking Arguments in Python](#packing-and-unpacking-arguments-in-python)
     - [Unpacking](#unpacking)
       - [Unpacking Lists](#unpacking-lists)
