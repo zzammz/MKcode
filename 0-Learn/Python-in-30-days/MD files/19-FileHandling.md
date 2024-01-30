@@ -33,7 +33,7 @@ So far we have seen different Python data types. We usually store our data in di
 File handling is an import part of programming which allows us to create, read, update and delete files. In Python to handle data we use _open()_ built-in function.
 
 ```py
-# Syntax
+# Syntax 
 open('filename', mode) # mode(r, a, w, x, t,b)  could be to read, write, update
 ```
 
