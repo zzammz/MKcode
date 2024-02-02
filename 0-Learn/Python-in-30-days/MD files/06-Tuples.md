@@ -3,7 +3,7 @@
 
  
 </div>
-
+ 
    
 - [Day 6:](#day-6)
   - [Tuples](#tuples)
