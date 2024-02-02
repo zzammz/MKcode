@@ -20,7 +20,7 @@
 # 📘 Day 9
  
 ## Conditionals
-
+ 
 By default, statements in Python script are executed sequentially from top to bottom. If the processing logic require so, the sequential flow of execution can be altered in two way:
  
 - Conditional execution: a block of one or more statements will be executed if a certain expression is true
