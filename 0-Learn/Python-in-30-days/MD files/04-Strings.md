@@ -23,7 +23,7 @@
     - [String Methods](#string-methods)
   - [💻 Exercises - Day 4](#-exercises---day-4)
 
-# Day 4
+# Day 4 
   
 ## Strings
 
