@@ -8,7 +8,7 @@
   - [Boolean](#boolean)
   - [Operators](#operators)
     - [Assignment Operators](#assignment-operators)
-    - [Arithmetic Operators:](#arithmetic-operators)
+    - [Arithmetic Operators:](#arithmetic-operators) 
     - [Comparison Operators](#comparison-operators)
     - [Logical Operators](#logical-operators)
   - [💻 Exercises - Day 3](#-exercises---day-3) 
