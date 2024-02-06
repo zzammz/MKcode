@@ -49,7 +49,7 @@ As you can see in the example above, 3 is greater than 0. The condition was true
 
 ### If Else
 
-If condition is true the first block will be executed, if not the else condition will run.
+If condition is true the first block will be executed, if not the else condition will run. 
 
 ```py
 # syntax
