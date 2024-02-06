@@ -44,7 +44,7 @@ A list is collection of different data types which is ordered and modifiable(mut
 
 ### How to Create a List
  
-In Python we can create lists in two ways:
+In Python we can create lists in two ways: 
 
 - Using list built-in function
 
