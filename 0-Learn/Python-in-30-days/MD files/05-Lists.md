@@ -12,7 +12,7 @@
     - [Unpacking List Items](#unpacking-list-items)
     - [Slicing Items from a List](#slicing-items-from-a-list)
     - [Modifying Lists](#modifying-lists)
-    - [Checking Items in a List](#checking-items-in-a-list)
+    - [Checking Items in a List](#checking-items-in-a-list) 
     - [Adding Items to a List](#adding-items-to-a-list)
     - [Inserting Items into a List](#inserting-items-into-a-list)
     - [Removing Items from a List](#removing-items-from-a-list)
