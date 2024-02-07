@@ -21,7 +21,7 @@ A boolean data type represents one of the two values: _True_ or _False_. The use
 **Example: Boolean Values**
 
 ```py
-print(True)
+print(True) 
 print(False)
 ```
  
