@@ -8,7 +8,7 @@
   - [Higher Order Functions](#higher-order-functions)
     - [Function as a Parameter](#function-as-a-parameter)
     - [Function as a Return Value](#function-as-a-return-value)
-  - [Python Closures](#python-closures)
+  - [Python Closures](#python-closures) 
   - [Python Decorators](#python-decorators)
     - [Creating Decorators](#creating-decorators)
     - [Applying Multiple Decorators to a Single Function](#applying-multiple-decorators-to-a-single-function)
