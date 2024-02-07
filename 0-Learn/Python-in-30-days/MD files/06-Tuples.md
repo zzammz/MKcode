@@ -30,7 +30,7 @@ A tuple is a collection of different data types which is ordered and unchangeabl
 - index(): to find the index of a specified item in a tuple
 - + operator: to join two or more tuples and to create a new tuple 
 
-### Creating a Tuple
+### Creating a Tuple 
 
 - Empty tuple: Creating an empty tuple
   
