@@ -5,7 +5,7 @@
  
 </div>
 
- 
+  
 - [📘 Day 2](#-day-2)
   - [Built in functions](#built-in-functions)
   - [Variables](#variables)
