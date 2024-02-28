@@ -27,7 +27,7 @@
  
 A dictionary is a collection of unordered, modifiable(mutable) paired (key: value) data type.
 
-### Creating a Dictionary 
+### Creating a Dictionary  
 
 To create a dictionary we use curly brackets, {} or the *dict()* built-in function.
 
