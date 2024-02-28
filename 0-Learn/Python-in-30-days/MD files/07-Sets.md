@@ -18,7 +18,7 @@
     - [Joining Sets](#joining-sets)
     - [Finding Intersection Items](#finding-intersection-items)
     - [Checking Subset and Super Set](#checking-subset-and-super-set)
-    - [Checking the Difference Between Two Sets](#checking-the-difference-between-two-sets)
+    - [Checking the Difference Between Two Sets](#checking-the-difference-between-two-sets) 
     - [Finding Symmetric Difference Between Two Sets](#finding-symmetric-difference-between-two-sets)
     - [Joining Sets](#joining-sets-1) 
   - [💻 Exercises: Day 7](#-exercises-day-7)
