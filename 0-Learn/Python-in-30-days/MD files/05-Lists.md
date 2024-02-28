@@ -28,7 +28,7 @@
   - [💻 Exercises: Day 5](#-exercises-day-5)
     - [Exercises: Level 1](#exercises-level-1)
     - [Exercises: Level 2](#exercises-level-2)
-
+ 
 # Day 5
 
 ## Lists
