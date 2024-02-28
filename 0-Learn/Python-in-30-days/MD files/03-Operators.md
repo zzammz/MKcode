@@ -13,7 +13,7 @@
     - [Logical Operators](#logical-operators)
   - [💻 Exercises - Day 3](#-exercises---day-3) 
 
-# 📘 Day 3  
+# 📘 Day 3   
 
 ## Boolean
 
