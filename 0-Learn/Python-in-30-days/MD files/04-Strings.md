@@ -18,7 +18,7 @@
       - [Unpacking Characters](#unpacking-characters)
       - [Accessing Characters in Strings by Index](#accessing-characters-in-strings-by-index)
       - [Slicing Python Strings](#slicing-python-strings)
-      - [Reversing a String](#reversing-a-string)
+      - [Reversing a String](#reversing-a-string) 
       - [Skipping Characters While Slicing](#skipping-characters-while-slicing) 
     - [String Methods](#string-methods)
   - [💻 Exercises - Day 4](#-exercises---day-4)
