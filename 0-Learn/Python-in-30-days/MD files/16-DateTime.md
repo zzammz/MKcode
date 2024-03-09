@@ -10,7 +10,7 @@
     - [Formatting Date Output Using *strftime*](#formatting-date-output-using-strftime)
     - [String to Time Using *strptime*](#string-to-time-using-strptime)
     - [Using *date* from *datetime*](#using-date-from-datetime)
-    - [Time Objects to Represent Time](#time-objects-to-represent-time)
+    - [Time Objects to Represent Time](#time-objects-to-represent-time) 
     - [Difference Between Two Points in Time Using](#difference-between-two-points-in-time-using)
     - [Difference Between Two Points in Time Using *timedelata*](#difference-between-two-points-in-time-using-timedelata)
   - [💻 Exercises: Day 16](#-exercises-day-16)
