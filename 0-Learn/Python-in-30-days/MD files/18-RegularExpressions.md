@@ -22,7 +22,7 @@
     - [Period(.)](#period)
     - [Zero or more times(\*)](#zero-or-more-times)
     - [Zero or one time(?)](#zero-or-one-time)
-    - [Quantifier in RegEx](#quantifier-in-regex)
+    - [Quantifier in RegEx](#quantifier-in-regex) 
     - [Cart ^](#cart-)
   - [💻 Exercises: Day 18](#-exercises-day-18)
     - [Exercises: Level 1](#exercises-level-1)
