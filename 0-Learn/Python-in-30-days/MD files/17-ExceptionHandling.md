@@ -18,7 +18,7 @@
   - [Spreading in Python](#spreading-in-python)
   - [Enumerate](#enumerate)
   - [Zip](#zip)
-  - [Exercises: Day 17](#exercises-day-17)
+  - [Exercises: Day 17](#exercises-day-17) 
  
 # 📘 Day 17 
    
