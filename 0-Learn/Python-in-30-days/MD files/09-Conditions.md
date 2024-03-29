@@ -32,7 +32,7 @@ In python and other programming languages the key word _if_ is used to check if 
 
 ```py
 # syntax
-if condition:
+if condition: 
     this part of code runs for truthy conditions
 ```
 
