@@ -37,7 +37,7 @@ A function is a reusable block of code or programming statements designed to per
 ### Declaring and Calling a Function
 
 When we make a function, we call it declaring a function. When we start using the it,  we call it *calling* or *invoking* a function. Function can be declared with or without parameters.
-
+ 
 ```py
 # syntax
 # Declaring a function
