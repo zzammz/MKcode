@@ -13,7 +13,7 @@
     - [The Range Function](#the-range-function)
     - [Nested For Loop](#nested-for-loop)
     - [For Else](#for-else)
-    - [Pass](#pass)
+    - [Pass](#pass) 
   - [💻 Exercises: Day 10](#-exercises-day-10)
     - [Exercises: Level 1](#exercises-level-1)
     - [Exercises: Level 2](#exercises-level-2)
