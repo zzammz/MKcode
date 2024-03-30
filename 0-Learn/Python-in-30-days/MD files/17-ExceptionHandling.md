@@ -30,7 +30,7 @@ We have covered the different Python _error_ types in the previous section. If w
 
 
 
-```py
+```py 
 try:
     code in this block if things go well
 except:
