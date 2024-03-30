@@ -41,7 +41,7 @@ In this section, we will cover:
 
 ### Function as a Parameter
 
-```py
+```py 
 def sum_numbers(nums):  # normal function
     return sum(nums)    # a sad function abusing the built-in sum function :<
 
