@@ -20,7 +20,7 @@
     - [Escape character(\\) in RegEx](#escape-character-in-regex)
     - [One or more times(+)](#one-or-more-times)
     - [Period(.)](#period)
-    - [Zero or more times(\*)](#zero-or-more-times)
+    - [Zero or more times(\*)](#zero-or-more-times) 
     - [Zero or one time(?)](#zero-or-one-time)
     - [Quantifier in RegEx](#quantifier-in-regex) 
     - [Cart ^](#cart-)
