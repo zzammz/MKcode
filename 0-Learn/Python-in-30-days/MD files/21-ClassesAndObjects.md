@@ -16,7 +16,7 @@
     - [Inheritance](#inheritance)
     - [Overriding parent method](#overriding-parent-method)
   - [💻 Exercises: Day 21](#-exercises-day-21)
-    - [Exercises: Level 1](#exercises-level-1)
+    - [Exercises: Level 1](#exercises-level-1) 
     - [Exercises: Level 2](#exercises-level-2)
     - [Exercises: Level 3](#exercises-level-3)
 
