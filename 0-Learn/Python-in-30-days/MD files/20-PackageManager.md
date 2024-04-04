@@ -32,7 +32,7 @@ In programming, we do not have to write every utility program, instead we instal
 
 ### Installing PIP
  
-If you did not install pip, let us install it now. Go to your terminal or command prompt and copy and paste this:
+If you did not install pip, let us install it now. Go to your terminal or command prompt and copy and paste this: 
 
 ```sh
 T:~$ pip install pip
