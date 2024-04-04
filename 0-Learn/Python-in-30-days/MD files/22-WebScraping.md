@@ -25,7 +25,7 @@ In this section, we will use beautifulsoup and requests package to scrape data. 
 To start scraping websites you need _requests_, _beautifoulSoup4_ and a _website_.
 
 ```sh
-pip install requests
+pip install requests 
 pip install beautifulsoup4
 ```
 
