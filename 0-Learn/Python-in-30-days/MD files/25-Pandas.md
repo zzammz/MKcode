@@ -9,7 +9,7 @@
 - [📘 Day 25](#-day-25)
   - [Pandas](#pandas)
     - [Installing Pandas](#installing-pandas)
-    - [Importing Pandas](#importing-pandas)
+    - [Importing Pandas](#importing-pandas) 
     - [Creating Pandas Series with Default Index](#creating-pandas-series-with-default-index)
     - [Creating  Pandas Series with custom index](#creating--pandas-series-with-custom-index)
     - [Creating Pandas Series from a Dictionary](#creating-pandas-series-from-a-dictionary)
