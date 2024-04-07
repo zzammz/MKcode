@@ -13,7 +13,7 @@
 # 📘 Day 22 
 
 ## Python Web Scraping
-  
+   
 ### What is Web Scrapping
   
 The internet is full of huge amount of data which can be used for different purposes. To collect this data we need to know how to scrape data from a website.
