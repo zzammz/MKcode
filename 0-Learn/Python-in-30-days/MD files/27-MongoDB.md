@@ -25,7 +25,7 @@
   - [💻 Exercises: Day 27](#-exercises-day-27)
 
 # 📘 Day 27
-
+ 
 # Python with MongoDB
 
 Python is a backend technology and it can be connected with different data base applications. It can be connected to both SQL and noSQL databases. In this section, we connect Python with MongoDB database which is noSQL database. 
