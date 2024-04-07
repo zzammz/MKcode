@@ -15,7 +15,7 @@
     - [Creating Pandas Series from a Dictionary](#creating-pandas-series-from-a-dictionary)
     - [Creating a Constant Pandas Series](#creating-a-constant-pandas-series)
     - [Creating a  Pandas Series Using Linspace](#creating-a--pandas-series-using-linspace)
-  - [DataFrames](#dataframes)
+  - [DataFrames](#dataframes) 
     - [Creating DataFrames from List of Lists](#creating-dataframes-from-list-of-lists)
     - [Creating DataFrame Using Dictionary](#creating-dataframe-using-dictionary)
     - [Creating DataFrames from a List of Dictionaries](#creating-dataframes-from-a-list-of-dictionaries)
