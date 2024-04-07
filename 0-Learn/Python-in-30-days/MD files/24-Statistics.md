@@ -12,7 +12,7 @@
   - [Statistics Module](#statistics-module)
 - [NumPy](#numpy)
 
-# 📘 Day 24 
+# 📘 Day 24  
 
 ## Python for Statistical Analysis
  
