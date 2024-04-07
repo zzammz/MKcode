@@ -24,7 +24,7 @@
   - [Exercises: Day 26](#exercises-day-26)
 
 # 📘 Day 26
-
+ 
 ## Python for Web
 
 Python is a general purpose programming language and it can be used for many places. In this section, we will see how we use Python for the web. There are many Python web frame works. Django and Flask are the most popular ones. Today, we will see how to use Flask for web development.
