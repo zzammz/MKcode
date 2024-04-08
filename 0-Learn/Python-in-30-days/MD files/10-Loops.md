@@ -49,7 +49,7 @@ while count < 5:
 ```
 
 In the above while loop, the condition becomes false when count is 5. That is when the loop stops.
-If we are interested to run block of code once the condition is no longer true, we can use _else_.
+If we are interested to run block of code once the condition is no longer true, we can use _else_. 
 
 ```py
   # syntax
