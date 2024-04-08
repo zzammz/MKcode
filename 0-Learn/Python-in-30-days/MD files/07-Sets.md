@@ -40,7 +40,7 @@ We use the _set()_ built-in function.
 
 ```py
 # syntax
-st = set()
+st = set() 
 ```
 
 - Creating a set with initial items
