@@ -31,7 +31,7 @@ A dictionary is a collection of unordered, modifiable(mutable) paired (key: valu
 
 To create a dictionary we use curly brackets, {} or the *dict()* built-in function.
 
-```py
+```py 
 # syntax
 empty_dict = {}
 # Dictionary with data values
