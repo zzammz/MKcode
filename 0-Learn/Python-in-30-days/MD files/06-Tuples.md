@@ -42,7 +42,7 @@ A tuple is a collection of different data types which is ordered and unchangeabl
   ```
 
 - Tuple with initial values
-  
+   
   ```py
   # syntax
   tpl = ('item1', 'item2','item3')
