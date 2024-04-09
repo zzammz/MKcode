@@ -13,7 +13,7 @@
     - [Slicing tuples](#slicing-tuples)
     - [Changing Tuples to Lists](#changing-tuples-to-lists)
     - [Checking an Item in a Tuple](#checking-an-item-in-a-tuple) 
-    - [Joining Tuples](#joining-tuples)
+    - [Joining Tuples](#joining-tuples) 
     - [Deleting Tuples](#deleting-tuples)
   - [💻 Exercises: Day 6](#-exercises-day-6)
     - [Exercises: Level 1](#exercises-level-1)
