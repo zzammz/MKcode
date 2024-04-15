@@ -13,7 +13,7 @@
     - [Installing packages using pip](#installing-packages-using-pip)
     - [Uninstalling Packages](#uninstalling-packages)
     - [List of Packages](#list-of-packages)
-    - [Show Package](#show-package)
+    - [Show Package](#show-package) 
     - [PIP Freeze](#pip-freeze)
     - [Reading from URL](#reading-from-url)
     - [Creating a Package](#creating-a-package)
