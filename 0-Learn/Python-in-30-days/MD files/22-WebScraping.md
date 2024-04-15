@@ -9,7 +9,7 @@
   - [Python Web Scraping](#python-web-scraping)
     - [What is Web Scrapping](#what-is-web-scrapping)
   - [💻 Exercises: Day 22](#-exercises-day-22)
-
+ 
 # 📘 Day 22 
 
 ## Python Web Scraping
