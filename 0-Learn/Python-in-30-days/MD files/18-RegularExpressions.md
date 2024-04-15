@@ -14,7 +14,7 @@
       - [Search](#search)
       - [Searching for All Matches Using *findall*](#searching-for-all-matches-using-findall)
       - [Replacing a Substring](#replacing-a-substring)
-  - [Splitting Text Using RegEx Split](#splitting-text-using-regex-split)
+  - [Splitting Text Using RegEx Split](#splitting-text-using-regex-split) 
   - [Writing RegEx Patterns](#writing-regex-patterns)
     - [Square Bracket](#square-bracket)
     - [Escape character(\\) in RegEx](#escape-character-in-regex)
