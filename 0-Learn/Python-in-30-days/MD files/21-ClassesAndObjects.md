@@ -11,7 +11,7 @@
     - [Creating an Object](#creating-an-object)
     - [Class Constructor](#class-constructor)
     - [Object Methods](#object-methods)
-    - [Object Default Methods](#object-default-methods)
+    - [Object Default Methods](#object-default-methods) 
     - [Method to Modify Class Default Values](#method-to-modify-class-default-values)
     - [Inheritance](#inheritance)
     - [Overriding parent method](#overriding-parent-method)
