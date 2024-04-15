@@ -12,7 +12,7 @@
     - [Deleting Files](#deleting-files)
   - [File Types](#file-types)
     - [File with txt Extension](#file-with-txt-extension)
-    - [File with json Extension](#file-with-json-extension)
+    - [File with json Extension](#file-with-json-extension) 
     - [Changing JSON to Dictionary](#changing-json-to-dictionary)
     - [Changing Dictionary to JSON](#changing-dictionary-to-json)
     - [Saving as JSON File](#saving-as-json-file)
