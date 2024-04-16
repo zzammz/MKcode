@@ -9,7 +9,7 @@
     - [How to Create a List](#how-to-create-a-list)
     - [Accessing List Items Using Positive Indexing](#accessing-list-items-using-positive-indexing)
     - [Accessing List Items Using Negative Indexing](#accessing-list-items-using-negative-indexing)
-    - [Unpacking List Items](#unpacking-list-items)
+    - [Unpacking List Items](#unpacking-list-items) 
     - [Slicing Items from a List](#slicing-items-from-a-list)
     - [Modifying Lists](#modifying-lists)
     - [Checking Items in a List](#checking-items-in-a-list) 
