@@ -10,7 +10,7 @@
     - [Assignment Operators](#assignment-operators)
     - [Arithmetic Operators:](#arithmetic-operators)
     - [Comparison Operators](#comparison-operators)
-    - [Logical Operators](#logical-operators)
+    - [Logical Operators](#logical-operators) 
   - [💻 Exercises - Day 3](#-exercises---day-3) 
 
 # 📘 Day 3   
