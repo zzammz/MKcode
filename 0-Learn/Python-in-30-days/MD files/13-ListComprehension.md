@@ -12,7 +12,7 @@
   - [💻 Exercises: Day 13](#-exercises-day-13)
 
 # 📘 Day 13
-
+ 
 ## List Comprehension 
 
 List comprehension in Python is a compact way of creating a list from a sequence. It is a short way to create a new list. List comprehension is considerably faster than processing a list using the _for_ loop. 
