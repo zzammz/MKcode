@@ -27,7 +27,7 @@ print(dir(datetime))
 ```
 
 With dir or help built-in commands it is possible to know the available functions in a certain module. As you can see, in the datetime module there are many functions, but we will focus on _date_, _datetime_, _time_ and _timedelta_. Let se see them one by one.
-
+ 
 ### Getting *datetime* Information
 
 ```py
