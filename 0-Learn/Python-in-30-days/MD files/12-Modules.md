@@ -15,7 +15,7 @@
     - [Import Functions from a Module and Renaming](#import-functions-from-a-module-and-renaming)
   - [Import Built-in Modules](#import-built-in-modules) 
     - [OS Module](#os-module)
-    - [Sys Module](#sys-module)
+    - [Sys Module](#sys-module) 
     - [Statistics Module](#statistics-module)
     - [Math Module](#math-module)
     - [String Module](#string-module)
