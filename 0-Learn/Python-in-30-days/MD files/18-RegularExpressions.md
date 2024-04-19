@@ -8,7 +8,7 @@
 
 - [📘 Day 18](#-day-18)
   - [Regular Expressions](#regular-expressions)
-    - [The *re* Module](#the-re-module)
+    - [The *re* Module](#the-re-module) 
     - [Methods in *re* Module](#methods-in-re-module)
       - [Match](#match)
       - [Search](#search)
