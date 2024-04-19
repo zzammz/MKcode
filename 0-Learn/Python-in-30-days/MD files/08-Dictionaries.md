@@ -57,7 +57,7 @@ person = {
 
 The dictionary above shows that a value could be any data types:string, boolean, list, tuple, set or a dictionary.
 
-### Dictionary Length
+### Dictionary Length 
 
 It checks the number of 'key: value' pairs in the dictionary.
 
