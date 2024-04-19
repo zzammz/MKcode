@@ -9,7 +9,7 @@
     - [SyntaxError](#syntaxerror)
     - [NameError](#nameerror)
     - [IndexError](#indexerror)
-    - [ModuleNotFoundError](#modulenotfounderror)
+    - [ModuleNotFoundError](#modulenotfounderror) 
     - [AttributeError](#attributeerror)
     - [KeyError](#keyerror)
     - [TypeError](#typeerror)
