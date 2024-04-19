@@ -20,7 +20,7 @@
     - [Default and Arbitrary Number of Parameters in Functions](#default-and-arbitrary-number-of-parameters-in-functions)
     - [Function as a Parameter of Another Function](#function-as-a-parameter-of-another-function)
   - [💻 Exercises: Day 11](#-exercises-day-11) 
-    - [Exercises: Level 1](#exercises-level-1) 
+    - [Exercises: Level 1](#exercises-level-1)  
     - [Exercises: Level 2](#exercises-level-2)
     - [Exercises: Level 3](#exercises-level-3)
  
