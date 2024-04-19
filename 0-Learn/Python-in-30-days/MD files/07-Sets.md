@@ -37,7 +37,7 @@ Set is a collection of items. Let me take you back to your elementary or high sc
 We use the _set()_ built-in function.
 
 - Creating an empty set
-
+ 
 ```py
 # syntax
 st = set() 
