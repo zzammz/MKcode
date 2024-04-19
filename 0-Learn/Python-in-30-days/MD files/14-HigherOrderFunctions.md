@@ -6,7 +6,7 @@
 
 - [📘 Day 14](#-day-14)
   - [Higher Order Functions](#higher-order-functions)
-    - [Function as a Parameter](#function-as-a-parameter)
+    - [Function as a Parameter](#function-as-a-parameter) 
     - [Function as a Return Value](#function-as-a-return-value)
   - [Python Closures](#python-closures) 
   - [Python Decorators](#python-decorators)
