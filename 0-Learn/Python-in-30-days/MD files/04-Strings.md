@@ -15,7 +15,7 @@
       - [New Style String Formatting (str.format)](#new-style-string-formatting-strformat)
       - [String Interpolation / f-Strings (Python 3.6+)](#string-interpolation--f-strings-python-36)
     - [Python Strings as Sequences of Characters](#python-strings-as-sequences-of-characters)
-      - [Unpacking Characters](#unpacking-characters)
+      - [Unpacking Characters](#unpacking-characters) 
       - [Accessing Characters in Strings by Index](#accessing-characters-in-strings-by-index)
       - [Slicing Python Strings](#slicing-python-strings)
       - [Reversing a String](#reversing-a-string)  
