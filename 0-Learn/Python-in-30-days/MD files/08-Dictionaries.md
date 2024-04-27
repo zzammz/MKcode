@@ -20,7 +20,7 @@
     - [Getting Dictionary Keys as a List](#getting-dictionary-keys-as-a-list)
     - [Getting Dictionary Values as a List](#getting-dictionary-values-as-a-list)
   - [💻 Exercises: Day 8](#-exercises-day-8)
- 
+  
 # 📘 Day 8
  
 ## Dictionaries  
