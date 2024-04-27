@@ -17,7 +17,7 @@
   - [💻 Exercises: Day 9](#-exercises-day-9)
     - [Exercises: Level 1](#exercises-level-1)
 
-# 📘 Day 9
+# 📘 Day 9 
   
 ## Conditionals 
  
