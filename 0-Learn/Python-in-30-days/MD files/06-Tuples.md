@@ -10,7 +10,7 @@
     - [Creating a Tuple](#creating-a-tuple)
     - [Tuple length](#tuple-length)
     - [Accessing Tuple Items](#accessing-tuple-items)
-    - [Slicing tuples](#slicing-tuples)
+    - [Slicing tuples](#slicing-tuples) 
     - [Changing Tuples to Lists](#changing-tuples-to-lists)
     - [Checking an Item in a Tuple](#checking-an-item-in-a-tuple) 
     - [Joining Tuples](#joining-tuples) 
