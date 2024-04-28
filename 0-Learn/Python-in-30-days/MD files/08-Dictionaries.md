@@ -18,7 +18,7 @@
     - [Deleting a Dictionary](#deleting-a-dictionary)
     - [Copy a Dictionary](#copy-a-dictionary)
     - [Getting Dictionary Keys as a List](#getting-dictionary-keys-as-a-list)
-    - [Getting Dictionary Values as a List](#getting-dictionary-values-as-a-list)
+    - [Getting Dictionary Values as a List](#getting-dictionary-values-as-a-list) 
   - [💻 Exercises: Day 8](#-exercises-day-8)
   
 # 📘 Day 8
