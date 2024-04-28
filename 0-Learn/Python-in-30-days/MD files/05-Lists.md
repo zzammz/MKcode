@@ -17,7 +17,7 @@
     - [Inserting Items into a List](#inserting-items-into-a-list)
     - [Removing Items from a List](#removing-items-from-a-list)
     - [Removing Items Using Pop](#removing-items-using-pop)
-    - [Removing Items Using Del](#removing-items-using-del)
+    - [Removing Items Using Del](#removing-items-using-del) 
     - [Clearing List Items](#clearing-list-items)
     - [Copying a List](#copying-a-list)
     - [Joining Lists](#joining-lists)
