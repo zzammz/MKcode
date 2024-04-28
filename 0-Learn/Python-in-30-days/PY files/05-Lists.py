@@ -5,29 +5,33 @@ import sys
 
 # ========================= common
 def log_trace(func_name):
-    print ("\n----- " + func_name + "() -----")
+    print ("\n\n========== " + func_name + "()")
     #print (inspect.stack()[1][3])
     #frame = inspect.currentframe()
     #print (inspect.getframeinfo(frame).function)
     #print(inspect.getframeinfo(inspect.currentframe()).function)
     return
 
+def log_trace2(str_msg):
+    print ("\n--- " + str_msg)
+    return
+
+
 
 def lists_basics():
     log_trace("lists_basics")
 
-    print ("")
-    print ("-- create")
+    log_trace2("create")
 
     empty_list = list()  # this is an empty list, no item in the list
+    print ("length of empty list")
     print(len(empty_list))  # 0
 
-    print("")
-    print("-- initial values")
+    log_trace2("initial values")
     fruits = ['banana', 'orange', 'mango', 'lemon']  # list of fruits
     vegetables = ['Tomato', 'Potato', 'Cabbage', 'Onion', 'Carrot']  # list of vegetables
     animal_products = ['milk', 'meat', 'butter', 'yoghurt']  # list of animal products
-    web_techs = ['HTML', 'CSS', 'JS', 'React', 'Redux', 'Node', 'MongDB']  # list of web technologies
+    web_techs = ['HTML', 'CSS', 'JS', 'React', 'Redux', 'Node', 'MongoDB']  # list of web technologies
     countries = ['Finland', 'Estonia', 'Denmark', 'Sweden', 'Norway']
     lst_of_diff_things = ['Jim', 250, True, {'country': 'US', 'city': 'Scranton'}]  # list containing different data types
 
@@ -43,9 +47,9 @@ def lists_basics():
     print('Countries:', countries)
     print('Number of countries:', len(countries))
     print("lst_of_diff_things: ", lst_of_diff_things)
+    print ('Number of items in lst_of_diff_things: ', len(lst_of_diff_things))
 
-    print("")
-    print("-- accessing using positive indexing")
+    log_trace2("accessing using positive indexing")
     fruits = ['banana', 'orange', 'mango', 'lemon']
     first_fruit = fruits[0]  # we are accessing the first item using its index
     print(first_fruit)  # banana
@@ -57,8 +61,7 @@ def lists_basics():
     last_index = len(fruits) - 1
     last_fruit = fruits[last_index]
 
-    print("")
-    print("-- accessing using negative indexing")
+    log_trace2("accessing using negative indexing")
     fruits = ['banana', 'orange', 'mango', 'lemon']
     first_fruit = fruits[-4]
     last_fruit = fruits[-1]
@@ -68,16 +71,20 @@ def lists_basics():
     print(second_last)  # mango
 
     print ("first fruit via negative indexing: " + fruits [len(fruits) * -1 ]  )
+    itmp = len(fruits) * -1
+    print (itmp)
 
     return
+
 
 def unpack_2():
     log_trace("unpack_2")
 
     lst = ['item1', 'item2', 'item3', 'item4', 'item5']
     first_item, second_item, third_item, fourth_item, fifth_item = lst
-    print (first_item)
-    print(fifth_item)
+    print (lst)
+    print ("first item: " + first_item)
+    print("fifth item: " + fifth_item)
 
     #item1, item2, *other_items = lst   #
 
@@ -133,11 +140,11 @@ def unpacking_lists():
 
     return
 
+
 def slicing_lists():
     log_trace("slicing_lists")
 
-    print("")
-    print("-- positive indexing")
+    log_trace2("positive indexing")
     fruits = ['banana', 'orange', 'mango', 'lemon']  # list of fruits
     vegetables = ['Tomato', 'Potato', 'Cabbage', 'Onion', 'Carrot']  # list of vegetables
     animal_products = ['milk', 'meat', 'butter', 'yoghurt']  # list of animal products
@@ -152,14 +159,15 @@ def slicing_lists():
     orange_mango_lemon = fruits[1:]
     orange_and_lemon = fruits[::2]  # here we used a 3rd argument, step. It will take every 2cnd item - ['banana', 'mango']
 
-    print("")
-    print("-- negative indexing")
-
+    log_trace2("negative indexing")
     fruits = ['banana', 'orange', 'mango', 'lemon']
+    print ("fruits list:")
+    print (fruits)
     all_fruits = fruits[-4:]  # it returns all the fruits
     orange_and_mango = fruits[-3:-1]  # it does not include the last index,['orange', 'mango']
     orange_mango_lemon = fruits[-3:]  # this will give starting from -3 to the end,['orange', 'mango', 'lemon']
     reverse_fruits = fruits[::-1]  # a negative step will take the list in reverse order,['lemon', 'mango', 'orange', 'banana']
+    print ("revsersing the list")
     print (reverse_fruits)
     print (fruits[::-1])
 
@@ -182,18 +190,17 @@ def modifying_lists():
 
 
 def adding_to_lists():
-    log_trace("condition_and_local_operators")
+    #log_trace("condition_and_local_operators")
+    log_trace("adding_to_lists")
 
-    print("")
-    print("-- appending")
+    log_trace2("appending")
     fruits = ['banana', 'orange', 'mango', 'lemon']
     fruits.append('apple')
     print(fruits)  # ['banana', 'orange', 'mango', 'lemon', 'apple']
     fruits.append('lime')  # ['banana', 'orange', 'mango', 'lemon', 'apple', 'lime']
     print(fruits)
 
-    print("")
-    print("-- inserting")
+    log_trace2("inserting")
     fruits = ['banana', 'orange', 'mango', 'lemon']
     fruits.insert(2, 'apple')  # insert apple between orange and mango
     print(fruits)  # ['banana', 'orange', 'apple', 'mango', 'lemon']
@@ -207,16 +214,14 @@ def removing_from_list():
     log_trace("removing_from_list")
 
     index = 0
-    print("")
-    print("-- using remove")
+    log_trace2("using remove")
     fruits = ['banana', 'orange', 'mango', 'lemon', 'banana']
     fruits.remove('banana')
     print(fruits)  # ['orange', 'mango', 'lemon', 'banana'] - this method removes the first occurrence of the item in the list
     fruits.remove('lemon')
     print(fruits)  # ['orange', 'mango', 'banana']
 
-    print("")
-    print("-- using pop")
+    log_trace2("using pop")
     lst = ['item1', 'item2']
     print(lst)
     lst.pop()  # last item
@@ -232,8 +237,7 @@ def removing_from_list():
     fruits.pop(0)
     print(fruits)  # ['orange', 'mango']
 
-    print("")
-    print("-- using del")
+    log_trace2("using del")
     lst = ['item1', 'item2']
     del lst[index]  # only a single item
     del lst  # to delete the list completely
@@ -248,12 +252,14 @@ def removing_from_list():
     del fruits
     #print(fruits)  # This should give: NameError: name 'fruits' is not defined
 
-    print("")
-    print("-- clear list with del")
+    log_trace2("clear list with del")
     mylist = ["1", "2", "3", "4", "5"]
     print(mylist)
     del mylist[0:]
     print(mylist)
+
+    del mylist
+    #print (mylist)  #this will give an error because the mylist does not exist anymore
 
     return
 
@@ -268,8 +274,7 @@ def clearing_a_list():
     #fruits.clear()
     print(fruits)  # []
 
-    print("")
-    print("-- clear list with del")
+    log_trace2("clear list with del")
     mylist = ["1", "2", "3", "4", "5"]
     print(mylist)
     del mylist[0:]
@@ -284,8 +289,8 @@ def copying_a_list():
     #lst_copy = lst.copy()
 
     fruits = ['banana', 'orange', 'mango', 'lemon']
-    #fruits_copy = fruits.copy()
-    #print(fruits_copy)  # ['banana', 'orange', 'mango', 'lemon']
+    fruits_copy = fruits.copy()
+    print(fruits_copy)  # ['banana', 'orange', 'mango', 'lemon']
 
     return
 
@@ -293,8 +298,7 @@ def copying_a_list():
 def joining_a_list():
     log_trace("joining_a_list")
 
-    print("")
-    print("-- using +")
+    log_trace2("using +")
     positive_numbers = [1, 2, 3, 4, 5]
     zero = [0]
     negative_numbers = [-5, -4, -3, -2, -1]
@@ -305,8 +309,7 @@ def joining_a_list():
     fruits_and_vegetables = fruits + vegetables
     print(fruits_and_vegetables)  # ['banana', 'orange', 'mango', 'lemon', 'Tomato', 'Potato', 'Cabbage', 'Onion', 'Carrot']
 
-    print("")
-    print("-- using extend()")
+    log_trace2("using extend()")
 
     list1 = ['item1', 'item2']
     list2 = ['item3', 'item4', 'item5']
@@ -337,21 +340,27 @@ def copying_items_in_a_list():
     item = 0
     lst = ['item1', 'item2']
     lst.count(item)
+    print (lst)
     print("items in lst: " + str(len(lst)))
 
-    fruits = ['banana', 'orange', 'mango', 'lemon']
-    print("count of fruits: " + str(fruits.count('orange')))  # 1
+    print("")
+    fruits = ['banana', 'orange', 'mango', 'orange', 'lemon']
+    print (fruits)
+    print("count of 'orange' in fruits: " + str(fruits.count('orange')))  # 1
+    print("")
     ages = [22, 19, 24, 25, 26, 24, 25, 24]
-    print("count of time agew has 24: " + str(ages.count(24)))
     print (ages)
+    print("count of time 'ages' has 24: " + str(ages.count(24)))
 
     return
+
 
 def find_in_list(mylist, find_value):
     find_pos = -1
     if find_value in mylist:
         find_pos = mylist.index(find_value)
     return find_pos
+
 
 def finding_index_of_an_item():
     log_trace("finding_index_of_an_item")
@@ -369,6 +378,7 @@ def finding_index_of_an_item():
     find_value = "cherry"
     print("index of " + find_value + " : " + str(find_in_list(fruits, find_value)))
 
+    print("")
     ages = [22, 19, 24, 25, 26, 24, 25, 24]
     print (ages)
     find_value = 24
@@ -380,8 +390,7 @@ def finding_index_of_an_item():
 def sorting_a_list():
     log_trace("sorting_a_list")
 
-    print("")
-    print("-- using sort()")
+    log_trace2("using sort()")
     lst = ['item1', 'item2']
     lst.sort()  # ascending
     print(lst)
@@ -400,8 +409,7 @@ def sorting_a_list():
     ages.sort(reverse=True)
     print(ages)  # [26, 25, 25, 24, 24, 24, 22, 19]
 
-    print("")
-    print("-- using sorted() - returns the ordered list without modifying the original list")
+    log_trace2("using sorted(), which returns the ordered list without modifying the original list")
     fruits = ['banana', 'orange', 'mango', 'lemon']
     print(sorted(fruits))  # ['banana', 'lemon', 'mango', 'orange']
     print(fruits)
@@ -422,9 +430,11 @@ def reversing_a_list():
     print(lst)
 
     fruits = ['banana', 'orange', 'mango', 'lemon']
+    print (fruits)
     fruits.reverse()
     print(fruits)  # ['lemon', 'mango', 'orange', 'banana']
     ages = [22, 19, 24, 25, 26, 24, 25, 24]
+    print (ages)
     ages.reverse()
     print(ages)  # [24, 25, 24, 26, 25, 24, 19, 22]
 
