@@ -5,12 +5,17 @@ import sys
 
 # ========================= common
 def log_trace(func_name):
-    print ("\n--- " + func_name + "()")
+    print ("\n========== " + func_name + "()")
     #print (inspect.stack()[1][3])
     #frame = inspect.currentframe()
     #print (inspect.getframeinfo(frame).function)
     #print(inspect.getframeinfo(inspect.currentframe()).function)
     return
+
+def log_trace2(str_msg):
+    print ("\n--- " + str_msg)
+    return
+
 
 def creating_a_string():
     log_trace("creating_a_string")
@@ -19,6 +24,8 @@ def creating_a_string():
     print(len(letter))  # 1
     greeting = 'Hello, World!'  # String could be made using a single or double quote,"Hello, World!"
     print(greeting)  # Hello, World!
+    greeting2 = 'bye world'
+    print (greeting2)
     print(len(greeting))  # 13
     sentence = "I hope you are having some fun"
     print(sentence)
@@ -92,6 +99,13 @@ def string_formatting():
     language = 'Python'
     formated_string = 'I am {} {}. I teach {}'.format(first_name, last_name, language)
     print(formated_string)
+
+    # learning reference with indexing
+    new_format_str = "'{} says he likes {}'".format(first_name, language)
+    print("2: " + new_format_str)
+    new_format_str2 = "'{0} says he likes {1}'".format(first_name, last_name, language)
+    print("3: " + new_format_str2)
+
     a = 4
     b = 3
 
@@ -138,6 +152,7 @@ def string_as_sequence_of_chars():
     print(f)  # n
 
     # accessing by index
+    print()
     language = 'Python'
     first_letter = language[0]
     print(first_letter)  # P
@@ -148,6 +163,7 @@ def string_as_sequence_of_chars():
     print(last_letter)  # n
 
     # from right
+    print ()
     language = 'Python'
     last_letter = language[-1]
     print(last_letter)  # n
@@ -155,18 +171,22 @@ def string_as_sequence_of_chars():
     print(second_last)  # o
 
     # slice string into substrings
+    print()
     language = 'Python'
     first_three = language[0:3]  # starts at zero index and up to 3 but not include 3
     print(first_three)  # Pyt
     last_three = language[3:6]
     print(last_three)  # hon
+
     # Another way
+    print()
     last_three = language[-3:]
     print(last_three)  # hon
     last_three = language[3:]
     print(last_three)  # hon
 
     # reversing a string
+    print()
     greeting = 'Hello, World!'
     print(greeting[::-1])  # !dlroW ,olleH
 
@@ -192,34 +212,41 @@ def string_methods():
     print(challenge.count('th'))  # 2`
 
     # endswith(): Checks if a string ends with a specified ending
+    log_trace2("endswith")
     challenge = 'thirty days of python'
     print(challenge.endswith('on'))  # True
     print(challenge.endswith('tion'))  # False
 
     # expandtabs(): Replaces tab character with spaces, default tab size is 8. It takes tab size argument
+    log_trace2("expandtabs")
     challenge = 'thirty\tdays\tof\tnight'
     print(challenge.expandtabs())
     print(challenge.expandtabs(10))
 
     # find(): Returns the index of the first occurrence of a substring, if not found returns -1
+    log_trace2("find")
     challenge = 'thirty days of python'
     print(challenge.find('y'))  # 5
     print(challenge.find('th'))  # 0
 
     # rfind(): Returns the index of the last occurrence of a substring, if not found returns -1
+    log_trace2("rfind")
     challenge = 'thirty days of python'
     print(challenge.rfind('y'))  # 16
     print(challenge.rfind('th'))  # 17
 
     # format(): formats string into a nicer output
+    log_trace2("format")
     first_name = 'Jim'
     last_name = 'Halpert'
     age = 250
     job = 'teacher'
-    country = 'Finland'
-    sentence = 'I am {} {}. I am a {}. I am {} years old. I live in {}.'.format(first_name, last_name, age, job,
-                                                                                country)
-    print(sentence)  # I am Jim H. I am 250 years old. I am a salesman. I live in Scranton.
+    country = 'United States'
+    #sentence = 'I am {} {}. I am a {}. I am {} years old. I live in {}.'.format(first_name, last_name, age, job, country)
+    #print(sentence)  # I am Jim H. I am 250 years old. I am a salesman. I live in Scranton.
+
+    sentence2 = 'I am {0} {1}. I am a {3}. I am {2} years old. I live in {4}.'.format(first_name, last_name, age, job, country)
+    print(sentence2)  # I am Jim H. I am 250 years old. I am a salesman. I live in Scranton.
 
     radius = 10
     pi = 3.14
@@ -238,12 +265,14 @@ def string_methods():
 
     # rindex(): Returns the highest index of a substring,
     # additional arguments indicate starting and ending index (default 0 and string length - 1)
+    log_trace2("rindex")
     challenge = 'thirty days of python'
     sub_string = 'da'
     print(challenge.rindex(sub_string))  # 8
-    print(challenge.rindex(sub_string, 9))  # error
+    #print(challenge.rindex(sub_string, 9))  # error
 
     # isalnum(): Checks alphanumeric character
+    log_trace2("isalnum")
     challenge = 'ThirtyDaysPython'
     print(challenge.isalnum())  # True
 
@@ -257,6 +286,7 @@ def string_methods():
     print(challenge.isalnum())  # False
 
     # isalpha(): Checks if all string elements are alphabet characters (a-z and A-Z)
+    log_trace2("isalpha")
     challenge = 'thirty days of python'
     print(challenge.isalpha())  # False, space is once again excluded
     challenge = 'ThirtyDaysPython'
@@ -265,6 +295,7 @@ def string_methods():
     print(num.isalpha())  # False
 
     # isdecimal(): Checks if all characters in a string are decimal (0-9)
+    log_trace2("isdecimal")
     challenge = 'thirty days of python'
     print(challenge.isdecimal())  # False
     challenge = '123'
@@ -274,8 +305,8 @@ def string_methods():
     challenge = '12 3'
     print(challenge.isdecimal())  # False, space not allowed
 
-
     # isdigit(): Checks if all chars in a string are numbers (0-9 and some other unicode chars for numbers)
+    log_trace2("isdigit")
     challenge = 'Thirty'
     print(challenge.isdigit())  # False
     challenge = '30'
@@ -284,6 +315,7 @@ def string_methods():
     print(challenge.isdigit())  # True
 
     #isnumeric(): Checks if all characters in a string are numbers or number related (just like isdigit(), just accept more symbols like %)
+    log_trace2("isnumeric")
     num = '10'
     print(num.isnumeric())  # True
     num = '\u00BD'
@@ -292,57 +324,67 @@ def string_methods():
     print(num.isnumeric())  # False
 
     # isidentifier(): Checks for a valid identifier - it checks if a string is a valid variable name
+    log_trace2("isidentifier")
     challenge = '30DaysOfPython'
     print(challenge.isidentifier())  # False, because it starts with a number
     challenge = 'thirty_days_of_python'
     print(challenge.isidentifier())  # True
 
     # islower(): Checks if all alphabet characters in the string are lowercase
+    log_trace2("islower")
     challenge = 'thirty days of python'
     print(challenge.islower())  # True
     challenge = 'Thirty days of python'
     print(challenge.islower())  # False
 
     # isupper(): Checks if all alphabet characters in the string are uppercase
+    log_trace2("isupper")
     hallenge = 'thirty days of python'
     print(challenge.isupper())  # False
     challenge = 'THIRTY DAYS OF PYTHON'
     print(challenge.isupper())  # True
 
     #join(): Returns a concatenated string
+    log_trace2("join")
     web_tech = ['HTML', 'CSS', 'JavaScript', 'React']
     result = ' '.join(web_tech)
     print(result)  # 'HTML CSS JavaScript React'
 
     web_tech = ['HTML', 'CSS', 'JavaScript', 'React']
     result = '# '.join(web_tech)
-    print(result)  # 'HTML# CSS# JavaScript# React'
+    print("[" + result + "]")  # 'HTML# CSS# JavaScript# React'
 
     # strip(): Removes all given characters starting from the beginning and end of the string
+    log_trace2("strip")
     challenge = 'thirty days of pythoonnn'
     print(challenge.strip('noth'))  # 'irty days of py'
 
     # replace(): Replaces substring with a given string
+    log_trace2("replace")
     challenge = 'thirty days of python'
     print(challenge.replace('python', 'coding'))  # 'thirty days of coding'
 
     # split(): Splits the string, using given string or space as a separator
+    log_trace2("split")
     challenge = 'thirty days of python'
     print(challenge.split())  # ['thirty', 'days', 'of', 'python']
     challenge = 'thirty, days, of, python'
     print(challenge.split(', '))  # ['thirty', 'days', 'of', 'python']
 
     # title(): Returns a title cased string
+    log_trace2("title")
     challenge = 'thirty days of python'
     print(challenge.title())  # Thirty Days Of Python
 
     # swapcase(): Converts all uppercase characters to lowercase and all lowercase characters to uppercase characters
+    log_trace2("swapcase")
     challenge = 'thirty days of python'
     print(challenge.swapcase())  # THIRTY DAYS OF PYTHON
     challenge = 'Thirty Days Of Python'
     print(challenge.swapcase())  # tHIRTY dAYS oF pYTHON
 
     # startswith(): Checks if String Starts with the Specified String
+    log_trace2("startswith")
     challenge = 'thirty days of python'
     print(challenge.startswith('thirty'))  # True
 
@@ -353,11 +395,11 @@ def string_methods():
 
 # ========================= main
 
-#creating_a_string()
-#string_concatenation()
+creating_a_string()
+string_concatenation()
 escape_sequences()
 string_formatting()
-#string_as_sequence_of_chars()
-#string_methods()
+string_as_sequence_of_chars()
+string_methods()
 
 

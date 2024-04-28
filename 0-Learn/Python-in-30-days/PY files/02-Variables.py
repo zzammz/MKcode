@@ -34,6 +34,7 @@ def examples_variables():
         'country': 'US',
         'city': 'Scranton'
     }
+
     print('First name:', first_name) 
     print('First name length:', len(first_name))
     print('Last name: ', last_name)

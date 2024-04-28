@@ -104,17 +104,18 @@ def examples_comparison_operators():
     print('True == False: ', True == False)
     print('False == False:', False == False)
 
-    print('1 is 1', 1 is 1)  # True - because the data values are the same
-    print('1 is not 2', 1 is not 2)  # True - because 1 is not 2
+    #print('1 is 1', 1 is 1)  # True - because the data values are the same
+    #print('1 is not 2', 1 is not 2)  # True - because 1 is not 2
     print('A in Jim', 'A' in 'Jim')  # True - A found in the string
     print('B in Jim', 'B' in 'Jim')  # False - there is no uppercase B
     print('coding' in 'coding for all')  # True - because coding for all has the word coding
     print('a in an:', 'a' in 'an')  # True
-    print('4 is 2 ** 2:', 4 is 2 ** 2)  # True
+    #print('4 is 2 ** 2:', 4 is 2 ** 2)  # True
     return
 
 
 def examples_logical_operators():
+    log_trace("examples_logical_operators")
     print(3 > 2 and 4 > 3)  # True - because both statements are true
     print(3 > 2 and 4 < 3)  # False - because the second statement is false
     print(3 < 2 and 4 < 3)  # False - because both statements are false
@@ -136,9 +137,6 @@ def examples_logical_operators():
 examples_arithmetic_ops()
 examples_comparison_operators()
 examples_logical_operators()
-
-
-
 
 
 

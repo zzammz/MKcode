@@ -42,7 +42,7 @@ def examples_check_data_type():
     print(type((9.8, 3.14, 2.7)))  # Tuple
     return
 
-
+#
 
 # ========================= main
 
