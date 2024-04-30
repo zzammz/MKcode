@@ -33,7 +33,7 @@ In Python functions are treated as first class citizens, allowing you to perform
 - A function can be modified
 - A function can be assigned to a variable
 
-In this section, we will cover:
+In this section, we will cover: 
 
 1. Handling functions as parameters
 2. Returning functions as return value from another functions
