@@ -10,7 +10,7 @@
     - [Opening Files for Reading](#opening-files-for-reading)
     - [Opening Files for Writing and Updating](#opening-files-for-writing-and-updating)
     - [Deleting Files](#deleting-files)
-  - [File Types](#file-types)
+  - [File Types](#file-types) 
     - [File with txt Extension](#file-with-txt-extension)
     - [File with json Extension](#file-with-json-extension) 
     - [Changing JSON to Dictionary](#changing-json-to-dictionary)
