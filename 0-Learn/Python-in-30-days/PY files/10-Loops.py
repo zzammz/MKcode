@@ -5,11 +5,11 @@ import sys
 
 # ========================= common
 def log_trace(func_name):
-    print ("\n----- " + func_name + "() -----")
-    #print (inspect.stack()[1][3])
-    #frame = inspect.currentframe()
-    #print (inspect.getframeinfo(frame).function)
-    #print(inspect.getframeinfo(inspect.currentframe()).function)
+    print ("\n\n========== " + func_name + "()")
+    return
+
+def log_trace2(str_msg):
+    print ("\n--- " + str_msg)
     return
 
 
@@ -17,13 +17,13 @@ def log_trace(func_name):
 def while_loop():
     log_trace("while_loop")
 
-    print ("")
-    print ("-- while")
+    log_trace2 ("while")
     count = 0
     while count < 5:
         print(count)
         count = count + 1
 
+    print ("")
     count = 0
     while count < 5:
         print(count)
@@ -31,6 +31,7 @@ def while_loop():
         if (count == 3):
             break
 
+    print("")
     count = 0
     while count < 5:
         if count == 3:
@@ -43,22 +44,22 @@ def while_loop():
 def for_loop():
     log_trace("for_loop")
 
-    print("")
-    print("-- for")
+    log_trace2("for")
 
     language = 'Python'
     for letter in language:
         print(letter)
 
+    print("")
     for i in range(len(language)):
         print(language[i])
 
+    print("")
     numbers = (0, 1, 2, 3, 4, 5)
     for number in numbers:
         print(number)
 
-    print("")
-    print("-- fictionary looping")
+    log_trace2("dictionary looping")
     person = {
         'first_name': 'Jim',
         'last_name': 'Halpert',
@@ -71,24 +72,28 @@ def for_loop():
             'zipcode': '02210'
         }
     }
+    print ("only keys:")
     for key in person:
         print(key)
 
+    print ("")
+    print("both keys & values:")
     for key, value in person.items():
         print(key, value)  # this way we get both keys and values printed out
 
-    print("")
-    print("-- set")
+    log_trace2("set")
     it_companies = {'Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon'}
     for company in it_companies:
         print(company)
 
+    print("")
     numbers = (0, 1, 2, 3, 4, 5)
     for number in numbers:
         print(number)
         if number == 3:
             break
 
+    print("")
     numbers = (0, 1, 2, 3, 4, 5)
     for number in numbers:
         print(number)
@@ -106,18 +111,19 @@ def for_loop():
 def range_func():
     log_trace("range_func")
 
-    print("")
-    print("-- range")
+    log_trace2("range")
     lst = list(range(11))
     print(lst) # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     st = set(range(1, 11))    # 2 arguments indicate start and end of the sequence, step set to default 1
     print(st) # {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
 
+    print ("")
     lst = list(range(0,11,2))
     print(lst) # [0, 2, 4, 6, 8, 10]
     st = set(range(0,11,2))
     print(st) #  {0, 2, 4, 6, 8, 10}
 
+    print("")
     for number in range(11):
         print(number)  # prints 0 to 10, not including 11
 
@@ -139,9 +145,10 @@ def nested_for_loop():
         }
     }
     for key in person:
+        print ("key: " + key)
         if key == 'skills':
             for skill in person['skills']:
-                print(skill)
+                print("  " + skill)
     return
 
 def for_else():
@@ -150,7 +157,7 @@ def for_else():
     for number in range(11):
         print(number)  # prints 0 to 10, not including 11  #
     else:
-        print('The loop stops at', number)
+        print('The loop stopped at', number)
     return
 
 
@@ -158,6 +165,9 @@ def loop_pass():
     log_trace("loop_pass")
     for number in range(6):
         pass
+
+    print ("here I am")
+
     return
 
 

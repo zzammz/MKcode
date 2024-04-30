@@ -5,20 +5,22 @@ import sys
 
 # ========================= common
 def log_trace(func_name):
-    print ("\n----- " + func_name + "() -----")
+    print ("\n\n========== " + func_name + "()")
     #print (inspect.stack()[1][3])
     #frame = inspect.currentframe()
     #print (inspect.getframeinfo(frame).function)
     #print(inspect.getframeinfo(inspect.currentframe()).function)
     return
 
+def log_trace2(str_msg):
+    print ("\n--- " + str_msg)
+    return
 
 
 def tuples_basics():
     log_trace("tuples_basics")
 
-    print ("")
-    print ("-- creating")
+    log_trace2 ("creating")
 
     # syntax
     empty_tuple = ()
@@ -33,8 +35,7 @@ def tuples_basics():
     fruits = ('banana', 'orange', 'mango', 'lemon')
     print (fruits)
 
-    print("")
-    print("-- tuple length")
+    log_trace2("tuple length")
     print("length of tpl: " + str(len(tpl)) )
     print("length of fruits: " + str(len(fruits)))
 
@@ -44,8 +45,7 @@ def tuples_basics():
 def accessing_tuples(**kwargs):
     log_trace("accessing_tuples")
 
-    print("")
-    print("-- positive indexing")
+    log_trace2("positive indexing")
 
     # Syntax
     tpl = ('item1', 'item2', 'item3')
@@ -60,8 +60,7 @@ def accessing_tuples(**kwargs):
     last_fruit = fruits[last_index]
     print("last_fruit: " + last_fruit)
 
-    print("")
-    print("-- negative indexing")
+    log_trace2("negative indexing")
     # Syntax
     tpl = ('item1', 'item2', 'item3', 'item4')
     first_item = tpl[-4]
@@ -80,8 +79,7 @@ def accessing_tuples(**kwargs):
 def slicing_tuples(**kwargs):
     log_trace("slicing_tuples")
 
-    print("")
-    print("-- range of positive numbers")
+    log_trace2("range of positive numbers")
     tpl = ('item1', 'item2', 'item3', 'item4')
     all_items = tpl[0:4]  # all items
     print (all_items)
@@ -99,8 +97,7 @@ def slicing_tuples(**kwargs):
     orange_to_the_rest = fruits[1:]
     print (orange_to_the_rest)
 
-    print("")
-    print("-- range of negative numbers")
+    log_trace2("range of negative numbers")
     tpl = ('item1', 'item2', 'item3', 'item4')
     all_items = tpl[-4:]  # all items
     print (all_items)
@@ -120,23 +117,23 @@ def slicing_tuples(**kwargs):
 def tuple_conversion(**kwargs):
     log_trace("tuple_conversion")
 
-    print("")
-    print("-- to list")
+    log_trace2("tuple to list")
 
     tpl = ('item1', 'item2', 'item3', 'item4')
     lst = list(tpl)
     print (tpl)
+    print (lst)
 
     print("")
     fruits_tpl = ('banana', 'orange', 'mango', 'lemon')
     print(fruits_tpl)
     fruits_list = list(fruits_tpl)
     print(fruits_list)
+    print ("modify list[0]")
     fruits_list[0] = 'apple'
     print(fruits_list)  # ['apple', 'orange', 'mango', 'lemon']
 
-    print("")
-    print("-- list to tuple")
+    log_trace2("list to tuple")
 
     fruits_tpl2 = tuple(fruits_list)
     print(fruits_tpl2)  # ('apple', 'orange', 'mango', 'lemon')

@@ -5,11 +5,11 @@ import sys
 
 # ========================= common
 def log_trace(func_name):
-    print ("\n----- " + func_name + "() -----")
-    #print (inspect.stack()[1][3])
-    #frame = inspect.currentframe()
-    #print (inspect.getframeinfo(frame).function)
-    #print(inspect.getframeinfo(inspect.currentframe()).function)
+    print ("\n\n========== " + func_name + "()")
+    return
+
+def log_trace2(str_msg):
+    print ("\n--- " + str_msg)
     return
 
 
@@ -17,8 +17,7 @@ def log_trace(func_name):
 def examples_conditions():
     log_trace("examples_conditions")
 
-    print ("")
-    print ("-- if")
+    log_trace2 ("if")
     a = 3   # A is a positive number
     if a > 0:
         print('A is a positive number')
@@ -59,8 +58,7 @@ def examples_conditions():
 def condition_and_local_operators():
     log_trace("condition_and_local_operators")
 
-    print("")
-    print("-- condition & logical ops")
+    log_trace2("condition & logical ops")
     a = 0
     if a > 0 and a % 2 == 0:
         print('A is an even and positive integer')
