@@ -11,7 +11,7 @@
     - [If Else](#if-else)
     - [If Elif Else](#if-elif-else)
     - [Short Hand](#short-hand)
-    - [Nested Conditions](#nested-conditions)
+    - [Nested Conditions](#nested-conditions) 
     - [If Condition and Logical Operators](#if-condition-and-logical-operators)
     - [If and Or Logical Operators](#if-and-or-logical-operators)
   - [💻 Exercises: Day 9](#-exercises-day-9)
