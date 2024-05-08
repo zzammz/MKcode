@@ -9,7 +9,7 @@
 - [📘 Day 2](#-day-2)
   - [Built in functions](#built-in-functions)
   - [Variables](#variables)
-    - [Declaring Multiple Variable in a Line](#declaring-multiple-variable-in-a-line)
+    - [Declaring Multiple Variable in a Line](#declaring-multiple-variable-in-a-line) 
   - [Data Types](#data-types)
   - [Checking Data types and Casting](#checking-data-types-and-casting)
   - [Numbers](#numbers) 
