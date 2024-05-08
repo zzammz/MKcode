@@ -14,7 +14,7 @@
     - [Nested For Loop](#nested-for-loop)
     - [For Else](#for-else)
     - [Pass](#pass) 
-  - [💻 Exercises: Day 10](#-exercises-day-10)
+  - [💻 Exercises: Day 10](#-exercises-day-10) 
     - [Exercises: Level 1](#exercises-level-1)
     - [Exercises: Level 2](#exercises-level-2)
     - [Exercises: Level 3](#exercises-level-3)
