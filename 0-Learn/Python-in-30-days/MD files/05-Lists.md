@@ -81,7 +81,7 @@ countries = ['Finland', 'Estonia', 'Denmark', 'Sweden', 'Norway']
 
 # Print the lists and its length
 print('Fruits:', fruits)
-print('Number of fruits:', len(fruits))
+print('Number of fruits:', len(fruits)) 
 print('Vegetables:', vegetables)
 print('Number of vegetables:', len(vegetables))
 print('Animal products:',animal_products)
