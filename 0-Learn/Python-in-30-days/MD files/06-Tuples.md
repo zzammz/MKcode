@@ -32,7 +32,7 @@ A tuple is a collection of different data types which is ordered and unchangeabl
 
 ### Creating a Tuple 
 
-- Empty tuple: Creating an empty tuple
+- Empty tuple: Creating an empty tuple 
    
   ```py
   # syntax
