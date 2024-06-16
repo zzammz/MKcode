@@ -20,7 +20,7 @@
     - [Exercises: Level 3](#exercises-level-3)
   
 # 📘 Day 10
- 
+  
 ## Loops 
 
 Life is full of routines. In programming we also do lots of repetitive tasks. In order to handle repetitive task programming languages use loops. Python programming language also provides the following types of two loops:
