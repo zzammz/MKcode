@@ -34,7 +34,7 @@ We have covered the different Python _error_ types in the previous section. If w
 try:
     code in this block if things go well
 except:
-    code in this block run if things go wrong
+    code in this block run if things go wrong 
 ```
 
 **Example:**
