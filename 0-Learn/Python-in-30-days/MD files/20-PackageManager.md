@@ -41,7 +41,7 @@ T:~$ pip install pip
 Check if pip is installed by writing
 
 ```sh
-pip --version
+pip --version 
 ```
 
 ```py
