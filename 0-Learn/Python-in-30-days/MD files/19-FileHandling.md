@@ -44,7 +44,7 @@ open('filename', mode) # mode(r, a, w, x, t,b)  could be to read, write, update
 - "t" - Text - Default value. Text mode
 - "b" - Binary - Binary mode (e.g. images)
 
-### Opening Files for Reading
+### Opening Files for Reading 
 
 The default mode of _open_ is reading, so we do not have to specify 'r' or 'rt'. I have created and saved a file named reading_file_example.txt in the files directory. Let us see how it is done:
  
