@@ -19,7 +19,7 @@
     - [Removing Items Using Pop](#removing-items-using-pop)
     - [Removing Items Using Del](#removing-items-using-del) 
     - [Clearing List Items](#clearing-list-items)
-    - [Copying a List](#copying-a-list)
+    - [Copying a List](#copying-a-list) 
     - [Joining Lists](#joining-lists) 
     - [Counting Items in a List](#counting-items-in-a-list)
     - [Finding Index of an Item](#finding-index-of-an-item)
