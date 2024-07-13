@@ -11,7 +11,7 @@
     - [Defining a Function](#defining-a-function)
     - [Declaring and Calling a Function](#declaring-and-calling-a-function)
     - [Function without Parameters](#function-without-parameters)
-    - [Function Returning a Value - Part 1](#function-returning-a-value---part-1)
+    - [Function Returning a Value - Part 1](#function-returning-a-value---part-1) 
     - [Function with Parameters](#function-with-parameters)
     - [Passing Arguments with Key and Value](#passing-arguments-with-key-and-value)
     - [Function Returning a Value - Part 2](#function-returning-a-value---part-2)
