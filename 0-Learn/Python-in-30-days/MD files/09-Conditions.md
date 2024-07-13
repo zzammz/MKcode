@@ -35,7 +35,7 @@ In python and other programming languages the key word _if_ is used to check if 
 if condition: 
     this part of code runs for truthy conditions
 ```
-
+ 
 **Example: 1** 
 
 ```py
