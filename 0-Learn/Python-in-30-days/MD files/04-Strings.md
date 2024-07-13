@@ -12,7 +12,7 @@
     - [Escape Sequences in Strings](#escape-sequences-in-strings)
     - [String formatting](#string-formatting) 
       - [Old Style String Formatting (% Operator)](#old-style-string-formatting--operator)
-      - [New Style String Formatting (str.format)](#new-style-string-formatting-strformat)
+      - [New Style String Formatting (str.format)](#new-style-string-formatting-strformat) 
       - [String Interpolation / f-Strings (Python 3.6+)](#string-interpolation--f-strings-python-36)
     - [Python Strings as Sequences of Characters](#python-strings-as-sequences-of-characters)
       - [Unpacking Characters](#unpacking-characters) 
