@@ -9,7 +9,7 @@
     - [While Loop](#while-loop)
     - [Break and Continue - Part 1](#break-and-continue---part-1)
     - [For Loop](#for-loop)
-    - [Break and Continue - Part 2](#break-and-continue---part-2)
+    - [Break and Continue - Part 2](#break-and-continue---part-2) 
     - [The Range Function](#the-range-function)
     - [Nested For Loop](#nested-for-loop)
     - [For Else](#for-else)
