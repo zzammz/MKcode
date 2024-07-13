@@ -20,7 +20,7 @@
     - [Math Module](#math-module)
     - [String Module](#string-module)
     - [Random Module](#random-module)
-  - [💻 Exercises: Day 12](#-exercises-day-12)
+  - [💻 Exercises: Day 12](#-exercises-day-12) 
     - [Exercises: Level 1](#exercises-level-1)
     - [Exercises: Level 2](#exercises-level-2)
     - [Exercises: Level 3](#exercises-level-3)
