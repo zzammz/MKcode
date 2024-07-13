@@ -14,7 +14,7 @@
     - [Removing Items from a Set](#removing-items-from-a-set)
     - [Clearing Items in a Set](#clearing-items-in-a-set)
     - [Deleting a Set](#deleting-a-set)
-    - [Converting List to Set](#converting-list-to-set) 
+    - [Converting List to Set](#converting-list-to-set)  
     - [Joining Sets](#joining-sets)
     - [Finding Intersection Items](#finding-intersection-items)
     - [Checking Subset and Super Set](#checking-subset-and-super-set)
