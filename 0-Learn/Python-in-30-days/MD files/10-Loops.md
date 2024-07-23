@@ -36,7 +36,7 @@ We use the reserved word _while_ to make a while loop. It is used to execute a b
   # syntax
 while condition:
     code goes here
-```
+``` 
 
 **Example:**
 
