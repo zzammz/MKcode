@@ -15,7 +15,7 @@
     - [If Condition and Logical Operators](#if-condition-and-logical-operators)
     - [If and Or Logical Operators](#if-and-or-logical-operators)
   - [💻 Exercises: Day 9](#-exercises-day-9)
-    - [Exercises: Level 1](#exercises-level-1)
+    - [Exercises: Level 1](#exercises-level-1) 
 
 # 📘 Day 9  
   
