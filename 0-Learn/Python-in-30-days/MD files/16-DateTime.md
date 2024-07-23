@@ -18,7 +18,7 @@
 
 ## Python *datetime* 
 
-Python has got _datetime_ module to handle date and time.    
+Python has got _datetime_ module to handle date and time.     
   
 ```py 
 import datetime
