@@ -39,7 +39,7 @@ A regular expression or RegEx is a special text string that helps to find patter
 
 After importing the module we can use it to detect or find patterns.
 
-```py
+```py 
 import re
 ```
 
