@@ -34,7 +34,7 @@ print(type(lst))     # list
 print(lst)           # ['P', 'y', 't', 'h', 'o', 'n']
 
 # Second way: list comprehension
-lst = [i for i in language]
+lst = [i for i in language] 
 print(type(lst)) # list
 print(lst)       # ['P', 'y', 't', 'h', 'o', 'n']
 
