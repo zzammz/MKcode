@@ -12,7 +12,7 @@
     - [ModuleNotFoundError](#modulenotfounderror) 
     - [AttributeError](#attributeerror)
     - [KeyError](#keyerror)
-    - [TypeError](#typeerror)
+    - [TypeError](#typeerror) 
     - [ImportError](#importerror)
     - [ValueError](#valueerror)
     - [ZeroDivisionError](#zerodivisionerror)
